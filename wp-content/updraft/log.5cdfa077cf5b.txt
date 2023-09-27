@@ -1,0 +1,452 @@
+0000.000 (0) Opened log file at time: Thu, 13 Jul 2023 10:38:28 +0000 on https://vastvoltelectrical.com.au
+0000.002 (0) UpdraftPlus WordPress backup plugin (https://updraftplus.com): 1.23.7 WP: 6.2.2 PHP: 8.0.28 (litespeed, Linux cp-wc23.syd02.ds.network 3.10.0-962.3.2.lve1.5.27.el7.x86_64 #1 SMP Sat Nov 30 02:18:52 EST 2019 x86_64) MySQL: 10.5.19-MariaDB-cll-lve-log (max packet size=26214400) WPLANG: en_US Server: Apache safe_mode: 0 max_execution_time: 900 memory_limit: 512M (used: 74.4M | 77M) multisite: N openssl: OpenSSL 1.1.1p  21 Jun 2022 mcrypt: Y LANG:  ZipArchive::addFile: Y
+0000.032 (0) Free space on disk containing Updraft's temporary directory: 38843.7 MB
+0000.035 (0) Tasks: Backup files: 1 (schedule: unset) Backup DB: 1 (schedule: unset)
+0000.039 (0) Requesting semaphore lock (fd) (apparently not via scheduler)
+0000.041 (0) Semaphore (fd, wp_options) was stuck, set lock time to 2023-07-13 10:38:28
+0000.043 (0) Semaphore (fd, wp_options) reset to 1
+0000.044 (0) Set semaphore last lock (fd) time to 2023-07-13 10:38:28
+0000.045 (0) Semaphore lock (fd) complete
+0000.050 (0) Backup run: resumption=0, nonce=5cdfa077cf5b, file_nonce=5cdfa077cf5b begun at=1689244708 (0s ago), job type=backup
+0000.052 (0) Scheduling a resumption (1) after 300 seconds (1689245008) in case this run gets aborted
+0000.158 (0) Checking if we have a zip executable available
+0000.159 (0) Testing: /usr/bin/zip
+0000.170 (0) Output: zip warning: binziptest/test.zip not found or empty
+0000.172 (0) Output: adding: binziptest/subdir1/	(in=0) (out=0) (stored 0%)
+0000.174 (0) Output: adding: binziptest/subdir1/subdir2/	(in=0) (out=0) (stored 0%)
+0000.177 (0) Output: adding: binziptest/subdir1/subdir2/test.html	(in=131) (out=107) (deflated 18%)
+0000.178 (0) Output: total bytes=131, compressed=107 -> 18% savings
+0000.188 (0) Output: adding: binziptest/subdir1/subdir2/test2.html	(in=138) (out=113) (deflated 18%)
+0000.190 (0) Output: total bytes=269, compressed=220 -> 18% savings
+0000.197 (0) Working binary zip found: /usr/bin/zip
+0000.200 (0) Zip engine: found/will use a binary zip: /usr/bin/zip
+0000.201 (0) Creation of backups of directories: beginning
+0000.220 (0) Beginning creation of dump of plugins (split every: 400 MB)
+0005.491 (0) Total entities for the zip file: 1592 directories, 10297 files (0 skipped as non-modified), 164.7 MB
+0005.494 (0) Adding batch to zip file (UpdraftPlus_BinZip): over 2.0 seconds have passed since the last write (0 MB, 1 (1) files added so far); re-opening (prior size: 0 KB)
+0005.666 (0) backup_2023-07-13-1038_Vastvolt_5cdfa077cf5b-plugins.zip.tmp: size is now: 0.40 MB
+0005.670 (0) Zip: backup_2023-07-13-1038_Vastvolt_5cdfa077cf5b-plugins.zip.tmp: 100 files added (on-disk size: 361.2 KB)
+0005.673 (0) Zip: backup_2023-07-13-1038_Vastvolt_5cdfa077cf5b-plugins.zip.tmp: 200 files added (on-disk size: 361.2 KB)
+0005.675 (0) Zip: backup_2023-07-13-1038_Vastvolt_5cdfa077cf5b-plugins.zip.tmp: 300 files added (on-disk size: 361.2 KB)
+0005.678 (0) Zip: backup_2023-07-13-1038_Vastvolt_5cdfa077cf5b-plugins.zip.tmp: 400 files added (on-disk size: 361.2 KB)
+0005.680 (0) Zip: backup_2023-07-13-1038_Vastvolt_5cdfa077cf5b-plugins.zip.tmp: 500 files added (on-disk size: 361.2 KB)
+0005.683 (0) Zip: backup_2023-07-13-1038_Vastvolt_5cdfa077cf5b-plugins.zip.tmp: 600 files added (on-disk size: 361.2 KB)
+0005.685 (0) Zip: backup_2023-07-13-1038_Vastvolt_5cdfa077cf5b-plugins.zip.tmp: 700 files added (on-disk size: 361.2 KB)
+0005.688 (0) Zip: backup_2023-07-13-1038_Vastvolt_5cdfa077cf5b-plugins.zip.tmp: 800 files added (on-disk size: 361.2 KB)
+0005.691 (0) Zip: backup_2023-07-13-1038_Vastvolt_5cdfa077cf5b-plugins.zip.tmp: 900 files added (on-disk size: 361.2 KB)
+0005.694 (0) Zip: backup_2023-07-13-1038_Vastvolt_5cdfa077cf5b-plugins.zip.tmp: 1000 files added (on-disk size: 361.2 KB)
+0005.695 (0) Adding batch to zip file (UpdraftPlus_BinZip): over 1000 files added on this batch (19.3 MB, 10297 files batched, 1001 (1002) added so far); re-opening (prior size: 361.2 KB)
+0018.367 (0) backup_2023-07-13-1038_Vastvolt_5cdfa077cf5b-plugins.zip.tmp: size is now: 7.10 MB
+0018.373 (0) Zip: backup_2023-07-13-1038_Vastvolt_5cdfa077cf5b-plugins.zip.tmp: 1100 files added (on-disk size: 7226.9 KB)
+0018.375 (0) Zip: backup_2023-07-13-1038_Vastvolt_5cdfa077cf5b-plugins.zip.tmp: 1200 files added (on-disk size: 7226.9 KB)
+0018.378 (0) Zip: backup_2023-07-13-1038_Vastvolt_5cdfa077cf5b-plugins.zip.tmp: 1300 files added (on-disk size: 7226.9 KB)
+0018.381 (0) Zip: backup_2023-07-13-1038_Vastvolt_5cdfa077cf5b-plugins.zip.tmp: 1400 files added (on-disk size: 7226.9 KB)
+0018.383 (0) Zip: backup_2023-07-13-1038_Vastvolt_5cdfa077cf5b-plugins.zip.tmp: 1500 files added (on-disk size: 7226.9 KB)
+0018.386 (0) Zip: backup_2023-07-13-1038_Vastvolt_5cdfa077cf5b-plugins.zip.tmp: 1600 files added (on-disk size: 7226.9 KB)
+0018.389 (0) Zip: backup_2023-07-13-1038_Vastvolt_5cdfa077cf5b-plugins.zip.tmp: 1700 files added (on-disk size: 7226.9 KB)
+0018.392 (0) Zip: backup_2023-07-13-1038_Vastvolt_5cdfa077cf5b-plugins.zip.tmp: 1800 files added (on-disk size: 7226.9 KB)
+0018.394 (0) Zip: backup_2023-07-13-1038_Vastvolt_5cdfa077cf5b-plugins.zip.tmp: 1900 files added (on-disk size: 7226.9 KB)
+0018.396 (0) Zip: backup_2023-07-13-1038_Vastvolt_5cdfa077cf5b-plugins.zip.tmp: 2000 files added (on-disk size: 7226.9 KB)
+0018.398 (0) Adding batch to zip file (UpdraftPlus_BinZip): over 1000 files added on this batch (9.4 MB, 10297 files batched, 1001 (2003) added so far); re-opening (prior size: 7226.9 KB)
+0028.430 (0) backup_2023-07-13-1038_Vastvolt_5cdfa077cf5b-plugins.zip.tmp: size is now: 9.40 MB
+0028.435 (0) Zip: backup_2023-07-13-1038_Vastvolt_5cdfa077cf5b-plugins.zip.tmp: 2100 files added (on-disk size: 9599.2 KB)
+0028.437 (0) Zip: backup_2023-07-13-1038_Vastvolt_5cdfa077cf5b-plugins.zip.tmp: 2200 files added (on-disk size: 9599.2 KB)
+0028.440 (0) Zip: backup_2023-07-13-1038_Vastvolt_5cdfa077cf5b-plugins.zip.tmp: 2300 files added (on-disk size: 9599.2 KB)
+0028.442 (0) Zip: backup_2023-07-13-1038_Vastvolt_5cdfa077cf5b-plugins.zip.tmp: 2400 files added (on-disk size: 9599.2 KB)
+0028.446 (0) Zip: backup_2023-07-13-1038_Vastvolt_5cdfa077cf5b-plugins.zip.tmp: 2500 files added (on-disk size: 9599.2 KB)
+0028.448 (0) Zip: backup_2023-07-13-1038_Vastvolt_5cdfa077cf5b-plugins.zip.tmp: 2600 files added (on-disk size: 9599.2 KB)
+0028.451 (0) Zip: backup_2023-07-13-1038_Vastvolt_5cdfa077cf5b-plugins.zip.tmp: 2700 files added (on-disk size: 9599.2 KB)
+0028.453 (0) Zip: backup_2023-07-13-1038_Vastvolt_5cdfa077cf5b-plugins.zip.tmp: 2800 files added (on-disk size: 9599.2 KB)
+0028.456 (0) Adding batch to zip file (UpdraftPlus_BinZip): over 25 MB added on this batch (28.5 MB, 10297 files batched, 878 (2881) added so far); re-opening (prior size: 9599.2 KB)
+0054.790 (0) backup_2023-07-13-1038_Vastvolt_5cdfa077cf5b-plugins.zip.tmp: size is now: 22.50 MB
+0054.794 (0) A useful amount of data was added after this amount of zip processing: 26.5 s (normalised: 23.2 s, rate: 1101.5 KB/s)
+0054.796 (0) Zip: backup_2023-07-13-1038_Vastvolt_5cdfa077cf5b-plugins.zip.tmp: 2900 files added (on-disk size: 23083.8 KB)
+0054.799 (0) Zip: backup_2023-07-13-1038_Vastvolt_5cdfa077cf5b-plugins.zip.tmp: 3000 files added (on-disk size: 23083.8 KB)
+0054.801 (0) Zip: backup_2023-07-13-1038_Vastvolt_5cdfa077cf5b-plugins.zip.tmp: 3100 files added (on-disk size: 23083.8 KB)
+0054.804 (0) Zip: backup_2023-07-13-1038_Vastvolt_5cdfa077cf5b-plugins.zip.tmp: 3200 files added (on-disk size: 23083.8 KB)
+0054.806 (0) Zip: backup_2023-07-13-1038_Vastvolt_5cdfa077cf5b-plugins.zip.tmp: 3300 files added (on-disk size: 23083.8 KB)
+0054.809 (0) Zip: backup_2023-07-13-1038_Vastvolt_5cdfa077cf5b-plugins.zip.tmp: 3400 files added (on-disk size: 23083.8 KB)
+0054.811 (0) Zip: backup_2023-07-13-1038_Vastvolt_5cdfa077cf5b-plugins.zip.tmp: 3500 files added (on-disk size: 23083.8 KB)
+0054.814 (0) Zip: backup_2023-07-13-1038_Vastvolt_5cdfa077cf5b-plugins.zip.tmp: 3600 files added (on-disk size: 23083.8 KB)
+0054.816 (0) Zip: backup_2023-07-13-1038_Vastvolt_5cdfa077cf5b-plugins.zip.tmp: 3700 files added (on-disk size: 23083.8 KB)
+0054.818 (0) Adding batch to zip file (UpdraftPlus_BinZip): over 25 MB added on this batch (25 MB, 10297 files batched, 905 (3786) added so far); re-opening (prior size: 23083.8 KB)
+0074.369 (0) backup_2023-07-13-1038_Vastvolt_5cdfa077cf5b-plugins.zip.tmp: size is now: 29.00 MB
+0074.373 (0) A useful amount of data was added after this amount of zip processing: 20.1 s (normalised: 20.1 s, rate: 1275.4 KB/s)
+0074.376 (0) Zip: backup_2023-07-13-1038_Vastvolt_5cdfa077cf5b-plugins.zip.tmp: 3800 files added (on-disk size: 29678.5 KB)
+0074.380 (0) Zip: backup_2023-07-13-1038_Vastvolt_5cdfa077cf5b-plugins.zip.tmp: 3900 files added (on-disk size: 29678.5 KB)
+0074.382 (0) Zip: backup_2023-07-13-1038_Vastvolt_5cdfa077cf5b-plugins.zip.tmp: 4000 files added (on-disk size: 29678.5 KB)
+0074.385 (0) Zip: backup_2023-07-13-1038_Vastvolt_5cdfa077cf5b-plugins.zip.tmp: 4100 files added (on-disk size: 29678.5 KB)
+0074.388 (0) Zip: backup_2023-07-13-1038_Vastvolt_5cdfa077cf5b-plugins.zip.tmp: 4200 files added (on-disk size: 29678.5 KB)
+0074.390 (0) Zip: backup_2023-07-13-1038_Vastvolt_5cdfa077cf5b-plugins.zip.tmp: 4300 files added (on-disk size: 29678.5 KB)
+0074.393 (0) Zip: backup_2023-07-13-1038_Vastvolt_5cdfa077cf5b-plugins.zip.tmp: 4400 files added (on-disk size: 29678.5 KB)
+0074.396 (0) Zip: backup_2023-07-13-1038_Vastvolt_5cdfa077cf5b-plugins.zip.tmp: 4500 files added (on-disk size: 29678.5 KB)
+0074.400 (0) Zip: backup_2023-07-13-1038_Vastvolt_5cdfa077cf5b-plugins.zip.tmp: 4600 files added (on-disk size: 29678.5 KB)
+0074.403 (0) Zip: backup_2023-07-13-1038_Vastvolt_5cdfa077cf5b-plugins.zip.tmp: 4700 files added (on-disk size: 29678.5 KB)
+0074.405 (0) Adding batch to zip file (UpdraftPlus_BinZip): over 1000 files added on this batch (7 MB, 10297 files batched, 1001 (4787) added so far); re-opening (prior size: 29678.5 KB)
+0084.093 (0) Zip: backup_2023-07-13-1038_Vastvolt_5cdfa077cf5b-plugins.zip.tmp: 4800 files added (on-disk size: 32098.8 KB)
+0084.096 (0) Zip: backup_2023-07-13-1038_Vastvolt_5cdfa077cf5b-plugins.zip.tmp: 4900 files added (on-disk size: 32098.8 KB)
+0084.099 (0) Zip: backup_2023-07-13-1038_Vastvolt_5cdfa077cf5b-plugins.zip.tmp: 5000 files added (on-disk size: 32098.8 KB)
+0084.102 (0) Zip: backup_2023-07-13-1038_Vastvolt_5cdfa077cf5b-plugins.zip.tmp: 5100 files added (on-disk size: 32098.8 KB)
+0084.105 (0) Zip: backup_2023-07-13-1038_Vastvolt_5cdfa077cf5b-plugins.zip.tmp: 5200 files added (on-disk size: 32098.8 KB)
+0084.107 (0) Zip: backup_2023-07-13-1038_Vastvolt_5cdfa077cf5b-plugins.zip.tmp: 5300 files added (on-disk size: 32098.8 KB)
+0084.110 (0) Zip: backup_2023-07-13-1038_Vastvolt_5cdfa077cf5b-plugins.zip.tmp: 5400 files added (on-disk size: 32098.8 KB)
+0084.112 (0) Zip: backup_2023-07-13-1038_Vastvolt_5cdfa077cf5b-plugins.zip.tmp: 5500 files added (on-disk size: 32098.8 KB)
+0084.115 (0) Zip: backup_2023-07-13-1038_Vastvolt_5cdfa077cf5b-plugins.zip.tmp: 5600 files added (on-disk size: 32098.8 KB)
+0084.117 (0) Zip: backup_2023-07-13-1038_Vastvolt_5cdfa077cf5b-plugins.zip.tmp: 5700 files added (on-disk size: 32098.8 KB)
+0084.120 (0) Adding batch to zip file (UpdraftPlus_BinZip): over 1000 files added on this batch (16.6 MB, 10297 files batched, 1001 (5788) added so far); re-opening (prior size: 32098.8 KB)
+0100.247 (0) Zip: backup_2023-07-13-1038_Vastvolt_5cdfa077cf5b-plugins.zip.tmp: 5800 files added (on-disk size: 36212.4 KB)
+0100.250 (0) Zip: backup_2023-07-13-1038_Vastvolt_5cdfa077cf5b-plugins.zip.tmp: 5900 files added (on-disk size: 36212.4 KB)
+0100.252 (0) Zip: backup_2023-07-13-1038_Vastvolt_5cdfa077cf5b-plugins.zip.tmp: 6000 files added (on-disk size: 36212.4 KB)
+0100.255 (0) Zip: backup_2023-07-13-1038_Vastvolt_5cdfa077cf5b-plugins.zip.tmp: 6100 files added (on-disk size: 36212.4 KB)
+0100.258 (0) Zip: backup_2023-07-13-1038_Vastvolt_5cdfa077cf5b-plugins.zip.tmp: 6200 files added (on-disk size: 36212.4 KB)
+0100.260 (0) Zip: backup_2023-07-13-1038_Vastvolt_5cdfa077cf5b-plugins.zip.tmp: 6300 files added (on-disk size: 36212.4 KB)
+0100.262 (0) Zip: backup_2023-07-13-1038_Vastvolt_5cdfa077cf5b-plugins.zip.tmp: 6400 files added (on-disk size: 36212.4 KB)
+0100.265 (0) Zip: backup_2023-07-13-1038_Vastvolt_5cdfa077cf5b-plugins.zip.tmp: 6500 files added (on-disk size: 36212.4 KB)
+0100.267 (0) Zip: backup_2023-07-13-1038_Vastvolt_5cdfa077cf5b-plugins.zip.tmp: 6600 files added (on-disk size: 36212.4 KB)
+0100.270 (0) Zip: backup_2023-07-13-1038_Vastvolt_5cdfa077cf5b-plugins.zip.tmp: 6700 files added (on-disk size: 36212.4 KB)
+0100.272 (0) Adding batch to zip file (UpdraftPlus_BinZip): over 1000 files added on this batch (11.2 MB, 10297 files batched, 1001 (6789) added so far); re-opening (prior size: 36212.4 KB)
+0114.240 (0) Zip: backup_2023-07-13-1038_Vastvolt_5cdfa077cf5b-plugins.zip.tmp: 6800 files added (on-disk size: 42217.8 KB)
+0114.243 (0) Zip: backup_2023-07-13-1038_Vastvolt_5cdfa077cf5b-plugins.zip.tmp: 6900 files added (on-disk size: 42217.8 KB)
+0114.245 (0) Zip: backup_2023-07-13-1038_Vastvolt_5cdfa077cf5b-plugins.zip.tmp: 7000 files added (on-disk size: 42217.8 KB)
+0114.248 (0) Zip: backup_2023-07-13-1038_Vastvolt_5cdfa077cf5b-plugins.zip.tmp: 7100 files added (on-disk size: 42217.8 KB)
+0114.250 (0) Zip: backup_2023-07-13-1038_Vastvolt_5cdfa077cf5b-plugins.zip.tmp: 7200 files added (on-disk size: 42217.8 KB)
+0114.252 (0) Zip: backup_2023-07-13-1038_Vastvolt_5cdfa077cf5b-plugins.zip.tmp: 7300 files added (on-disk size: 42217.8 KB)
+0114.255 (0) Zip: backup_2023-07-13-1038_Vastvolt_5cdfa077cf5b-plugins.zip.tmp: 7400 files added (on-disk size: 42217.8 KB)
+0114.257 (0) Zip: backup_2023-07-13-1038_Vastvolt_5cdfa077cf5b-plugins.zip.tmp: 7500 files added (on-disk size: 42217.8 KB)
+0114.259 (0) Zip: backup_2023-07-13-1038_Vastvolt_5cdfa077cf5b-plugins.zip.tmp: 7600 files added (on-disk size: 42217.8 KB)
+0114.262 (0) Zip: backup_2023-07-13-1038_Vastvolt_5cdfa077cf5b-plugins.zip.tmp: 7700 files added (on-disk size: 42217.8 KB)
+0114.264 (0) Adding batch to zip file (UpdraftPlus_BinZip): over 25 MB added on this batch (25.2 MB, 10297 files batched, 983 (7772) added so far); re-opening (prior size: 42217.8 KB)
+0135.957 (0) backup_2023-07-13-1038_Vastvolt_5cdfa077cf5b-plugins.zip.tmp: size is now: 50.80 MB
+0135.960 (0) A useful amount of data was added after this amount of zip processing: 22.7 s (normalised: 22.5 s, rate: 1136.1 KB/s)
+0135.963 (0) Zip: backup_2023-07-13-1038_Vastvolt_5cdfa077cf5b-plugins.zip.tmp: 7800 files added (on-disk size: 51975.5 KB)
+0135.965 (0) Zip: backup_2023-07-13-1038_Vastvolt_5cdfa077cf5b-plugins.zip.tmp: 7900 files added (on-disk size: 51975.5 KB)
+0135.967 (0) Zip: backup_2023-07-13-1038_Vastvolt_5cdfa077cf5b-plugins.zip.tmp: 8000 files added (on-disk size: 51975.5 KB)
+0135.970 (0) Zip: backup_2023-07-13-1038_Vastvolt_5cdfa077cf5b-plugins.zip.tmp: 8100 files added (on-disk size: 51975.5 KB)
+0135.972 (0) Zip: backup_2023-07-13-1038_Vastvolt_5cdfa077cf5b-plugins.zip.tmp: 8200 files added (on-disk size: 51975.5 KB)
+0135.974 (0) Zip: backup_2023-07-13-1038_Vastvolt_5cdfa077cf5b-plugins.zip.tmp: 8300 files added (on-disk size: 51975.5 KB)
+0135.977 (0) Zip: backup_2023-07-13-1038_Vastvolt_5cdfa077cf5b-plugins.zip.tmp: 8400 files added (on-disk size: 51975.5 KB)
+0135.979 (0) Zip: backup_2023-07-13-1038_Vastvolt_5cdfa077cf5b-plugins.zip.tmp: 8500 files added (on-disk size: 51975.5 KB)
+0135.981 (0) Zip: backup_2023-07-13-1038_Vastvolt_5cdfa077cf5b-plugins.zip.tmp: 8600 files added (on-disk size: 51975.5 KB)
+0135.984 (0) Zip: backup_2023-07-13-1038_Vastvolt_5cdfa077cf5b-plugins.zip.tmp: 8700 files added (on-disk size: 51975.5 KB)
+0135.985 (0) Adding batch to zip file (UpdraftPlus_BinZip): over 1000 files added on this batch (17 MB, 10297 files batched, 1001 (8773) added so far); re-opening (prior size: 51975.5 KB)
+0152.978 (0) Zip: backup_2023-07-13-1038_Vastvolt_5cdfa077cf5b-plugins.zip.tmp: 8800 files added (on-disk size: 57080.9 KB)
+0152.981 (0) Zip: backup_2023-07-13-1038_Vastvolt_5cdfa077cf5b-plugins.zip.tmp: 8900 files added (on-disk size: 57080.9 KB)
+0152.984 (0) Zip: backup_2023-07-13-1038_Vastvolt_5cdfa077cf5b-plugins.zip.tmp: 9000 files added (on-disk size: 57080.9 KB)
+0153.002 (0) Zip: backup_2023-07-13-1038_Vastvolt_5cdfa077cf5b-plugins.zip.tmp: 9100 files added (on-disk size: 57080.9 KB)
+0153.005 (0) Zip: backup_2023-07-13-1038_Vastvolt_5cdfa077cf5b-plugins.zip.tmp: 9200 files added (on-disk size: 57080.9 KB)
+0153.008 (0) Zip: backup_2023-07-13-1038_Vastvolt_5cdfa077cf5b-plugins.zip.tmp: 9300 files added (on-disk size: 57080.9 KB)
+0153.010 (0) Zip: backup_2023-07-13-1038_Vastvolt_5cdfa077cf5b-plugins.zip.tmp: 9400 files added (on-disk size: 57080.9 KB)
+0153.013 (0) Zip: backup_2023-07-13-1038_Vastvolt_5cdfa077cf5b-plugins.zip.tmp: 9500 files added (on-disk size: 57080.9 KB)
+0153.016 (0) Zip: backup_2023-07-13-1038_Vastvolt_5cdfa077cf5b-plugins.zip.tmp: 9600 files added (on-disk size: 57080.9 KB)
+0153.018 (0) Zip: backup_2023-07-13-1038_Vastvolt_5cdfa077cf5b-plugins.zip.tmp: 9700 files added (on-disk size: 57080.9 KB)
+0153.021 (0) Adding batch to zip file (UpdraftPlus_BinZip): over 1000 files added on this batch (3.1 MB, 10297 files batched, 1001 (9774) added so far); re-opening (prior size: 57080.9 KB)
+0160.896 (0) Zip: backup_2023-07-13-1038_Vastvolt_5cdfa077cf5b-plugins.zip.tmp: 9800 files added (on-disk size: 58594.9 KB)
+0160.898 (0) Zip: backup_2023-07-13-1038_Vastvolt_5cdfa077cf5b-plugins.zip.tmp: 9900 files added (on-disk size: 58594.9 KB)
+0160.900 (0) Zip: backup_2023-07-13-1038_Vastvolt_5cdfa077cf5b-plugins.zip.tmp: 10000 files added (on-disk size: 58594.9 KB)
+0160.903 (0) Zip: backup_2023-07-13-1038_Vastvolt_5cdfa077cf5b-plugins.zip.tmp: 10100 files added (on-disk size: 58594.9 KB)
+0160.905 (0) Zip: backup_2023-07-13-1038_Vastvolt_5cdfa077cf5b-plugins.zip.tmp: 10200 files added (on-disk size: 58594.9 KB)
+0167.690 (0) Creating zip file manifest (backup_2023-07-13-1038_Vastvolt_5cdfa077cf5b-plugins.zip.list-temp.tmp)
+0167.725 (0) Successfully created zip file manifest (size: 960420)
+0168.276 (0) Created plugins zip (0) - 59560.5 KB in 168 s (354.5 KB/s) (sha1: a4fe1a5459816b6b02c452ef7d8a1c5dea98eb87, sha256: 4cdb930d4bd3a5d181fab098cf5291622abf00c71263ae665b4d875ebf2b83d5)
+0169.302 (0) Cloud backup selection (1/1): none with instance (1/1) (last)
+0169.303 (0) No remote despatch: user chose no remote backup service
+0169.304 (0) Recording as successfully uploaded: backup_2023-07-13-1038_Vastvolt_5cdfa077cf5b-plugins.zip
+0169.307 (0) Deleting zip manifest (backup_2023-07-13-1038_Vastvolt_5cdfa077cf5b-plugins.zip.list.tmp)
+0169.310 (0) Retain: beginning examination of existing backup sets; user setting: retain_files=2, retain_db=2
+0169.312 (0) Number of backup sets in history: 3; groups (db): 1
+0169.313 (0) Examining (for databases) backup set with group_id=0, nonce=c4e5e0d87ddf, datestamp=1683033423 (May 02 2023 13:17:03)
+0169.314 (0) Examining (for databases) backup set with group_id=0, nonce=b29ac31c12d7, datestamp=1682659273 (Apr 28 2023 05:21:13)
+0169.314 (0) This backup set remains non-empty (f=1/d=1); will retain in history
+0169.315 (0) Examining (for databases) backup set with group_id=0, nonce=ed814e34ab2c, datestamp=1682051539 (Apr 21 2023 04:32:19)
+0169.315 (0) This backup set remains non-empty (f=1/d=1); will retain in history
+0169.315 (0) Number of backup sets in history: 3; groups (files): 1
+0169.316 (0) Examining (for files) backup set with nonce=c4e5e0d87ddf, datestamp=1683033423 (May 02 2023 13:17:03)
+0169.316 (0) This backup set remains non-empty (f=1/d=0); will retain in history
+0169.317 (0) Examining (for files) backup set with nonce=b29ac31c12d7, datestamp=1682659273 (Apr 28 2023 05:21:13)
+0169.317 (0) This backup set remains non-empty (f=1/d=1); will retain in history
+0169.318 (0) Examining (for files) backup set with nonce=ed814e34ab2c, datestamp=1682051539 (Apr 21 2023 04:32:19)
+0169.318 (0) plugins: over retain limit (2); will delete this file entity
+0169.318 (0) themes: over retain limit (2); will delete this file entity
+0169.318 (0) uploads: over retain limit (2); will delete this file entity
+0169.318 (0) others: over retain limit (2); will delete this file entity
+0169.320 (0) This backup set remains non-empty (f=0/d=1); will retain in history
+0169.322 (0) Retain: saving new backup history (sets now: 3) and finishing retain operation
+0169.329 (0) Beginning creation of dump of themes (split every: 400 MB)
+0169.360 (0) Total entities for the zip file: 57 directories, 252 files (0 skipped as non-modified), 8.8 MB
+0169.363 (0) Zip: backup_2023-07-13-1038_Vastvolt_5cdfa077cf5b-themes.zip.tmp: 100 files added (on-disk size: 0 KB)
+0169.365 (0) Zip: backup_2023-07-13-1038_Vastvolt_5cdfa077cf5b-themes.zip.tmp: 200 files added (on-disk size: 0 KB)
+0173.768 (0) backup_2023-07-13-1038_Vastvolt_5cdfa077cf5b-themes.zip.tmp: size is now: 6.00 MB
+0173.774 (0) Creating zip file manifest (backup_2023-07-13-1038_Vastvolt_5cdfa077cf5b-themes.zip.list-temp.tmp)
+0173.776 (0) Successfully created zip file manifest (size: 15971)
+0173.849 (0) Created themes zip (0) - 6106.3 KB in 4.5 s (1359 KB/s) (sha1: d7e994d98009849ca6df4203ee9a376a200baf56, sha256: 0e98641f33ee8d5a70ebe3c8a53cbe679cbdea07ed6b991f3744dca6485e54a7)
+0173.853 (0) Cloud backup selection (1/1): none with instance (1/1) (last)
+0173.855 (0) No remote despatch: user chose no remote backup service
+0173.856 (0) Recording as successfully uploaded: backup_2023-07-13-1038_Vastvolt_5cdfa077cf5b-themes.zip
+0173.858 (0) Deleting zip manifest (backup_2023-07-13-1038_Vastvolt_5cdfa077cf5b-themes.zip.list.tmp)
+0173.861 (0) Retain: beginning examination of existing backup sets; user setting: retain_files=2, retain_db=2
+0173.863 (0) Number of backup sets in history: 3; groups (db): 1
+0173.864 (0) Examining (for databases) backup set with group_id=0, nonce=c4e5e0d87ddf, datestamp=1683033423 (May 02 2023 13:17:03)
+0173.865 (0) Examining (for databases) backup set with group_id=0, nonce=b29ac31c12d7, datestamp=1682659273 (Apr 28 2023 05:21:13)
+0173.865 (0) This backup set remains non-empty (f=1/d=1); will retain in history
+0173.866 (0) Examining (for databases) backup set with group_id=0, nonce=ed814e34ab2c, datestamp=1682051539 (Apr 21 2023 04:32:19)
+0173.866 (0) This backup set remains non-empty (f=0/d=1); will retain in history
+0173.868 (0) Number of backup sets in history: 3; groups (files): 1
+0173.869 (0) Examining (for files) backup set with nonce=c4e5e0d87ddf, datestamp=1683033423 (May 02 2023 13:17:03)
+0173.869 (0) This backup set remains non-empty (f=1/d=0); will retain in history
+0173.870 (0) Examining (for files) backup set with nonce=b29ac31c12d7, datestamp=1682659273 (Apr 28 2023 05:21:13)
+0173.870 (0) This backup set remains non-empty (f=1/d=1); will retain in history
+0173.871 (0) Examining (for files) backup set with nonce=ed814e34ab2c, datestamp=1682051539 (Apr 21 2023 04:32:19)
+0173.871 (0) This backup set remains non-empty (f=0/d=1); will retain in history
+0173.873 (0) Retain: saving new backup history (sets now: 3) and finishing retain operation
+0173.878 (0) No backup of uploads: excluded by user's options
+0173.879 (0) No backup of others: excluded by user's options
+0173.883 (0) Saving backup status to database (elements: 4)
+0173.887 (0) Beginning creation of database dump (WordPress DB)
+0173.888 (0) SQL compatibility mode is: ERROR_FOR_DIVISION_BY_ZERO,NO_ENGINE_SUBSTITUTION
+0173.892 (0) Testing potential mysqldump binary: /usr/bin/mysqldump
+0173.957 (0) Output: /*!40103 SET @OLD_TIME_ZONE=@@TIME_ZONE */;\n/*!40103 SET TIME_ZONE='+00:00' */;\n/*!40014 SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0 */;\n/*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;\n/*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;\n/*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;\nDROP TABLE IF EXISTS `wp_options`;\n/*!40101 SET @saved_cs_client     = @@character_set_client */;\n/*!40101 SET character_set_client = utf8 */;\nCRE (truncated - 1458 bytes total)
+0173.959 (0) Working binary mysqldump found: /usr/bin/mysqldump
+0173.974 (0) Table wp_options: Total expected rows (via COUNT): 361
+0173.975 (0) Table is relatively small; fetch_rows will thus be: 500 (allow_further_reductions=1, is_first_fetch=1, known_bigger_than_table=1)
+0173.987 (0) Table wp_options: Rows added in this batch (next record: 11645): 357 (uncompressed bytes in this segment=224936) in 0.02 seconds
+0173.993 (0) Table wp_options: finishing file(s) (2, 46.9 KB)
+0174.002 (0) Table wp_users: Total expected rows (via COUNT): 1
+0174.003 (0) Table is relatively small; fetch_rows will thus be: 20 (allow_further_reductions=1, is_first_fetch=1, known_bigger_than_table=1)
+0174.006 (0) Table wp_users: Rows added in this batch (next record: 1): 1 (uncompressed bytes in this segment=1201) in 0.01 seconds
+0174.010 (0) Table wp_users: finishing file(s) (2, 0.6 KB)
+0174.020 (0) Table wp_usermeta: Total expected rows (via COUNT): 51
+0174.021 (0) Table is relatively small; fetch_rows will thus be: 100 (allow_further_reductions=1, is_first_fetch=1, known_bigger_than_table=1)
+0174.024 (0) Table wp_usermeta: Rows added in this batch (next record: 52): 51 (uncompressed bytes in this segment=13005) in 0.01 seconds
+0174.029 (0) Table wp_usermeta: finishing file(s) (2, 4.3 KB)
+0174.039 (0) Table wp_actionscheduler_actions: Total expected rows (via COUNT): 57
+0174.040 (0) Table is relatively small; fetch_rows will thus be: 100 (allow_further_reductions=1, is_first_fetch=1, known_bigger_than_table=1)
+0174.043 (0) Table wp_actionscheduler_actions: Rows added in this batch (next record: 1930): 57 (uncompressed bytes in this segment=28085) in 0.01 seconds
+0174.048 (0) Table wp_actionscheduler_actions: finishing file(s) (2, 2.9 KB)
+0174.057 (0) Table wp_actionscheduler_claims: Total expected rows (via COUNT): 0
+0174.060 (0) Table wp_actionscheduler_claims: Rows added in this batch (next record: -1): 0 (uncompressed bytes in this segment=626) in 0.01 seconds
+0174.063 (0) Table wp_actionscheduler_claims: finishing file(s) (2, 0.4 KB)
+0174.071 (0) Table wp_actionscheduler_groups: Total expected rows (via COUNT): 4
+0174.073 (0) Table is relatively small; fetch_rows will thus be: 20 (allow_further_reductions=1, is_first_fetch=1, known_bigger_than_table=1)
+0174.075 (0) Table wp_actionscheduler_groups: Rows added in this batch (next record: 4): 4 (uncompressed bytes in this segment=713) in 0.01 seconds
+0174.080 (0) Table wp_actionscheduler_groups: finishing file(s) (2, 0.4 KB)
+0174.090 (0) Table wp_actionscheduler_logs: Total expected rows (via COUNT): 167
+0174.091 (0) Table is relatively small; fetch_rows will thus be: 250 (allow_further_reductions=1, is_first_fetch=1, known_bigger_than_table=1)
+0174.095 (0) Table wp_actionscheduler_logs: Rows added in this batch (next record: 1921): 167 (uncompressed bytes in this segment=17015) in 0.01 seconds
+0174.101 (0) Table wp_actionscheduler_logs: finishing file(s) (2, 2.4 KB)
+0174.112 (0) Table wp_commentmeta: Total expected rows (via COUNT): 0
+0174.115 (0) Table wp_commentmeta: Rows added in this batch (next record: -1): 0 (uncompressed bytes in this segment=634) in 0.01 seconds
+0174.120 (0) Table wp_commentmeta: finishing file(s) (2, 0.4 KB)
+0174.128 (0) Table wp_comments: Total expected rows (via COUNT): 0
+0174.132 (0) Table wp_comments: Rows added in this batch (next record: -1): 0 (uncompressed bytes in this segment=1466) in 0.01 seconds
+0174.136 (0) Table wp_comments: finishing file(s) (2, 0.5 KB)
+0174.144 (0) Table wp_links: Total expected rows (via COUNT): 0
+0174.146 (0) Table wp_links: Rows added in this batch (next record: -1): 0 (uncompressed bytes in this segment=1027) in 0.01 seconds
+0174.150 (0) Table wp_links: finishing file(s) (2, 0.5 KB)
+0174.153 (0) Table wp_postmeta: Total expected rows (approximate): 122662
+0174.575 (0) Table wp_postmeta: binary mysqldump finished (writes: 43, bytes 11899381, return code 0) in 0.42 seconds
+0174.579 (0) Table wp_postmeta: finishing file(s) (1, 1821.4 KB)
+0174.590 (0) Table wp_posts: Total expected rows (approximate): 1060
+0174.623 (0) Table wp_posts: Rows added in this batch (next record: 1357): 1102 (uncompressed bytes in this segment=856581) in 0.04 seconds
+0174.630 (0) Table wp_posts: finishing file(s) (2, 76.1 KB)
+0174.638 (0) Table wp_term_relationships: Total expected rows (approximate): 53
+0174.642 (0) Table wp_term_relationships: Rows added in this batch (next record: 100000): 49 (uncompressed bytes in this segment=1398) in 0.01 seconds
+0174.646 (0) Table wp_term_relationships: finishing file(s) (2, 0.5 KB)
+0174.656 (0) Table wp_term_taxonomy: Total expected rows (via COUNT): 26
+0174.658 (0) Table is relatively small; fetch_rows will thus be: 50 (allow_further_reductions=1, is_first_fetch=1, known_bigger_than_table=1)
+0174.661 (0) Table wp_term_taxonomy: Rows added in this batch (next record: 27): 26 (uncompressed bytes in this segment=1738) in 0.01 seconds
+0174.666 (0) Table wp_term_taxonomy: finishing file(s) (2, 0.6 KB)
+0174.678 (0) Table wp_termmeta: Total expected rows (via COUNT): 0
+0174.682 (0) Table wp_termmeta: Rows added in this batch (next record: -1): 0 (uncompressed bytes in this segment=607) in 0.01 seconds
+0174.688 (0) Table wp_termmeta: finishing file(s) (2, 0.4 KB)
+0174.697 (0) Table wp_terms: Total expected rows (via COUNT): 26
+0174.698 (0) Table is relatively small; fetch_rows will thus be: 50 (allow_further_reductions=1, is_first_fetch=1, known_bigger_than_table=1)
+0174.700 (0) Table wp_terms: Rows added in this batch (next record: 27): 26 (uncompressed bytes in this segment=1807) in 0.01 seconds
+0174.704 (0) Table wp_terms: finishing file(s) (2, 0.8 KB)
+0174.716 (0) Table wp_aioseo_cache: Total expected rows (via COUNT): 165
+0174.717 (0) Table is relatively small; fetch_rows will thus be: 250 (allow_further_reductions=1, is_first_fetch=1, known_bigger_than_table=1)
+0174.725 (0) Table wp_aioseo_cache: Rows added in this batch (next record: 740): 165 (uncompressed bytes in this segment=118736) in 0.02 seconds
+0174.731 (0) Table wp_aioseo_cache: finishing file(s) (2, 21.8 KB)
+0174.743 (0) Table wp_aioseo_notifications: Total expected rows (via COUNT): 1
+0174.744 (0) Table is relatively small; fetch_rows will thus be: 20 (allow_further_reductions=1, is_first_fetch=1, known_bigger_than_table=1)
+0174.747 (0) Table wp_aioseo_notifications: Rows added in this batch (next record: 1): 1 (uncompressed bytes in this segment=1965) in 0.01 seconds
+0174.753 (0) Table wp_aioseo_notifications: finishing file(s) (2, 0.8 KB)
+0174.765 (0) Table wp_aioseo_posts: Total expected rows (via COUNT): 18
+0174.766 (0) Table is relatively small; fetch_rows will thus be: 20 (allow_further_reductions=1, is_first_fetch=1, known_bigger_than_table=1)
+0174.770 (0) Table wp_aioseo_posts: Rows added in this batch (next record: 18): 18 (uncompressed bytes in this segment=68568) in 0.01 seconds
+0174.776 (0) Table wp_aioseo_posts: finishing file(s) (2, 4.5 KB)
+0174.785 (0) Table wp_fca_eoi_activity: Total expected rows (approximate): 0
+0174.787 (0) Table wp_fca_eoi_activity: Rows added in this batch (next record: 0): 0 (uncompressed bytes in this segment=649) in 0.01 seconds
+0174.792 (0) Table wp_fca_eoi_activity: finishing file(s) (2, 0.4 KB)
+0174.805 (0) Table wp_fca_eoi_subscribers: Total expected rows (via COUNT): 0
+0174.806 (0) Table wp_fca_eoi_subscribers: Rows added in this batch (next record: -1): 0 (uncompressed bytes in this segment=737) in 0.01 seconds
+0174.811 (0) Table wp_fca_eoi_subscribers: finishing file(s) (2, 0.4 KB)
+0174.821 (0) Table wp_newsletter: Total expected rows (via COUNT): 0
+0174.824 (0) Table wp_newsletter: Rows added in this batch (next record: -1): 0 (uncompressed bytes in this segment=4456) in 0.01 seconds
+0174.828 (0) Table wp_newsletter: finishing file(s) (2, 0.8 KB)
+0174.839 (0) Table wp_newsletter_emails: Total expected rows (via COUNT): 1
+0174.840 (0) Table is relatively small; fetch_rows will thus be: 20 (allow_further_reductions=1, is_first_fetch=1, known_bigger_than_table=1)
+0174.843 (0) Table wp_newsletter_emails: Rows added in this batch (next record: 2): 1 (uncompressed bytes in this segment=2377) in 0.01 seconds
+0174.848 (0) Table wp_newsletter_emails: finishing file(s) (2, 0.9 KB)
+0174.857 (0) Table wp_newsletter_sent: Total expected rows (approximate): 0
+0174.860 (0) Table wp_newsletter_sent: Rows added in this batch (next record: 0): 0 (uncompressed bytes in this segment=798) in 0.01 seconds
+0174.863 (0) Table wp_newsletter_sent: finishing file(s) (2, 0.4 KB)
+0174.872 (0) Table wp_newsletter_stats: Total expected rows (via COUNT): 0
+0174.874 (0) Table wp_newsletter_stats: Rows added in this batch (next record: -1): 0 (uncompressed bytes in this segment=728) in 0.01 seconds
+0174.877 (0) Table wp_newsletter_stats: finishing file(s) (2, 0.4 KB)
+0174.889 (0) Table wp_newsletter_user_logs: Total expected rows (via COUNT): 1
+0174.890 (0) Table is relatively small; fetch_rows will thus be: 20 (allow_further_reductions=1, is_first_fetch=1, known_bigger_than_table=1)
+0174.893 (0) Table wp_newsletter_user_logs: Rows added in this batch (next record: 1): 1 (uncompressed bytes in this segment=784) in 0.01 seconds
+0174.900 (0) Table wp_newsletter_user_logs: finishing file(s) (2, 0.4 KB)
+0174.913 (0) Table wp_wpforms_payment_meta: Total expected rows (via COUNT): 0
+0174.916 (0) Table wp_wpforms_payment_meta: Rows added in this batch (next record: -1): 0 (uncompressed bytes in this segment=690) in 0.01 seconds
+0174.922 (0) Table wp_wpforms_payment_meta: finishing file(s) (2, 0.4 KB)
+0174.932 (0) Table wp_wpforms_payments: Total expected rows (via COUNT): 0
+0174.936 (0) Table wp_wpforms_payments: Rows added in this batch (next record: -1): 0 (uncompressed bytes in this segment=1650) in 0.01 seconds
+0174.941 (0) Table wp_wpforms_payments: finishing file(s) (2, 0.6 KB)
+0174.954 (0) Table wp_wpforms_tasks_meta: Total expected rows (via COUNT): 1
+0174.956 (0) Table is relatively small; fetch_rows will thus be: 20 (allow_further_reductions=1, is_first_fetch=1, known_bigger_than_table=1)
+0174.959 (0) Table wp_wpforms_tasks_meta: Rows added in this batch (next record: 1): 1 (uncompressed bytes in this segment=679) in 0.01 seconds
+0174.964 (0) Table wp_wpforms_tasks_meta: finishing file(s) (2, 0.4 KB)
+0174.974 (0) Table wp_wpmailsmtp_debug_events: Total expected rows (via COUNT): 36
+0174.975 (0) Table is relatively small; fetch_rows will thus be: 50 (allow_further_reductions=1, is_first_fetch=1, known_bigger_than_table=1)
+0174.979 (0) Table wp_wpmailsmtp_debug_events: Rows added in this batch (next record: 36): 36 (uncompressed bytes in this segment=18648) in 0.01 seconds
+0174.983 (0) Table wp_wpmailsmtp_debug_events: finishing file(s) (2, 1.4 KB)
+0174.994 (0) Table wp_wpmailsmtp_tasks_meta: Total expected rows (via COUNT): 0
+0174.997 (0) Table wp_wpmailsmtp_tasks_meta: Rows added in this batch (next record: -1): 0 (uncompressed bytes in this segment=579) in 0.01 seconds
+0175.002 (0) Table wp_wpmailsmtp_tasks_meta: finishing file(s) (2, 0.4 KB)
+0175.013 (0) Table wp_yoast_indexable: Total expected rows (via COUNT): 40
+0175.014 (0) Table is relatively small; fetch_rows will thus be: 50 (allow_further_reductions=1, is_first_fetch=1, known_bigger_than_table=1)
+0175.018 (0) Table wp_yoast_indexable: Rows added in this batch (next record: 49): 40 (uncompressed bytes in this segment=25806) in 0.01 seconds
+0175.024 (0) Table wp_yoast_indexable: finishing file(s) (2, 4.6 KB)
+0175.033 (0) Table wp_yoast_indexable_hierarchy: Total expected rows (approximate): 42
+0175.036 (0) Table wp_yoast_indexable_hierarchy: Rows added in this batch (next record: 1000): 39 (uncompressed bytes in this segment=1414) in 0.01 seconds
+0175.040 (0) Table wp_yoast_indexable_hierarchy: finishing file(s) (2, 0.5 KB)
+0175.049 (0) Table wp_yoast_migrations: Total expected rows (via COUNT): 26
+0175.052 (0) Table is relatively small; fetch_rows will thus be: 50 (allow_further_reductions=1, is_first_fetch=1, known_bigger_than_table=1)
+0175.056 (0) Table wp_yoast_migrations: Rows added in this batch (next record: 26): 26 (uncompressed bytes in this segment=1243) in 0.01 seconds
+0175.060 (0) Table wp_yoast_migrations: finishing file(s) (2, 0.6 KB)
+0175.070 (0) Table wp_yoast_primary_term: Total expected rows (via COUNT): 0
+0175.073 (0) Table wp_yoast_primary_term: Rows added in this batch (next record: -1): 0 (uncompressed bytes in this segment=829) in 0.01 seconds
+0175.077 (0) Table wp_yoast_primary_term: finishing file(s) (2, 0.4 KB)
+0175.085 (0) Table wp_yoast_prominent_words: Total expected rows (via COUNT): 97
+0175.087 (0) Table is relatively small; fetch_rows will thus be: 100 (allow_further_reductions=1, is_first_fetch=1, known_bigger_than_table=1)
+0175.090 (0) Table wp_yoast_prominent_words: Rows added in this batch (next record: 97): 97 (uncompressed bytes in this segment=3377) in 0.01 seconds
+0175.094 (0) Table wp_yoast_prominent_words: finishing file(s) (2, 1.2 KB)
+0175.102 (0) Table wp_yoast_seo_links: Total expected rows (via COUNT): 9
+0175.103 (0) Table is relatively small; fetch_rows will thus be: 20 (allow_further_reductions=1, is_first_fetch=1, known_bigger_than_table=1)
+0175.107 (0) Table wp_yoast_seo_links: Rows added in this batch (next record: 9): 9 (uncompressed bytes in this segment=2195) in 0.01 seconds
+0175.116 (0) Table wp_yoast_seo_links: finishing file(s) (2, 0.7 KB)
+0175.117 (0) PHP event: code E_WARNING: filemtime(): stat failed for /home/vastvolt/public_html/wp-content/updraft/backup_2023-07-13-1038_Vastvolt_5cdfa077cf5b-db.gz (line 1976, wp-content/plugins/updraftplus/backup.php)
+0175.119 (0) backup_2023-07-13-1038_Vastvolt_5cdfa077cf5b-db-table-wp_options.table.tmpr11646.gz (1/37/fopen): adding to final database dump
+0175.121 (0) backup_2023-07-13-1038_Vastvolt_5cdfa077cf5b-db-table-wp_options.table.gz (2/37/fopen): adding to final database dump
+0175.122 (0) backup_2023-07-13-1038_Vastvolt_5cdfa077cf5b-db-table-wp_users.table.tmpr2.gz (3/37/fopen): adding to final database dump
+0175.123 (0) backup_2023-07-13-1038_Vastvolt_5cdfa077cf5b-db-table-wp_users.table.gz (4/37/fopen): adding to final database dump
+0175.124 (0) backup_2023-07-13-1038_Vastvolt_5cdfa077cf5b-db-table-wp_usermeta.table.tmpr53.gz (5/37/fopen): adding to final database dump
+0175.126 (0) backup_2023-07-13-1038_Vastvolt_5cdfa077cf5b-db-table-wp_usermeta.table.gz (6/37/fopen): adding to final database dump
+0175.127 (0) backup_2023-07-13-1038_Vastvolt_5cdfa077cf5b-db-table-wp_actionscheduler_actions.table.tmpr1931.gz (7/37/fopen): adding to final database dump
+0175.128 (0) backup_2023-07-13-1038_Vastvolt_5cdfa077cf5b-db-table-wp_actionscheduler_actions.table.gz (8/37/fopen): adding to final database dump
+0175.129 (0) backup_2023-07-13-1038_Vastvolt_5cdfa077cf5b-db-table-wp_actionscheduler_claims.table.tmpr0.gz (9/37/fopen): adding to final database dump
+0175.130 (0) backup_2023-07-13-1038_Vastvolt_5cdfa077cf5b-db-table-wp_actionscheduler_claims.table.gz (10/37/fopen): adding to final database dump
+0175.131 (0) backup_2023-07-13-1038_Vastvolt_5cdfa077cf5b-db-table-wp_actionscheduler_groups.table.tmpr5.gz (11/37/fopen): adding to final database dump
+0175.133 (0) backup_2023-07-13-1038_Vastvolt_5cdfa077cf5b-db-table-wp_actionscheduler_groups.table.gz (12/37/fopen): adding to final database dump
+0175.134 (0) backup_2023-07-13-1038_Vastvolt_5cdfa077cf5b-db-table-wp_actionscheduler_logs.table.tmpr1922.gz (13/37/fopen): adding to final database dump
+0175.135 (0) backup_2023-07-13-1038_Vastvolt_5cdfa077cf5b-db-table-wp_actionscheduler_logs.table.gz (14/37/fopen): adding to final database dump
+0175.136 (0) backup_2023-07-13-1038_Vastvolt_5cdfa077cf5b-db-table-wp_commentmeta.table.tmpr0.gz (15/37/fopen): adding to final database dump
+0175.138 (0) backup_2023-07-13-1038_Vastvolt_5cdfa077cf5b-db-table-wp_commentmeta.table.gz (16/37/fopen): adding to final database dump
+0175.139 (0) backup_2023-07-13-1038_Vastvolt_5cdfa077cf5b-db-table-wp_comments.table.tmpr0.gz (17/37/fopen): adding to final database dump
+0175.140 (0) backup_2023-07-13-1038_Vastvolt_5cdfa077cf5b-db-table-wp_comments.table.gz (18/37/fopen): adding to final database dump
+0175.141 (0) backup_2023-07-13-1038_Vastvolt_5cdfa077cf5b-db-table-wp_links.table.tmpr0.gz (19/37/fopen): adding to final database dump
+0175.142 (0) backup_2023-07-13-1038_Vastvolt_5cdfa077cf5b-db-table-wp_links.table.gz (20/37/fopen): adding to final database dump
+0175.143 (0) backup_2023-07-13-1038_Vastvolt_5cdfa077cf5b-db-table-wp_postmeta.table.gz (21/37/fopen): adding to final database dump
+0175.169 (0) backup_2023-07-13-1038_Vastvolt_5cdfa077cf5b-db-table-wp_posts.table.tmpr1358.gz (22/37/fopen): adding to final database dump
+0175.172 (0) backup_2023-07-13-1038_Vastvolt_5cdfa077cf5b-db-table-wp_posts.table.gz (23/37/fopen): adding to final database dump
+0175.173 (0) backup_2023-07-13-1038_Vastvolt_5cdfa077cf5b-db-table-wp_term_relationships.table.tmpr100001.gz (24/37/fopen): adding to final database dump
+0175.174 (0) backup_2023-07-13-1038_Vastvolt_5cdfa077cf5b-db-table-wp_term_relationships.table.gz (25/37/fopen): adding to final database dump
+0175.175 (0) backup_2023-07-13-1038_Vastvolt_5cdfa077cf5b-db-table-wp_term_taxonomy.table.tmpr28.gz (26/37/fopen): adding to final database dump
+0175.176 (0) backup_2023-07-13-1038_Vastvolt_5cdfa077cf5b-db-table-wp_term_taxonomy.table.gz (27/37/fopen): adding to final database dump
+0175.178 (0) backup_2023-07-13-1038_Vastvolt_5cdfa077cf5b-db-table-wp_termmeta.table.tmpr0.gz (28/37/fopen): adding to final database dump
+0175.179 (0) backup_2023-07-13-1038_Vastvolt_5cdfa077cf5b-db-table-wp_termmeta.table.gz (29/37/fopen): adding to final database dump
+0175.179 (0) backup_2023-07-13-1038_Vastvolt_5cdfa077cf5b-db-table-wp_terms.table.tmpr28.gz (30/37/fopen): adding to final database dump
+0175.181 (0) backup_2023-07-13-1038_Vastvolt_5cdfa077cf5b-db-table-wp_terms.table.gz (31/37/fopen): adding to final database dump
+0175.181 (0) backup_2023-07-13-1038_Vastvolt_5cdfa077cf5b-db-table-wp_aioseo_cache.table.tmpr741.gz (32/37/fopen): adding to final database dump
+0175.183 (0) backup_2023-07-13-1038_Vastvolt_5cdfa077cf5b-db-table-wp_aioseo_cache.table.gz (33/37/fopen): adding to final database dump
+0175.184 (0) backup_2023-07-13-1038_Vastvolt_5cdfa077cf5b-db-table-wp_aioseo_notifications.table.tmpr2.gz (34/37/fopen): adding to final database dump
+0175.185 (0) backup_2023-07-13-1038_Vastvolt_5cdfa077cf5b-db-table-wp_aioseo_notifications.table.gz (35/37/fopen): adding to final database dump
+0175.186 (0) backup_2023-07-13-1038_Vastvolt_5cdfa077cf5b-db-table-wp_aioseo_posts.table.tmpr19.gz (36/37/fopen): adding to final database dump
+0175.187 (0) backup_2023-07-13-1038_Vastvolt_5cdfa077cf5b-db-table-wp_aioseo_posts.table.gz (37/37/fopen): adding to final database dump
+0175.188 (0) backup_2023-07-13-1038_Vastvolt_5cdfa077cf5b-db-table-wp_fca_eoi_activity.table.tmpr1.gz (38/37/fopen): adding to final database dump
+0175.189 (0) backup_2023-07-13-1038_Vastvolt_5cdfa077cf5b-db-table-wp_fca_eoi_activity.table.gz (39/37/fopen): adding to final database dump
+0175.190 (0) backup_2023-07-13-1038_Vastvolt_5cdfa077cf5b-db-table-wp_fca_eoi_subscribers.table.tmpr0.gz (40/37/fopen): adding to final database dump
+0175.191 (0) backup_2023-07-13-1038_Vastvolt_5cdfa077cf5b-db-table-wp_fca_eoi_subscribers.table.gz (41/37/fopen): adding to final database dump
+0175.192 (0) backup_2023-07-13-1038_Vastvolt_5cdfa077cf5b-db-table-wp_newsletter.table.tmpr0.gz (42/37/fopen): adding to final database dump
+0175.193 (0) backup_2023-07-13-1038_Vastvolt_5cdfa077cf5b-db-table-wp_newsletter.table.gz (43/37/fopen): adding to final database dump
+0175.194 (0) backup_2023-07-13-1038_Vastvolt_5cdfa077cf5b-db-table-wp_newsletter_emails.table.tmpr3.gz (44/37/fopen): adding to final database dump
+0175.195 (0) backup_2023-07-13-1038_Vastvolt_5cdfa077cf5b-db-table-wp_newsletter_emails.table.gz (45/37/fopen): adding to final database dump
+0175.196 (0) backup_2023-07-13-1038_Vastvolt_5cdfa077cf5b-db-table-wp_newsletter_sent.table.tmpr1.gz (46/37/fopen): adding to final database dump
+0175.197 (0) backup_2023-07-13-1038_Vastvolt_5cdfa077cf5b-db-table-wp_newsletter_sent.table.gz (47/37/fopen): adding to final database dump
+0175.198 (0) backup_2023-07-13-1038_Vastvolt_5cdfa077cf5b-db-table-wp_newsletter_stats.table.tmpr0.gz (48/37/fopen): adding to final database dump
+0175.199 (0) backup_2023-07-13-1038_Vastvolt_5cdfa077cf5b-db-table-wp_newsletter_stats.table.gz (49/37/fopen): adding to final database dump
+0175.201 (0) backup_2023-07-13-1038_Vastvolt_5cdfa077cf5b-db-table-wp_newsletter_user_logs.table.tmpr2.gz (50/37/fopen): adding to final database dump
+0175.202 (0) backup_2023-07-13-1038_Vastvolt_5cdfa077cf5b-db-table-wp_newsletter_user_logs.table.gz (51/37/fopen): adding to final database dump
+0175.203 (0) backup_2023-07-13-1038_Vastvolt_5cdfa077cf5b-db-table-wp_wpforms_payment_meta.table.tmpr0.gz (52/37/fopen): adding to final database dump
+0175.204 (0) backup_2023-07-13-1038_Vastvolt_5cdfa077cf5b-db-table-wp_wpforms_payment_meta.table.gz (53/37/fopen): adding to final database dump
+0175.205 (0) backup_2023-07-13-1038_Vastvolt_5cdfa077cf5b-db-table-wp_wpforms_payments.table.tmpr0.gz (54/37/fopen): adding to final database dump
+0175.206 (0) backup_2023-07-13-1038_Vastvolt_5cdfa077cf5b-db-table-wp_wpforms_payments.table.gz (55/37/fopen): adding to final database dump
+0175.207 (0) backup_2023-07-13-1038_Vastvolt_5cdfa077cf5b-db-table-wp_wpforms_tasks_meta.table.tmpr2.gz (56/37/fopen): adding to final database dump
+0175.209 (0) backup_2023-07-13-1038_Vastvolt_5cdfa077cf5b-db-table-wp_wpforms_tasks_meta.table.gz (57/37/fopen): adding to final database dump
+0175.210 (0) backup_2023-07-13-1038_Vastvolt_5cdfa077cf5b-db-table-wp_wpmailsmtp_debug_events.table.tmpr37.gz (58/37/fopen): adding to final database dump
+0175.211 (0) backup_2023-07-13-1038_Vastvolt_5cdfa077cf5b-db-table-wp_wpmailsmtp_debug_events.table.gz (59/37/fopen): adding to final database dump
+0175.212 (0) backup_2023-07-13-1038_Vastvolt_5cdfa077cf5b-db-table-wp_wpmailsmtp_tasks_meta.table.tmpr0.gz (60/37/fopen): adding to final database dump
+0175.213 (0) backup_2023-07-13-1038_Vastvolt_5cdfa077cf5b-db-table-wp_wpmailsmtp_tasks_meta.table.gz (61/37/fopen): adding to final database dump
+0175.214 (0) backup_2023-07-13-1038_Vastvolt_5cdfa077cf5b-db-table-wp_yoast_indexable.table.tmpr50.gz (62/37/fopen): adding to final database dump
+0175.216 (0) backup_2023-07-13-1038_Vastvolt_5cdfa077cf5b-db-table-wp_yoast_indexable.table.gz (63/37/fopen): adding to final database dump
+0175.217 (0) backup_2023-07-13-1038_Vastvolt_5cdfa077cf5b-db-table-wp_yoast_indexable_hierarchy.table.tmpr1001.gz (64/37/fopen): adding to final database dump
+0175.218 (0) backup_2023-07-13-1038_Vastvolt_5cdfa077cf5b-db-table-wp_yoast_indexable_hierarchy.table.gz (65/37/fopen): adding to final database dump
+0175.219 (0) backup_2023-07-13-1038_Vastvolt_5cdfa077cf5b-db-table-wp_yoast_migrations.table.tmpr27.gz (66/37/fopen): adding to final database dump
+0175.220 (0) backup_2023-07-13-1038_Vastvolt_5cdfa077cf5b-db-table-wp_yoast_migrations.table.gz (67/37/fopen): adding to final database dump
+0175.221 (0) backup_2023-07-13-1038_Vastvolt_5cdfa077cf5b-db-table-wp_yoast_primary_term.table.tmpr0.gz (68/37/fopen): adding to final database dump
+0175.222 (0) backup_2023-07-13-1038_Vastvolt_5cdfa077cf5b-db-table-wp_yoast_primary_term.table.gz (69/37/fopen): adding to final database dump
+0175.223 (0) backup_2023-07-13-1038_Vastvolt_5cdfa077cf5b-db-table-wp_yoast_prominent_words.table.tmpr98.gz (70/37/fopen): adding to final database dump
+0175.224 (0) backup_2023-07-13-1038_Vastvolt_5cdfa077cf5b-db-table-wp_yoast_prominent_words.table.gz (71/37/fopen): adding to final database dump
+0175.225 (0) backup_2023-07-13-1038_Vastvolt_5cdfa077cf5b-db-table-wp_yoast_seo_links.table.tmpr10.gz (72/37/fopen): adding to final database dump
+0175.226 (0) backup_2023-07-13-1038_Vastvolt_5cdfa077cf5b-db-table-wp_yoast_seo_links.table.gz (73/37/fopen): adding to final database dump
+0175.246 (0) backup_2023-07-13-1038_Vastvolt_5cdfa077cf5b-db.gz: finished writing out complete database file (2001 KB)
+0175.278 (0) Total database tables backed up: 37 (backup_2023-07-13-1038_Vastvolt_5cdfa077cf5b-db.gz, size: 2049086, sha1: 6d018f7a941fd8079c65d83c1a1614f7a4f16f01, sha256: 0a31050c1d365d1013015fbeb38ff4c9877cc386d121e7635ccc847f308d5bee)
+0175.285 (0) backup_2023-07-13-1038_Vastvolt_5cdfa077cf5b-plugins.zip: plugins: This file has already been successfully uploaded
+0175.287 (0) backup_2023-07-13-1038_Vastvolt_5cdfa077cf5b-themes.zip: themes: This file has already been successfully uploaded
+0175.288 (0) backup_2023-07-13-1038_Vastvolt_5cdfa077cf5b-db.gz: db: This file has not yet been successfully uploaded: will queue
+0175.289 (0) Saving backup history. Total backup size: 66.1 MB
+0175.292 (0) Requesting upload of the files that have not yet been successfully uploaded (1)
+0175.295 (0) Cloud backup selection (1/1): none with instance (1/1) (last)
+0175.296 (0) No remote despatch: user chose no remote backup service
+0175.297 (0) Recording as successfully uploaded: backup_2023-07-13-1038_Vastvolt_5cdfa077cf5b-db.gz
+0175.301 (0) Retain: beginning examination of existing backup sets; user setting: retain_files=2, retain_db=2
+0175.303 (0) Number of backup sets in history: 4; groups (db): 1
+0175.304 (0) Examining (for databases) backup set with group_id=0, nonce=5cdfa077cf5b, datestamp=1689244708 (Jul 13 2023 10:38:28)
+0175.304 (0) This backup set is the backup set just made, so will not be deleted.
+0175.304 (0) Examining (for databases) backup set with group_id=0, nonce=c4e5e0d87ddf, datestamp=1683033423 (May 02 2023 13:17:03)
+0175.304 (0) Examining (for databases) backup set with group_id=0, nonce=b29ac31c12d7, datestamp=1682659273 (Apr 28 2023 05:21:13)
+0175.304 (0) This backup set remains non-empty (f=1/d=1); will retain in history
+0175.305 (0) Examining (for databases) backup set with group_id=0, nonce=ed814e34ab2c, datestamp=1682051539 (Apr 21 2023 04:32:19)
+0175.305 (0) 1682051539: db: this set includes a database (backup_2023-04-21-0432_Vastvolt_ed814e34ab2c-db.gz); db count is now 2
+0175.305 (0) 1682051539: db: over retain limit (2); will delete this database
+0175.306 (0) This backup set is now empty; will remove from history
+0175.307 (0) Corresponding log file (log.ed814e34ab2c.txt) not found - must have already been deleted
+0175.308 (0) Number of backup sets in history: 3; groups (files): 1
+0175.309 (0) Examining (for files) backup set with nonce=5cdfa077cf5b, datestamp=1689244708 (Jul 13 2023 10:38:28)
+0175.309 (0) This backup set is the backup set just made, so will not be deleted.
+0175.310 (0) This backup set is the backup set just made, so will not be deleted.
+0175.310 (0) This backup set remains non-empty (f=1/d=1); will retain in history
+0175.311 (0) Examining (for files) backup set with nonce=c4e5e0d87ddf, datestamp=1683033423 (May 02 2023 13:17:03)
+0175.311 (0) This backup set remains non-empty (f=1/d=0); will retain in history
+0175.312 (0) Examining (for files) backup set with nonce=b29ac31c12d7, datestamp=1682659273 (Apr 28 2023 05:21:13)
+0175.312 (0) plugins: over retain limit (2); will delete this file entity
+0175.312 (0) themes: over retain limit (2); will delete this file entity
+0175.313 (0) This backup set remains non-empty (f=1/d=1); will retain in history
+0175.314 (0) Retain: saving new backup history (sets now: 3) and finishing retain operation
+0175.317 (0) Resume backup (5cdfa077cf5b, 0): finish run
+0175.320 (0) Decremented the semaphore (fd) by 1
+0175.322 (0) Semaphore (fd) unlocked
+0175.325 (0) There were no errors in the uploads, so the 'resume' event (1) is being unscheduled
+0175.328 (0) No email will/can be sent - the user has not configured an email address.
+0175.329 (0) The backup apparently succeeded and is now complete

@@ -1,0 +1,1859 @@
+<!DOCTYPE html>
+
+<html class="no-js" lang="en-US" >
+
+<head><meta charset="UTF-8" /><script>if(navigator.userAgent.match(/MSIE|Internet Explorer/i)||navigator.userAgent.match(/Trident\/7\..*?rv:11/i)){var href=document.location.href;if(!href.match(/[?&]nowprocket/)){if(href.indexOf("?")==-1){if(href.indexOf("#")==-1){document.location.href=href+"?nowprocket=1"}else{document.location.href=href.replace("#","?nowprocket=1#")}}else{if(href.indexOf("#")==-1){document.location.href=href+"&nowprocket=1"}else{document.location.href=href.replace("#","&nowprocket=1#")}}}}</script><script>class RocketLazyLoadScripts{constructor(e){this.triggerEvents=e,this.eventOptions={passive:!0},this.userEventListener=this.triggerListener.bind(this),this.delayedScripts={normal:[],async:[],defer:[]},this.allJQueries=[]}_addUserInteractionListener(e){this.triggerEvents.forEach((t=>window.addEventListener(t,e.userEventListener,e.eventOptions)))}_removeUserInteractionListener(e){this.triggerEvents.forEach((t=>window.removeEventListener(t,e.userEventListener,e.eventOptions)))}triggerListener(){this._removeUserInteractionListener(this),"loading"===document.readyState?document.addEventListener("DOMContentLoaded",this._loadEverythingNow.bind(this)):this._loadEverythingNow()}async _loadEverythingNow(){this._delayEventListeners(),this._delayJQueryReady(this),this._handleDocumentWrite(),this._registerAllDelayedScripts(),this._preloadAllScripts(),await this._loadScriptsFromList(this.delayedScripts.normal),await this._loadScriptsFromList(this.delayedScripts.defer),await this._loadScriptsFromList(this.delayedScripts.async),await this._triggerDOMContentLoaded(),await this._triggerWindowLoad(),window.dispatchEvent(new Event("rocket-allScriptsLoaded"))}_registerAllDelayedScripts(){document.querySelectorAll("script[type=rocketlazyloadscript]").forEach((e=>{e.hasAttribute("src")?e.hasAttribute("async")&&!1!==e.async?this.delayedScripts.async.push(e):e.hasAttribute("defer")&&!1!==e.defer||"module"===e.getAttribute("data-rocket-type")?this.delayedScripts.defer.push(e):this.delayedScripts.normal.push(e):this.delayedScripts.normal.push(e)}))}async _transformScript(e){return await this._requestAnimFrame(),new Promise((t=>{const n=document.createElement("script");let r;[...e.attributes].forEach((e=>{let t=e.nodeName;"type"!==t&&("data-rocket-type"===t&&(t="type",r=e.nodeValue),n.setAttribute(t,e.nodeValue))})),e.hasAttribute("src")?(n.addEventListener("load",t),n.addEventListener("error",t)):(n.text=e.text,t()),e.parentNode.replaceChild(n,e)}))}async _loadScriptsFromList(e){const t=e.shift();return t?(await this._transformScript(t),this._loadScriptsFromList(e)):Promise.resolve()}_preloadAllScripts(){var e=document.createDocumentFragment();[...this.delayedScripts.normal,...this.delayedScripts.defer,...this.delayedScripts.async].forEach((t=>{const n=t.getAttribute("src");if(n){const t=document.createElement("link");t.href=n,t.rel="preload",t.as="script",e.appendChild(t)}})),document.head.appendChild(e)}_delayEventListeners(){let e={};function t(t,n){!function(t){function n(n){return e[t].eventsToRewrite.indexOf(n)>=0?"rocket-"+n:n}e[t]||(e[t]={originalFunctions:{add:t.addEventListener,remove:t.removeEventListener},eventsToRewrite:[]},t.addEventListener=function(){arguments[0]=n(arguments[0]),e[t].originalFunctions.add.apply(t,arguments)},t.removeEventListener=function(){arguments[0]=n(arguments[0]),e[t].originalFunctions.remove.apply(t,arguments)})}(t),e[t].eventsToRewrite.push(n)}function n(e,t){let n=e[t];Object.defineProperty(e,t,{get:()=>n||function(){},set(r){e["rocket"+t]=n=r}})}t(document,"DOMContentLoaded"),t(window,"DOMContentLoaded"),t(window,"load"),t(window,"pageshow"),t(document,"readystatechange"),n(document,"onreadystatechange"),n(window,"onload"),n(window,"onpageshow")}_delayJQueryReady(e){let t=window.jQuery;Object.defineProperty(window,"jQuery",{get:()=>t,set(n){if(n&&n.fn&&!e.allJQueries.includes(n)){n.fn.ready=n.fn.init.prototype.ready=function(t){e.domReadyFired?t.bind(document)(n):document.addEventListener("rocket-DOMContentLoaded",(()=>t.bind(document)(n)))};const t=n.fn.on;n.fn.on=n.fn.init.prototype.on=function(){if(this[0]===window){function e(e){return e.split(" ").map((e=>"load"===e||0===e.indexOf("load.")?"rocket-jquery-load":e)).join(" ")}"string"==typeof arguments[0]||arguments[0]instanceof String?arguments[0]=e(arguments[0]):"object"==typeof arguments[0]&&Object.keys(arguments[0]).forEach((t=>{delete Object.assign(arguments[0],{[e(t)]:arguments[0][t]})[t]}))}return t.apply(this,arguments),this},e.allJQueries.push(n)}t=n}})}async _triggerDOMContentLoaded(){this.domReadyFired=!0,await this._requestAnimFrame(),document.dispatchEvent(new Event("rocket-DOMContentLoaded")),await this._requestAnimFrame(),window.dispatchEvent(new Event("rocket-DOMContentLoaded")),await this._requestAnimFrame(),document.dispatchEvent(new Event("rocket-readystatechange")),await this._requestAnimFrame(),document.rocketonreadystatechange&&document.rocketonreadystatechange()}async _triggerWindowLoad(){await this._requestAnimFrame(),window.dispatchEvent(new Event("rocket-load")),await this._requestAnimFrame(),window.rocketonload&&window.rocketonload(),await this._requestAnimFrame(),this.allJQueries.forEach((e=>e(window).trigger("rocket-jquery-load"))),window.dispatchEvent(new Event("rocket-pageshow")),await this._requestAnimFrame(),window.rocketonpageshow&&window.rocketonpageshow()}_handleDocumentWrite(){const e=new Map;document.write=document.writeln=function(t){const n=document.currentScript,r=document.createRange(),i=n.parentElement;let o=e.get(n);void 0===o&&(o=n.nextSibling,e.set(n,o));const a=document.createDocumentFragment();r.setStart(a,0),a.appendChild(r.createContextualFragment(t)),i.insertBefore(a,o)}}async _requestAnimFrame(){return new Promise((e=>requestAnimationFrame(e)))}static run(){const e=new RocketLazyLoadScripts(["keydown","mousemove","touchmove","touchstart","touchend","wheel"]);e._addUserInteractionListener(e)}}RocketLazyLoadScripts.run();</script>
+	
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+
+	<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+
+	<meta name='robots' content='index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1' />
+
+	<!-- This site is optimized with the Yoast SEO Premium plugin v20.8 (Yoast SEO v20.8) - https://yoast.com/wordpress/plugins/seo/ -->
+	<title>Electrical Safety Inspections - Vastvolt</title><link rel="stylesheet" href="https://vastvoltelectrical.com.au/wp-content/cache/min/1/f6e7b6de1f342ed78141947acb5dbad8.css" media="all" data-minify="1" />
+	<meta name="description" content="Peace of mind with our succinct electrical safety inspection checklist. Transparent electrical safety inspection costs for your property." />
+	<link rel="canonical" href="https://vastvoltelectrical.com.au/safety-inspections/" />
+	<meta property="og:locale" content="en_US" />
+	<meta property="og:type" content="article" />
+	<meta property="og:title" content="Electrical Safety Inspections" />
+	<meta property="og:description" content="Peace of mind with our succinct electrical safety inspection checklist. Transparent electrical safety inspection costs for your property." />
+	<meta property="og:url" content="https://vastvoltelectrical.com.au/safety-inspections/" />
+	<meta property="og:site_name" content="Vastvolt" />
+	<meta property="article:publisher" content="https://www.facebook.com/vastvoltelectrical" />
+	<meta property="article:modified_time" content="2023-05-28T02:56:19+00:00" />
+	<meta name="twitter:card" content="summary_large_image" />
+	<meta name="twitter:label1" content="Est. reading time" />
+	<meta name="twitter:data1" content="2 minutes" />
+	<script type="application/ld+json" class="yoast-schema-graph">{"@context":"https://schema.org","@graph":[{"@type":"WebPage","@id":"https://vastvoltelectrical.com.au/safety-inspections/","url":"https://vastvoltelectrical.com.au/safety-inspections/","name":"Electrical Safety Inspections - Vastvolt","isPartOf":{"@id":"https://vastvoltelectrical.com.au/#website"},"datePublished":"2023-04-13T05:42:25+00:00","dateModified":"2023-05-28T02:56:19+00:00","description":"Peace of mind with our succinct electrical safety inspection checklist. Transparent electrical safety inspection costs for your property.","breadcrumb":{"@id":"https://vastvoltelectrical.com.au/safety-inspections/#breadcrumb"},"inLanguage":"en-US","potentialAction":[{"@type":"ReadAction","target":["https://vastvoltelectrical.com.au/safety-inspections/"]}]},{"@type":"BreadcrumbList","@id":"https://vastvoltelectrical.com.au/safety-inspections/#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://vastvoltelectrical.com.au/"},{"@type":"ListItem","position":2,"name":"Electrical Safety Inspections"}]},{"@type":"WebSite","@id":"https://vastvoltelectrical.com.au/#website","url":"https://vastvoltelectrical.com.au/","name":"Vast Volt Electrical","description":"Reliable Electricians For Your Home - Every time","publisher":{"@id":"https://vastvoltelectrical.com.au/#organization"},"alternateName":"Vast Volt Electrical Services","potentialAction":[{"@type":"SearchAction","target":{"@type":"EntryPoint","urlTemplate":"https://vastvoltelectrical.com.au/?s={search_term_string}"},"query-input":"required name=search_term_string"}],"inLanguage":"en-US"},{"@type":"Organization","@id":"https://vastvoltelectrical.com.au/#organization","name":"VastVoltElectrical","url":"https://vastvoltelectrical.com.au/","logo":{"@type":"ImageObject","inLanguage":"en-US","@id":"https://vastvoltelectrical.com.au/#/schema/logo/image/","url":"https://vastvoltelectrical.com.au/wp-content/uploads/2023/05/FBLogo2.jpg","contentUrl":"https://vastvoltelectrical.com.au/wp-content/uploads/2023/05/FBLogo2.jpg","width":180,"height":180,"caption":"VastVoltElectrical"},"image":{"@id":"https://vastvoltelectrical.com.au/#/schema/logo/image/"},"sameAs":["https://www.facebook.com/vastvoltelectrical"]}]}</script>
+	<!-- / Yoast SEO Premium plugin. -->
+
+
+<script type="rocketlazyloadscript" data-rocket-type='application/javascript'>console.log('PixelYourSite Free version 9.4.0.1');</script>
+<link rel="alternate" type="application/rss+xml" title="Vastvolt &raquo; Feed" href="https://vastvoltelectrical.com.au/feed/" />
+<link rel="alternate" type="application/rss+xml" title="Vastvolt &raquo; Comments Feed" href="https://vastvoltelectrical.com.au/comments/feed/" />
+		<!-- This site uses the Google Analytics by MonsterInsights plugin v8.18 - Using Analytics tracking - https://www.monsterinsights.com/ -->
+							<script type="rocketlazyloadscript" src="//www.googletagmanager.com/gtag/js?id=G-0BHSWHDVP7"  data-cfasync="false" data-wpfc-render="false" async></script>
+			<script type="rocketlazyloadscript" data-cfasync="false" data-wpfc-render="false">
+				var mi_version = '8.18';
+				var mi_track_user = true;
+				var mi_no_track_reason = '';
+				
+								var disableStrs = [
+										'ga-disable-G-0BHSWHDVP7',
+									];
+
+				/* Function to detect opted out users */
+				function __gtagTrackerIsOptedOut() {
+					for (var index = 0; index < disableStrs.length; index++) {
+						if (document.cookie.indexOf(disableStrs[index] + '=true') > -1) {
+							return true;
+						}
+					}
+
+					return false;
+				}
+
+				/* Disable tracking if the opt-out cookie exists. */
+				if (__gtagTrackerIsOptedOut()) {
+					for (var index = 0; index < disableStrs.length; index++) {
+						window[disableStrs[index]] = true;
+					}
+				}
+
+				/* Opt-out function */
+				function __gtagTrackerOptout() {
+					for (var index = 0; index < disableStrs.length; index++) {
+						document.cookie = disableStrs[index] + '=true; expires=Thu, 31 Dec 2099 23:59:59 UTC; path=/';
+						window[disableStrs[index]] = true;
+					}
+				}
+
+				if ('undefined' === typeof gaOptout) {
+					function gaOptout() {
+						__gtagTrackerOptout();
+					}
+				}
+								window.dataLayer = window.dataLayer || [];
+
+				window.MonsterInsightsDualTracker = {
+					helpers: {},
+					trackers: {},
+				};
+				if (mi_track_user) {
+					function __gtagDataLayer() {
+						dataLayer.push(arguments);
+					}
+
+					function __gtagTracker(type, name, parameters) {
+						if (!parameters) {
+							parameters = {};
+						}
+
+						if (parameters.send_to) {
+							__gtagDataLayer.apply(null, arguments);
+							return;
+						}
+
+						if (type === 'event') {
+														parameters.send_to = monsterinsights_frontend.v4_id;
+							var hookName = name;
+							if (typeof parameters['event_category'] !== 'undefined') {
+								hookName = parameters['event_category'] + ':' + name;
+							}
+
+							if (typeof MonsterInsightsDualTracker.trackers[hookName] !== 'undefined') {
+								MonsterInsightsDualTracker.trackers[hookName](parameters);
+							} else {
+								__gtagDataLayer('event', name, parameters);
+							}
+							
+						} else {
+							__gtagDataLayer.apply(null, arguments);
+						}
+					}
+
+					__gtagTracker('js', new Date());
+					__gtagTracker('set', {
+						'developer_id.dZGIzZG': true,
+											});
+										__gtagTracker('config', 'G-0BHSWHDVP7', {"forceSSL":"true","link_attribution":"true"} );
+															window.gtag = __gtagTracker;										(function () {
+						/* https://developers.google.com/analytics/devguides/collection/analyticsjs/ */
+						/* ga and __gaTracker compatibility shim. */
+						var noopfn = function () {
+							return null;
+						};
+						var newtracker = function () {
+							return new Tracker();
+						};
+						var Tracker = function () {
+							return null;
+						};
+						var p = Tracker.prototype;
+						p.get = noopfn;
+						p.set = noopfn;
+						p.send = function () {
+							var args = Array.prototype.slice.call(arguments);
+							args.unshift('send');
+							__gaTracker.apply(null, args);
+						};
+						var __gaTracker = function () {
+							var len = arguments.length;
+							if (len === 0) {
+								return;
+							}
+							var f = arguments[len - 1];
+							if (typeof f !== 'object' || f === null || typeof f.hitCallback !== 'function') {
+								if ('send' === arguments[0]) {
+									var hitConverted, hitObject = false, action;
+									if ('event' === arguments[1]) {
+										if ('undefined' !== typeof arguments[3]) {
+											hitObject = {
+												'eventAction': arguments[3],
+												'eventCategory': arguments[2],
+												'eventLabel': arguments[4],
+												'value': arguments[5] ? arguments[5] : 1,
+											}
+										}
+									}
+									if ('pageview' === arguments[1]) {
+										if ('undefined' !== typeof arguments[2]) {
+											hitObject = {
+												'eventAction': 'page_view',
+												'page_path': arguments[2],
+											}
+										}
+									}
+									if (typeof arguments[2] === 'object') {
+										hitObject = arguments[2];
+									}
+									if (typeof arguments[5] === 'object') {
+										Object.assign(hitObject, arguments[5]);
+									}
+									if ('undefined' !== typeof arguments[1].hitType) {
+										hitObject = arguments[1];
+										if ('pageview' === hitObject.hitType) {
+											hitObject.eventAction = 'page_view';
+										}
+									}
+									if (hitObject) {
+										action = 'timing' === arguments[1].hitType ? 'timing_complete' : hitObject.eventAction;
+										hitConverted = mapArgs(hitObject);
+										__gtagTracker('event', action, hitConverted);
+									}
+								}
+								return;
+							}
+
+							function mapArgs(args) {
+								var arg, hit = {};
+								var gaMap = {
+									'eventCategory': 'event_category',
+									'eventAction': 'event_action',
+									'eventLabel': 'event_label',
+									'eventValue': 'event_value',
+									'nonInteraction': 'non_interaction',
+									'timingCategory': 'event_category',
+									'timingVar': 'name',
+									'timingValue': 'value',
+									'timingLabel': 'event_label',
+									'page': 'page_path',
+									'location': 'page_location',
+									'title': 'page_title',
+								};
+								for (arg in args) {
+																		if (!(!args.hasOwnProperty(arg) || !gaMap.hasOwnProperty(arg))) {
+										hit[gaMap[arg]] = args[arg];
+									} else {
+										hit[arg] = args[arg];
+									}
+								}
+								return hit;
+							}
+
+							try {
+								f.hitCallback();
+							} catch (ex) {
+							}
+						};
+						__gaTracker.create = newtracker;
+						__gaTracker.getByName = newtracker;
+						__gaTracker.getAll = function () {
+							return [];
+						};
+						__gaTracker.remove = noopfn;
+						__gaTracker.loaded = true;
+						window['__gaTracker'] = __gaTracker;
+					})();
+									} else {
+										console.log("");
+					(function () {
+						function __gtagTracker() {
+							return null;
+						}
+
+						window['__gtagTracker'] = __gtagTracker;
+						window['gtag'] = __gtagTracker;
+					})();
+									}
+			</script>
+				<!-- / Google Analytics by MonsterInsights -->
+		<script type="rocketlazyloadscript">
+window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/14.0.0\/72x72\/","ext":".png","svgUrl":"https:\/\/s.w.org\/images\/core\/emoji\/14.0.0\/svg\/","svgExt":".svg","source":{"concatemoji":"https:\/\/vastvoltelectrical.com.au\/wp-includes\/js\/wp-emoji-release.min.js?ver=6.2.2"}};
+/*! This file is auto-generated */
+!function(e,a,t){var n,r,o,i=a.createElement("canvas"),p=i.getContext&&i.getContext("2d");function s(e,t){p.clearRect(0,0,i.width,i.height),p.fillText(e,0,0);e=i.toDataURL();return p.clearRect(0,0,i.width,i.height),p.fillText(t,0,0),e===i.toDataURL()}function c(e){var t=a.createElement("script");t.src=e,t.defer=t.type="text/javascript",a.getElementsByTagName("head")[0].appendChild(t)}for(o=Array("flag","emoji"),t.supports={everything:!0,everythingExceptFlag:!0},r=0;r<o.length;r++)t.supports[o[r]]=function(e){if(p&&p.fillText)switch(p.textBaseline="top",p.font="600 32px Arial",e){case"flag":return s("\ud83c\udff3\ufe0f\u200d\u26a7\ufe0f","\ud83c\udff3\ufe0f\u200b\u26a7\ufe0f")?!1:!s("\ud83c\uddfa\ud83c\uddf3","\ud83c\uddfa\u200b\ud83c\uddf3")&&!s("\ud83c\udff4\udb40\udc67\udb40\udc62\udb40\udc65\udb40\udc6e\udb40\udc67\udb40\udc7f","\ud83c\udff4\u200b\udb40\udc67\u200b\udb40\udc62\u200b\udb40\udc65\u200b\udb40\udc6e\u200b\udb40\udc67\u200b\udb40\udc7f");case"emoji":return!s("\ud83e\udef1\ud83c\udffb\u200d\ud83e\udef2\ud83c\udfff","\ud83e\udef1\ud83c\udffb\u200b\ud83e\udef2\ud83c\udfff")}return!1}(o[r]),t.supports.everything=t.supports.everything&&t.supports[o[r]],"flag"!==o[r]&&(t.supports.everythingExceptFlag=t.supports.everythingExceptFlag&&t.supports[o[r]]);t.supports.everythingExceptFlag=t.supports.everythingExceptFlag&&!t.supports.flag,t.DOMReady=!1,t.readyCallback=function(){t.DOMReady=!0},t.supports.everything||(n=function(){t.readyCallback()},a.addEventListener?(a.addEventListener("DOMContentLoaded",n,!1),e.addEventListener("load",n,!1)):(e.attachEvent("onload",n),a.attachEvent("onreadystatechange",function(){"complete"===a.readyState&&t.readyCallback()})),(e=t.source||{}).concatemoji?c(e.concatemoji):e.wpemoji&&e.twemoji&&(c(e.twemoji),c(e.wpemoji)))}(window,document,window._wpemojiSettings);
+</script>
+<style>
+img.wp-smiley,
+img.emoji {
+	display: inline !important;
+	border: none !important;
+	box-shadow: none !important;
+	height: 1em !important;
+	width: 1em !important;
+	margin: 0 0.07em !important;
+	vertical-align: -0.1em !important;
+	background: none !important;
+	padding: 0 !important;
+}
+</style>
+	
+<style id='wp-block-library-theme-inline-css'>
+.wp-block-audio figcaption{color:#555;font-size:13px;text-align:center}.is-dark-theme .wp-block-audio figcaption{color:hsla(0,0%,100%,.65)}.wp-block-audio{margin:0 0 1em}.wp-block-code{border:1px solid #ccc;border-radius:4px;font-family:Menlo,Consolas,monaco,monospace;padding:.8em 1em}.wp-block-embed figcaption{color:#555;font-size:13px;text-align:center}.is-dark-theme .wp-block-embed figcaption{color:hsla(0,0%,100%,.65)}.wp-block-embed{margin:0 0 1em}.blocks-gallery-caption{color:#555;font-size:13px;text-align:center}.is-dark-theme .blocks-gallery-caption{color:hsla(0,0%,100%,.65)}.wp-block-image figcaption{color:#555;font-size:13px;text-align:center}.is-dark-theme .wp-block-image figcaption{color:hsla(0,0%,100%,.65)}.wp-block-image{margin:0 0 1em}.wp-block-pullquote{border-bottom:4px solid;border-top:4px solid;color:currentColor;margin-bottom:1.75em}.wp-block-pullquote cite,.wp-block-pullquote footer,.wp-block-pullquote__citation{color:currentColor;font-size:.8125em;font-style:normal;text-transform:uppercase}.wp-block-quote{border-left:.25em solid;margin:0 0 1.75em;padding-left:1em}.wp-block-quote cite,.wp-block-quote footer{color:currentColor;font-size:.8125em;font-style:normal;position:relative}.wp-block-quote.has-text-align-right{border-left:none;border-right:.25em solid;padding-left:0;padding-right:1em}.wp-block-quote.has-text-align-center{border:none;padding-left:0}.wp-block-quote.is-large,.wp-block-quote.is-style-large,.wp-block-quote.is-style-plain{border:none}.wp-block-search .wp-block-search__label{font-weight:700}.wp-block-search__button{border:1px solid #ccc;padding:.375em .625em}:where(.wp-block-group.has-background){padding:1.25em 2.375em}.wp-block-separator.has-css-opacity{opacity:.4}.wp-block-separator{border:none;border-bottom:2px solid;margin-left:auto;margin-right:auto}.wp-block-separator.has-alpha-channel-opacity{opacity:1}.wp-block-separator:not(.is-style-wide):not(.is-style-dots){width:100px}.wp-block-separator.has-background:not(.is-style-dots){border-bottom:none;height:1px}.wp-block-separator.has-background:not(.is-style-wide):not(.is-style-dots){height:2px}.wp-block-table{margin:0 0 1em}.wp-block-table td,.wp-block-table th{word-break:normal}.wp-block-table figcaption{color:#555;font-size:13px;text-align:center}.is-dark-theme .wp-block-table figcaption{color:hsla(0,0%,100%,.65)}.wp-block-video figcaption{color:#555;font-size:13px;text-align:center}.is-dark-theme .wp-block-video figcaption{color:hsla(0,0%,100%,.65)}.wp-block-video{margin:0 0 1em}.wp-block-template-part.has-background{margin-bottom:0;margin-top:0;padding:1.25em 2.375em}
+</style>
+
+<style id='global-styles-inline-css'>
+body{--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: #abb8c3;--wp--preset--color--white: #FFFFFF;--wp--preset--color--pale-pink: #f78da7;--wp--preset--color--vivid-red: #cf2e2e;--wp--preset--color--luminous-vivid-orange: #ff6900;--wp--preset--color--luminous-vivid-amber: #fcb900;--wp--preset--color--light-green-cyan: #7bdcb5;--wp--preset--color--vivid-green-cyan: #00d084;--wp--preset--color--pale-cyan-blue: #8ed1fc;--wp--preset--color--vivid-cyan-blue: #0693e3;--wp--preset--color--vivid-purple: #9b51e0;--wp--preset--color--dark-gray: #28303D;--wp--preset--color--gray: #39414D;--wp--preset--color--green: #D1E4DD;--wp--preset--color--blue: #D1DFE4;--wp--preset--color--purple: #D1D1E4;--wp--preset--color--red: #E4D1D1;--wp--preset--color--orange: #E4DAD1;--wp--preset--color--yellow: #EEEADD;--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple: linear-gradient(135deg,rgba(6,147,227,1) 0%,rgb(155,81,224) 100%);--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan: linear-gradient(135deg,rgb(122,220,180) 0%,rgb(0,208,130) 100%);--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange: linear-gradient(135deg,rgba(252,185,0,1) 0%,rgba(255,105,0,1) 100%);--wp--preset--gradient--luminous-vivid-orange-to-vivid-red: linear-gradient(135deg,rgba(255,105,0,1) 0%,rgb(207,46,46) 100%);--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray: linear-gradient(135deg,rgb(238,238,238) 0%,rgb(169,184,195) 100%);--wp--preset--gradient--cool-to-warm-spectrum: linear-gradient(135deg,rgb(74,234,220) 0%,rgb(151,120,209) 20%,rgb(207,42,186) 40%,rgb(238,44,130) 60%,rgb(251,105,98) 80%,rgb(254,248,76) 100%);--wp--preset--gradient--blush-light-purple: linear-gradient(135deg,rgb(255,206,236) 0%,rgb(152,150,240) 100%);--wp--preset--gradient--blush-bordeaux: linear-gradient(135deg,rgb(254,205,165) 0%,rgb(254,45,45) 50%,rgb(107,0,62) 100%);--wp--preset--gradient--luminous-dusk: linear-gradient(135deg,rgb(255,203,112) 0%,rgb(199,81,192) 50%,rgb(65,88,208) 100%);--wp--preset--gradient--pale-ocean: linear-gradient(135deg,rgb(255,245,203) 0%,rgb(182,227,212) 50%,rgb(51,167,181) 100%);--wp--preset--gradient--electric-grass: linear-gradient(135deg,rgb(202,248,128) 0%,rgb(113,206,126) 100%);--wp--preset--gradient--midnight: linear-gradient(135deg,rgb(2,3,129) 0%,rgb(40,116,252) 100%);--wp--preset--gradient--purple-to-yellow: linear-gradient(160deg, #D1D1E4 0%, #EEEADD 100%);--wp--preset--gradient--yellow-to-purple: linear-gradient(160deg, #EEEADD 0%, #D1D1E4 100%);--wp--preset--gradient--green-to-yellow: linear-gradient(160deg, #D1E4DD 0%, #EEEADD 100%);--wp--preset--gradient--yellow-to-green: linear-gradient(160deg, #EEEADD 0%, #D1E4DD 100%);--wp--preset--gradient--red-to-yellow: linear-gradient(160deg, #E4D1D1 0%, #EEEADD 100%);--wp--preset--gradient--yellow-to-red: linear-gradient(160deg, #EEEADD 0%, #E4D1D1 100%);--wp--preset--gradient--purple-to-red: linear-gradient(160deg, #D1D1E4 0%, #E4D1D1 100%);--wp--preset--gradient--red-to-purple: linear-gradient(160deg, #E4D1D1 0%, #D1D1E4 100%);--wp--preset--duotone--dark-grayscale: url('#wp-duotone-dark-grayscale');--wp--preset--duotone--grayscale: url('#wp-duotone-grayscale');--wp--preset--duotone--purple-yellow: url('#wp-duotone-purple-yellow');--wp--preset--duotone--blue-red: url('#wp-duotone-blue-red');--wp--preset--duotone--midnight: url('#wp-duotone-midnight');--wp--preset--duotone--magenta-yellow: url('#wp-duotone-magenta-yellow');--wp--preset--duotone--purple-green: url('#wp-duotone-purple-green');--wp--preset--duotone--blue-orange: url('#wp-duotone-blue-orange');--wp--preset--font-size--small: 18px;--wp--preset--font-size--medium: 20px;--wp--preset--font-size--large: 24px;--wp--preset--font-size--x-large: 42px;--wp--preset--font-size--extra-small: 16px;--wp--preset--font-size--normal: 20px;--wp--preset--font-size--extra-large: 40px;--wp--preset--font-size--huge: 96px;--wp--preset--font-size--gigantic: 144px;--wp--preset--spacing--20: 0.44rem;--wp--preset--spacing--30: 0.67rem;--wp--preset--spacing--40: 1rem;--wp--preset--spacing--50: 1.5rem;--wp--preset--spacing--60: 2.25rem;--wp--preset--spacing--70: 3.38rem;--wp--preset--spacing--80: 5.06rem;--wp--preset--shadow--natural: 6px 6px 9px rgba(0, 0, 0, 0.2);--wp--preset--shadow--deep: 12px 12px 50px rgba(0, 0, 0, 0.4);--wp--preset--shadow--sharp: 6px 6px 0px rgba(0, 0, 0, 0.2);--wp--preset--shadow--outlined: 6px 6px 0px -3px rgba(255, 255, 255, 1), 6px 6px rgba(0, 0, 0, 1);--wp--preset--shadow--crisp: 6px 6px 0px rgba(0, 0, 0, 1);}:where(.is-layout-flex){gap: 0.5em;}body .is-layout-flow > .alignleft{float: left;margin-inline-start: 0;margin-inline-end: 2em;}body .is-layout-flow > .alignright{float: right;margin-inline-start: 2em;margin-inline-end: 0;}body .is-layout-flow > .aligncenter{margin-left: auto !important;margin-right: auto !important;}body .is-layout-constrained > .alignleft{float: left;margin-inline-start: 0;margin-inline-end: 2em;}body .is-layout-constrained > .alignright{float: right;margin-inline-start: 2em;margin-inline-end: 0;}body .is-layout-constrained > .aligncenter{margin-left: auto !important;margin-right: auto !important;}body .is-layout-constrained > :where(:not(.alignleft):not(.alignright):not(.alignfull)){max-width: var(--wp--style--global--content-size);margin-left: auto !important;margin-right: auto !important;}body .is-layout-constrained > .alignwide{max-width: var(--wp--style--global--wide-size);}body .is-layout-flex{display: flex;}body .is-layout-flex{flex-wrap: wrap;align-items: center;}body .is-layout-flex > *{margin: 0;}:where(.wp-block-columns.is-layout-flex){gap: 2em;}.has-black-color{color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-color{color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-color{color: var(--wp--preset--color--white) !important;}.has-pale-pink-color{color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-color{color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-color{color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-color{color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-color{color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-color{color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-color{color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-color{color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-color{color: var(--wp--preset--color--vivid-purple) !important;}.has-black-background-color{background-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-background-color{background-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-background-color{background-color: var(--wp--preset--color--white) !important;}.has-pale-pink-background-color{background-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-background-color{background-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-background-color{background-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-background-color{background-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-background-color{background-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-background-color{background-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-background-color{background-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-background-color{background-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-background-color{background-color: var(--wp--preset--color--vivid-purple) !important;}.has-black-border-color{border-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-border-color{border-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-border-color{border-color: var(--wp--preset--color--white) !important;}.has-pale-pink-border-color{border-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-border-color{border-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-border-color{border-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-border-color{border-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-border-color{border-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-border-color{border-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-border-color{border-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-border-color{border-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-border-color{border-color: var(--wp--preset--color--vivid-purple) !important;}.has-vivid-cyan-blue-to-vivid-purple-gradient-background{background: var(--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple) !important;}.has-light-green-cyan-to-vivid-green-cyan-gradient-background{background: var(--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan) !important;}.has-luminous-vivid-amber-to-luminous-vivid-orange-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange) !important;}.has-luminous-vivid-orange-to-vivid-red-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-orange-to-vivid-red) !important;}.has-very-light-gray-to-cyan-bluish-gray-gradient-background{background: var(--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray) !important;}.has-cool-to-warm-spectrum-gradient-background{background: var(--wp--preset--gradient--cool-to-warm-spectrum) !important;}.has-blush-light-purple-gradient-background{background: var(--wp--preset--gradient--blush-light-purple) !important;}.has-blush-bordeaux-gradient-background{background: var(--wp--preset--gradient--blush-bordeaux) !important;}.has-luminous-dusk-gradient-background{background: var(--wp--preset--gradient--luminous-dusk) !important;}.has-pale-ocean-gradient-background{background: var(--wp--preset--gradient--pale-ocean) !important;}.has-electric-grass-gradient-background{background: var(--wp--preset--gradient--electric-grass) !important;}.has-midnight-gradient-background{background: var(--wp--preset--gradient--midnight) !important;}.has-small-font-size{font-size: var(--wp--preset--font-size--small) !important;}.has-medium-font-size{font-size: var(--wp--preset--font-size--medium) !important;}.has-large-font-size{font-size: var(--wp--preset--font-size--large) !important;}.has-x-large-font-size{font-size: var(--wp--preset--font-size--x-large) !important;}
+.wp-block-navigation a:where(:not(.wp-element-button)){color: inherit;}
+:where(.wp-block-columns.is-layout-flex){gap: 2em;}
+.wp-block-pullquote{font-size: 1.5em;line-height: 1.6;}
+</style>
+
+
+<link rel='stylesheet' id='twenty-twenty-one-print-style-css' href='https://vastvoltelectrical.com.au/wp-content/themes/vast-volt/assets/css/print.css?ver=1.8' media='print' />
+
+<style id='rocket-lazyload-inline-css'>
+.rll-youtube-player{position:relative;padding-bottom:56.23%;height:0;overflow:hidden;max-width:100%;}.rll-youtube-player:focus-within{outline: 2px solid currentColor;outline-offset: 5px;}.rll-youtube-player iframe{position:absolute;top:0;left:0;width:100%;height:100%;z-index:100;background:0 0}.rll-youtube-player img{bottom:0;display:block;left:0;margin:auto;max-width:100%;width:100%;position:absolute;right:0;top:0;border:none;height:auto;-webkit-transition:.4s all;-moz-transition:.4s all;transition:.4s all}.rll-youtube-player img:hover{-webkit-filter:brightness(75%)}.rll-youtube-player .play{height:100%;width:100%;left:0;top:0;position:absolute;background:url(https://vastvoltelectrical.com.au/wp-content/plugins/wp-rocket/assets/img/youtube.png) no-repeat center;background-color: transparent !important;cursor:pointer;border:none;}.wp-embed-responsive .wp-has-aspect-ratio .rll-youtube-player{position:absolute;padding-bottom:0;width:100%;height:100%;top:0;bottom:0;left:0;right:0}
+</style>
+<script type="rocketlazyloadscript" src='https://vastvoltelectrical.com.au/wp-content/plugins/google-analytics-for-wordpress/assets/js/frontend-gtag.min.js?ver=8.18' id='monsterinsights-frontend-script-js' defer></script>
+<script data-cfasync="false" data-wpfc-render="false" id='monsterinsights-frontend-script-js-extra'>var monsterinsights_frontend = {"js_events_tracking":"true","download_extensions":"doc,pdf,ppt,zip,xls,docx,pptx,xlsx","inbound_paths":"[{\"path\":\"\\\/go\\\/\",\"label\":\"affiliate\"},{\"path\":\"\\\/recommend\\\/\",\"label\":\"affiliate\"}]","home_url":"https:\/\/vastvoltelectrical.com.au","hash_tracking":"false","v4_id":"G-0BHSWHDVP7"};</script>
+<script type="rocketlazyloadscript" src='https://vastvoltelectrical.com.au/wp-includes/js/jquery/jquery.min.js?ver=3.6.4' id='jquery-core-js' defer></script>
+<script type="rocketlazyloadscript" src='https://vastvoltelectrical.com.au/wp-includes/js/jquery/jquery-migrate.min.js?ver=3.4.0' id='jquery-migrate-js' defer></script>
+<script type="rocketlazyloadscript" src='https://vastvoltelectrical.com.au/wp-content/plugins/pixelyoursite/dist/scripts/jquery.bind-first-0.2.3.min.js?ver=6.2.2' id='jquery-bind-first-js' defer></script>
+<script type="rocketlazyloadscript" src='https://vastvoltelectrical.com.au/wp-content/plugins/pixelyoursite/dist/scripts/js.cookie-2.1.3.min.js?ver=2.1.3' id='js-cookie-pys-js' defer></script>
+<script id='pys-js-extra'>
+var pysOptions = {"staticEvents":{"facebook":{"init_event":[{"delay":0,"type":"static","name":"PageView","pixelIds":["225537923418473"],"eventID":"9222b397-8212-4557-8bd8-3c163a674e45","params":{"page_title":"Electrical Safety Inspections","post_type":"page","post_id":46,"plugin":"PixelYourSite","user_role":"guest","event_url":"vastvoltelectrical.com.au\/safety-inspections\/"},"e_id":"init_event","ids":[],"hasTimeWindow":false,"timeWindow":0,"woo_order":"","edd_order":""}]}},"dynamicEvents":[],"triggerEvents":[],"triggerEventTypes":[],"facebook":{"pixelIds":["225537923418473"],"advancedMatching":{"external_id":"aaefadecafaeddfbbbacafb"},"removeMetadata":false,"contentParams":{"post_type":"page","post_id":46,"content_name":"Electrical Safety Inspections"},"commentEventEnabled":true,"wooVariableAsSimple":false,"downloadEnabled":true,"formEventEnabled":true,"serverApiEnabled":true,"wooCRSendFromServer":false,"send_external_id":null},"debug":"","siteUrl":"https:\/\/vastvoltelectrical.com.au","ajaxUrl":"https:\/\/vastvoltelectrical.com.au\/wp-admin\/admin-ajax.php","ajax_event":"40d9469a72","enable_remove_download_url_param":"1","cookie_duration":"7","last_visit_duration":"60","enable_success_send_form":"","ajaxForServerEvent":"1","gdpr":{"ajax_enabled":false,"all_disabled_by_api":false,"facebook_disabled_by_api":false,"analytics_disabled_by_api":false,"google_ads_disabled_by_api":false,"pinterest_disabled_by_api":false,"bing_disabled_by_api":false,"externalID_disabled_by_api":false,"facebook_prior_consent_enabled":true,"analytics_prior_consent_enabled":true,"google_ads_prior_consent_enabled":null,"pinterest_prior_consent_enabled":true,"bing_prior_consent_enabled":true,"cookiebot_integration_enabled":false,"cookiebot_facebook_consent_category":"marketing","cookiebot_analytics_consent_category":"statistics","cookiebot_tiktok_consent_category":"marketing","cookiebot_google_ads_consent_category":null,"cookiebot_pinterest_consent_category":"marketing","cookiebot_bing_consent_category":"marketing","consent_magic_integration_enabled":false,"real_cookie_banner_integration_enabled":false,"cookie_notice_integration_enabled":false,"cookie_law_info_integration_enabled":false},"cookie":{"disabled_all_cookie":false,"disabled_advanced_form_data_cookie":false,"disabled_landing_page_cookie":false,"disabled_first_visit_cookie":false,"disabled_trafficsource_cookie":false,"disabled_utmTerms_cookie":false,"disabled_utmId_cookie":false},"woo":{"enabled":false},"edd":{"enabled":false}};
+</script>
+<script type="rocketlazyloadscript" data-minify="1" src='https://vastvoltelectrical.com.au/wp-content/cache/min/1/wp-content/plugins/pixelyoursite/dist/scripts/public.js?ver=1689338791' id='pys-js' defer></script>
+<link rel="https://api.w.org/" href="https://vastvoltelectrical.com.au/wp-json/" /><link rel="alternate" type="application/json" href="https://vastvoltelectrical.com.au/wp-json/wp/v2/pages/46" /><link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://vastvoltelectrical.com.au/xmlrpc.php?rsd" />
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="https://vastvoltelectrical.com.au/wp-includes/wlwmanifest.xml" />
+<meta name="generator" content="WordPress 6.2.2" />
+<link rel='shortlink' href='https://vastvoltelectrical.com.au/?p=46' />
+<link rel="alternate" type="application/json+oembed" href="https://vastvoltelectrical.com.au/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fvastvoltelectrical.com.au%2Fsafety-inspections%2F" />
+<link rel="alternate" type="text/xml+oembed" href="https://vastvoltelectrical.com.au/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fvastvoltelectrical.com.au%2Fsafety-inspections%2F&#038;format=xml" />
+<!-- Google tag (gtag.js) -->
+<script type="rocketlazyloadscript" async src="https://www.googletagmanager.com/gtag/js?id=AW-11174953513"></script>
+<script type="rocketlazyloadscript">
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'AW-11174953513');
+</script>
+
+<script type="rocketlazyloadscript">
+  gtag('config', 'AW-11174953513/j-IVCKb91aQYEKmE0dAp', {
+    'phone_conversion_number': '1300 870 115'
+  });
+</script>
+
+<link rel="icon" href="https://vastvoltelectrical.com.au/wp-content/uploads/2023/05/cropped-FBLogo2-32x32.jpg" sizes="32x32" />
+<link rel="icon" href="https://vastvoltelectrical.com.au/wp-content/uploads/2023/05/cropped-FBLogo2-192x192.jpg" sizes="192x192" />
+<link rel="apple-touch-icon" href="https://vastvoltelectrical.com.au/wp-content/uploads/2023/05/cropped-FBLogo2-180x180.jpg" />
+<meta name="msapplication-TileImage" content="https://vastvoltelectrical.com.au/wp-content/uploads/2023/05/cropped-FBLogo2-270x270.jpg" />
+		<style id="wp-custom-css">
+			
+
+
+
+		</style>
+		<noscript><style id="rocket-lazyload-nojs-css">.rll-youtube-player, [data-lazy-src]{display:none !important;}</style></noscript><style id="wpforms-css-vars-root">
+				:root {
+					--wpforms-field-border-radius: 3px;
+--wpforms-field-background-color: #ffffff;
+--wpforms-field-border-color: rgba( 0, 0, 0, 0.25 );
+--wpforms-field-text-color: rgba( 0, 0, 0, 0.7 );
+--wpforms-label-color: rgba( 0, 0, 0, 0.85 );
+--wpforms-label-sublabel-color: rgba( 0, 0, 0, 0.55 );
+--wpforms-label-error-color: #d63637;
+--wpforms-button-border-radius: 3px;
+--wpforms-button-background-color: #066aab;
+--wpforms-button-text-color: #ffffff;
+--wpforms-field-size-input-height: 43px;
+--wpforms-field-size-input-spacing: 15px;
+--wpforms-field-size-font-size: 16px;
+--wpforms-field-size-line-height: 19px;
+--wpforms-field-size-padding-h: 14px;
+--wpforms-field-size-checkbox-size: 16px;
+--wpforms-field-size-sublabel-spacing: 5px;
+--wpforms-field-size-icon-size: 1;
+--wpforms-label-size-font-size: 16px;
+--wpforms-label-size-line-height: 19px;
+--wpforms-label-size-sublabel-font-size: 14px;
+--wpforms-label-size-sublabel-line-height: 17px;
+--wpforms-button-size-font-size: 17px;
+--wpforms-button-size-height: 41px;
+--wpforms-button-size-padding-h: 15px;
+--wpforms-button-size-margin-top: 10px;
+
+				}
+			</style>
+
+	
+
+	<!-- <link rel="stylesheet" type="text/css" href="https://vastvoltelectrical.com.au/wp-content/themes/vast-volt/new-css/fontawasome-all.min.css" media="screen" /> -->
+	
+	
+	
+	
+	
+	
+	
+	
+	<!-- <link rel="stylesheet" type="text/css" href="https://vastvoltelectrical.com.au/wp-content/themes/vast-volt/new-css/style.css" media="screen" /> -->
+	
+
+
+
+</head>
+
+<body class="page-template page-template-template-services-single page-template-template-services-single-php page page-id-46 wp-custom-logo wp-embed-responsive is-light-theme no-js singular has-main-navigation no-widgets">
+
+
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 0 0" width="0" height="0" focusable="false" role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;" ><defs><filter id="wp-duotone-dark-grayscale"><feColorMatrix color-interpolation-filters="sRGB" type="matrix" values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 " /><feComponentTransfer color-interpolation-filters="sRGB" ><feFuncR type="table" tableValues="0 0.49803921568627" /><feFuncG type="table" tableValues="0 0.49803921568627" /><feFuncB type="table" tableValues="0 0.49803921568627" /><feFuncA type="table" tableValues="1 1" /></feComponentTransfer><feComposite in2="SourceGraphic" operator="in" /></filter></defs></svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 0 0" width="0" height="0" focusable="false" role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;" ><defs><filter id="wp-duotone-grayscale"><feColorMatrix color-interpolation-filters="sRGB" type="matrix" values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 " /><feComponentTransfer color-interpolation-filters="sRGB" ><feFuncR type="table" tableValues="0 1" /><feFuncG type="table" tableValues="0 1" /><feFuncB type="table" tableValues="0 1" /><feFuncA type="table" tableValues="1 1" /></feComponentTransfer><feComposite in2="SourceGraphic" operator="in" /></filter></defs></svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 0 0" width="0" height="0" focusable="false" role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;" ><defs><filter id="wp-duotone-purple-yellow"><feColorMatrix color-interpolation-filters="sRGB" type="matrix" values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 " /><feComponentTransfer color-interpolation-filters="sRGB" ><feFuncR type="table" tableValues="0.54901960784314 0.98823529411765" /><feFuncG type="table" tableValues="0 1" /><feFuncB type="table" tableValues="0.71764705882353 0.25490196078431" /><feFuncA type="table" tableValues="1 1" /></feComponentTransfer><feComposite in2="SourceGraphic" operator="in" /></filter></defs></svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 0 0" width="0" height="0" focusable="false" role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;" ><defs><filter id="wp-duotone-blue-red"><feColorMatrix color-interpolation-filters="sRGB" type="matrix" values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 " /><feComponentTransfer color-interpolation-filters="sRGB" ><feFuncR type="table" tableValues="0 1" /><feFuncG type="table" tableValues="0 0.27843137254902" /><feFuncB type="table" tableValues="0.5921568627451 0.27843137254902" /><feFuncA type="table" tableValues="1 1" /></feComponentTransfer><feComposite in2="SourceGraphic" operator="in" /></filter></defs></svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 0 0" width="0" height="0" focusable="false" role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;" ><defs><filter id="wp-duotone-midnight"><feColorMatrix color-interpolation-filters="sRGB" type="matrix" values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 " /><feComponentTransfer color-interpolation-filters="sRGB" ><feFuncR type="table" tableValues="0 0" /><feFuncG type="table" tableValues="0 0.64705882352941" /><feFuncB type="table" tableValues="0 1" /><feFuncA type="table" tableValues="1 1" /></feComponentTransfer><feComposite in2="SourceGraphic" operator="in" /></filter></defs></svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 0 0" width="0" height="0" focusable="false" role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;" ><defs><filter id="wp-duotone-magenta-yellow"><feColorMatrix color-interpolation-filters="sRGB" type="matrix" values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 " /><feComponentTransfer color-interpolation-filters="sRGB" ><feFuncR type="table" tableValues="0.78039215686275 1" /><feFuncG type="table" tableValues="0 0.94901960784314" /><feFuncB type="table" tableValues="0.35294117647059 0.47058823529412" /><feFuncA type="table" tableValues="1 1" /></feComponentTransfer><feComposite in2="SourceGraphic" operator="in" /></filter></defs></svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 0 0" width="0" height="0" focusable="false" role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;" ><defs><filter id="wp-duotone-purple-green"><feColorMatrix color-interpolation-filters="sRGB" type="matrix" values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 " /><feComponentTransfer color-interpolation-filters="sRGB" ><feFuncR type="table" tableValues="0.65098039215686 0.40392156862745" /><feFuncG type="table" tableValues="0 1" /><feFuncB type="table" tableValues="0.44705882352941 0.4" /><feFuncA type="table" tableValues="1 1" /></feComponentTransfer><feComposite in2="SourceGraphic" operator="in" /></filter></defs></svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 0 0" width="0" height="0" focusable="false" role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;" ><defs><filter id="wp-duotone-blue-orange"><feColorMatrix color-interpolation-filters="sRGB" type="matrix" values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 " /><feComponentTransfer color-interpolation-filters="sRGB" ><feFuncR type="table" tableValues="0.098039215686275 1" /><feFuncG type="table" tableValues="0 0.66274509803922" /><feFuncB type="table" tableValues="0.84705882352941 0.41960784313725" /><feFuncA type="table" tableValues="1 1" /></feComponentTransfer><feComposite in2="SourceGraphic" operator="in" /></filter></defs></svg>
+<div id="page" class="site">
+	<a class="skip-link screen-reader-text" href="#content">
+		Skip to content	</a>
+
+	
+
+
+        <!--Search Popup-->
+        <div id="search-popup" class="search-popup">
+            <div class="popup-inner">
+                <div class="upper-box clearfix">
+                    <figure class="logo-box pull-left"><a href="https://vastvoltelectrical.com.au"><img width="152" height="50" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20152%2050'%3E%3C/svg%3E" alt="" data-lazy-src="https://vastvoltelectrical.com.au/wp-content/themes/vast-volt/images/logo-search.png"><noscript><img width="152" height="50" src="https://vastvoltelectrical.com.au/wp-content/themes/vast-volt/images/logo-search.png" alt=""></noscript></a></figure>
+                    <div class="close-search pull-right"><span class="fa fa-times"></span></div>
+                </div>
+                <div class="overlay-layer"></div>
+                <div class="auto-container">
+                    <div class="search-form">
+         
+
+
+                            <form method="post" action="https://vastvoltelectrical.com.au/">
+                               <div class="form-group">
+                                <fieldset>
+                                     <input type="text" name="s" id="s" class="form-control" name="search-input" value="" placeholder="Type your keyword and hit" required >
+                                   
+                                    
+                                        <button type="submit" id="searchsubmit"><i class="fa fa-search"></i></button>
+                                </fieldset>
+                                </div>
+                            </form>
+
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+<header id="masthead" class="main-header has-logo has-title-and-tagline has-menu">
+<!-- header-top -->
+<div class="header-top">
+    <div class="top-inner">
+        <div class="left-column">
+
+            <div class="widget_text widget widget_custom_html"><div class="widget_text widget-content"><div class="textwidget custom-html-widget"><ul class="info clearfix Mobile_view">
+                <li><i class="fa-regular fa-clock"></i>Mon-Sun  07:00AM-05:00PM</li>
+                <li><i class="fa-solid fa-location-dot"></i>Port Phillip, Melbourne</li>
+                <li><i class="fa-regular fa-envelope"></i><a href="mailto:info@vastvoltelectrical.com.au">info@vastvoltelectrical.com.au</a></li>
+            </ul></div></div></div>        </div>
+        <div class="right-column">
+         
+            <div class="widget_text widget widget_custom_html"><div class="widget_text widget-content"><div class="textwidget custom-html-widget"> <ul class="social-links clearfix">
+                <li>Follow Us:</li>
+                <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
+                <li><a href="#"><i class="fab fa-instagram"></i></a></li>
+                <li><a href="#"><i class="fab fa-linkedin-in"></i></a></li>
+            </ul></div></div></div>        </div>
+    </div>
+</div>  
+<!-- end -->
+
+
+
+
+
+
+<!-- header-lower -->
+<div class="header-lower">
+    <div class="outer-box">
+        <div class="menu-area clearfix">
+            <div class="logo-box">
+                <figure class="logo"><a href="https://vastvoltelectrical.com.au"><a href="https://vastvoltelectrical.com.au/" class="custom-logo-link" rel="home"><img width="152" height="50" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20152%2050'%3E%3C/svg%3E" class="custom-logo" alt="Vastvolt" decoding="async" data-lazy-srcset="https://vastvoltelectrical.com.au/wp-content/uploads/2023/04/weblogo.png 152w, https://vastvoltelectrical.com.au/wp-content/uploads/2023/04/weblogo-150x50.png 150w" data-lazy-sizes="(max-width: 152px) 100vw, 152px" data-lazy-src="https://vastvoltelectrical.com.au/wp-content/uploads/2023/04/weblogo.png" /><noscript><img width="152" height="50" src="https://vastvoltelectrical.com.au/wp-content/uploads/2023/04/weblogo.png" class="custom-logo" alt="Vastvolt" decoding="async" srcset="https://vastvoltelectrical.com.au/wp-content/uploads/2023/04/weblogo.png 152w, https://vastvoltelectrical.com.au/wp-content/uploads/2023/04/weblogo-150x50.png 150w" sizes="(max-width: 152px) 100vw, 152px" /></noscript></a></a></figure>
+            </div>
+            <!--Mobile Navigation Toggler-->
+            <div class="mobile-nav-toggler">
+                <i class="icon-bar"></i>
+                <i class="icon-bar"></i>
+                <i class="icon-bar"></i>
+            </div>
+            <nav class="main-menu navbar-expand-md navbar-light">
+                
+                		<div id="navbarSupportedContent" class="collapse navbar-collapse show clearfix"><ul class="navigation clearfix"><li id="menu-item-21" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-home menu-item-21 dropdown"><a href="https://vastvoltelectrical.com.au/">Reliable Electricians</a></li>
+<li id="menu-item-22" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-22 dropdown"><a href="https://vastvoltelectrical.com.au/reliable-electricians-servicing-melbourne-and-country-victoria-safety-first/">About VVE</a></li>
+<li id="menu-item-25" class="menu-item menu-item-type-post_type menu-item-object-page current-menu-ancestor current-menu-parent current_page_parent current_page_ancestor menu-item-has-children menu-item-25 dropdown"><a href="https://vastvoltelectrical.com.au/services/">ELectrical Services</a><button class="sub-menu-toggle" aria-expanded="false" onClick="twentytwentyoneExpandSubMenu(this)"><span class="icon-plus"><svg class="svg-icon" width="18" height="18" aria-hidden="true" role="img" focusable="false" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M18 11.2h-5.2V6h-1.6v5.2H6v1.6h5.2V18h1.6v-5.2H18z" fill="currentColor"/></svg></span><span class="icon-minus"><svg class="svg-icon" width="18" height="18" aria-hidden="true" role="img" focusable="false" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M6 11h12v2H6z" fill="currentColor"/></svg></span><span class="screen-reader-text">Open menu</span></button>
+<ul class="sub-menu">
+	<li id="menu-item-53" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-53 dropdown"><a href="https://vastvoltelectrical.com.au/lighting/">Lighting Design Specialists</a></li>
+	<li id="menu-item-52" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-52 dropdown"><a href="https://vastvoltelectrical.com.au/security-cctv/">Reliable Security Camera Systems</a></li>
+	<li id="menu-item-51" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-51 dropdown"><a href="https://vastvoltelectrical.com.au/everything-solar/">Everything Solar</a></li>
+	<li id="menu-item-50" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-50 dropdown"><a href="https://vastvoltelectrical.com.au/switchboard-upgrades/">Switchboard Upgrades</a></li>
+	<li id="menu-item-49" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-49 dropdown"><a href="https://vastvoltelectrical.com.au/ev-charging-stations/">EV Charging Stations</a></li>
+	<li id="menu-item-48" class="menu-item menu-item-type-post_type menu-item-object-page current-menu-item page_item page-item-46 current_page_item menu-item-48 dropdown"><a href="https://vastvoltelectrical.com.au/safety-inspections/" aria-current="page">Electrical Safety Inspections</a></li>
+</ul>
+</li>
+<li id="menu-item-23" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-23 dropdown"><a href="https://vastvoltelectrical.com.au/blog/">Navigating Home Electrical Upgrades</a></li>
+<li id="menu-item-24" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-24 dropdown"><a href="https://vastvoltelectrical.com.au/never-be-let-down-by-your-sparky-again/contact-us/">Contact Local Electricians</a></li>
+</ul></div>           
+               
+            </nav>
+        </div>
+        <div class="nav-right">
+            <div class="widget_text widget widget_custom_html"><div class="widget_text widget-content"><div class="textwidget custom-html-widget">     	<div class="support-box">
+		    <h6 class="mobile_call"><a href="tel:1300870115"><i class="fa-solid fa-phone"></i></a></h6>				
+            <h6 class="desktop"><i class="fa-solid fa-phone"></i>Call: <a href="tel:1300870115">1300 870 115 </a></h6>
+        </div>
+        <div class="search-box-outer search-toggler">
+            <i class="fa fa-magnifying-glass"></i>
+        </div>
+        <div class="btn-box">            
+            <button class="theme-btn btn-one" data-tf-popup="hE8PjEdp" data-tf-opacity="100" data-tf-size="100" data-tf-iframe-props="title=Book A Sparky Form (Website)" data-tf-transitive-search-params data-tf-medium="snippet">Book Your Sparky</button><script type="rocketlazyloadscript" data-minify="1" src="https://vastvoltelectrical.com.au/wp-content/cache/min/1/next/embed.js?ver=1689338791" defer></script>
+        </div></div></div></div>      
+        </div>
+    </div>
+</div>
+
+
+		    
+
+</header>
+<!-- #masthead -->
+<!-- Mobile Menu  -->
+        <div class="mobile-menu">
+            <div class="menu-backdrop"></div>
+            <div class="close-btn"><i class="fa fa-times"></i></div>
+            
+            <nav class="menu-box">
+                <div class="nav-logo"><a href="https://vastvoltelectrical.com.au"><img width="3008" height="861" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%203008%20861'%3E%3C/svg%3E" alt="" title="" data-lazy-src="/wp-content/uploads/2023/04/voltaze-white-logo.png"><noscript><img width="3008" height="861" src="/wp-content/uploads/2023/04/voltaze-white-logo.png" alt="" title=""></noscript></a></div>
+                <div class="menu-outer"><!--Here Menu Will Come Automatically Via Javascript / Same Menu as in Header--></div>
+                <div class="contact-info">
+                    <h4>Contact Info</h4>
+                    <ul>
+                        <li>Port Phillip, Melbourne, VIC</li>
+                        <li><a href="tel:1300870115"> 1300 870 115</a></li>
+                        <li><a href="mailto:info@vastvoltelectrical.com.au">info@vastvoltelectrical.com.au</a></li>
+                    </ul>
+                </div>
+                <div class="social-links">
+                    <ul class="clearfix">
+                        <li><a href="#"><span class="fab fa-twitter"></span></a></li>
+                        <li><a href="#"><span class="fab fa-facebook-square"></span></a></li>
+                        <li><a href="#"><span class="fab fa-pinterest-p"></span></a></li>
+                        <li><a href="#"><span class="fab fa-instagram"></span></a></li>
+                        <li><a href="#"><span class="fab fa-youtube"></span></a></li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+        <!-- End Mobile Menu -->
+	<div id="content" class="site-content">
+		<div id="primary" class="content-area">
+			<main id="main" class="site-main">
+  <!-- Page Title -->
+    
+    <!-- banner-section -->
+        
+        <section class="banner-section banner-style-one p_relative overflow-hidden">
+
+            <div class="shape">
+                <div class="shape-1 p_absolute l_0 b_0 z_2"></div>
+                <div class="shape-2 p_absolute l_0 t_0 z_2"></div>
+                <div class="shape-3 p_absolute l_0 t_0 z_2"></div>
+            </div>
+
+            <div class="banner-carousel owl-theme owl-carousel owl-dots-none">
+                                     
+
+                <div class="slide-item p_relative pt_180">
+                    <div data-bg="https://vastvoltelectrical.com.au/wp-content/uploads/2023/04/ElectricalSafety_ByVastVoltElectrical2.png" class="image-layer p_absolute rocket-lazyload"  style=""></div>
+                    <div class="auto-container">
+                        <div class="content-box p_relative d_block z_5">
+                            <h2 class="p_relative d_block fs_60 lh_70 fw_bold mb_18">Protect <span>Your Investment with </span>Regular Electrical Safety Inspections</h2>
+                            <p class="p_relative d_block fs_18">Regular electrical safety inspections can help protect your property investment by identifying potential hazards and ensuring that your electrical system is safe, reliable, and up-to-date."</p>
+                        </div> 
+                    </div>
+                </div>
+
+                                    
+
+                <div class="slide-item p_relative pt_180">
+                    <div data-bg="https://vastvoltelectrical.com.au/wp-content/uploads/2023/04/ElectricalSafety_ByVastVoltElectrical3.png" class="image-layer p_absolute rocket-lazyload"  style=""></div>
+                    <div class="auto-container">
+                        <div class="content-box p_relative d_block z_5">
+                            <h2 class="p_relative d_block fs_60 lh_70 fw_bold mb_18">Stay Compliant with <span>Electrical Safety</span> Standards</h2>
+                            <p class="p_relative d_block fs_18">Our electrical safety inspection service ensures that your electrical system is up-to-date and meets all relevant safety standards to avoid potential legal and financial penalties.</p>
+                        </div> 
+                    </div>
+                </div>
+
+                                    
+
+                <div class="slide-item p_relative pt_180">
+                    <div data-bg="https://vastvoltelectrical.com.au/wp-content/uploads/2023/04/ElectricalSafety_ByVastVoltElectrical1.png" class="image-layer p_absolute rocket-lazyload"  style=""></div>
+                    <div class="auto-container">
+                        <div class="content-box p_relative d_block z_5">
+                            <h2 class="p_relative d_block fs_60 lh_70 fw_bold mb_18">Ensure Your Property <span>is Safe with an </span> Electrical Safety Inspection</h2>
+                            <p class="p_relative d_block fs_18">Protect your home or business from potential electrical hazards with a comprehensive inspection by our licensed electricians.</p>
+                        </div> 
+                    </div>
+                </div>
+
+                               
+
+            </div>
+        </section>
+        
+    <!-- banner-section end -->
+
+
+    <!-- search-field -->
+
+            <section class="search-field search-field-all">
+            <div class="auto-container">
+                <div class="outer-container">
+                    <div class="title-text centred p_relative d_block">
+                         <h6>BOOK YOUR ELECTRICAL SAFETY INSPECTION TODAY!</h6>
+                    </div>
+                    <div class="search-area">
+                        
+<div class="wpcf7 no-js" id="wpcf7-f582-o1" lang="en-US" dir="ltr">
+<div class="screen-reader-response"><p role="status" aria-live="polite" aria-atomic="true"></p> <ul></ul></div>
+<form action="/safety-inspections/#wpcf7-f582-o1" method="post" class="wpcf7-form init" aria-label="Contact form" novalidate="novalidate" data-status="init">
+<div style="display: none;">
+<input type="hidden" name="_wpcf7" value="582" />
+<input type="hidden" name="_wpcf7_version" value="5.7.6" />
+<input type="hidden" name="_wpcf7_locale" value="en_US" />
+<input type="hidden" name="_wpcf7_unit_tag" value="wpcf7-f582-o1" />
+<input type="hidden" name="_wpcf7_container_post" value="0" />
+<input type="hidden" name="_wpcf7_posted_data_hash" value="" />
+</div>
+<div class="row clearfix">
+	<div class="form-group">
+		<p><span class="wpcf7-form-control-wrap" data-name="Yourname"><input size="40" class="wpcf7-form-control wpcf7-text wpcf7-validates-as-required" aria-required="true" aria-invalid="false" placeholder="Your name" value="" type="text" name="Yourname" /></span>
+		</p>
+	</div>
+	<div class="form-group">
+		<p><span class="wpcf7-form-control-wrap" data-name="Youremail"><input size="40" class="wpcf7-form-control wpcf7-text wpcf7-email wpcf7-validates-as-required wpcf7-validates-as-email" aria-required="true" aria-invalid="false" placeholder="Your email" value="" type="email" name="Youremail" /></span>
+		</p>
+	</div>
+	<div class="form-group">
+		<p><span class="wpcf7-form-control-wrap" data-name="Phone"><input size="40" class="wpcf7-form-control wpcf7-text wpcf7-validates-as-required" aria-required="true" aria-invalid="false" placeholder="Phone" value="" type="text" name="Phone" /></span>
+		</p>
+	</div>
+	<div class="form-group">
+		<p><input type="text" name="date" placeholder="Date" id="datepicker" />
+		</p>
+	</div>
+	<div class="btn-box">
+		<p><input class="wpcf7-form-control has-spinner wpcf7-submit theme-btn" type="submit" value="Book Now" />
+		</p>
+	</div>
+</div><p style="display: none !important;"><label>&#916;<textarea name="_wpcf7_ak_hp_textarea" cols="45" rows="8" maxlength="100"></textarea></label><input type="hidden" id="ak_js_1" name="_wpcf7_ak_js" value="44"/><script type="rocketlazyloadscript">document.getElementById( "ak_js_1" ).setAttribute( "value", ( new Date() ).getTime() );</script></p><div class="wpcf7-response-output" aria-hidden="true"></div>
+</form>
+</div>
+                    </div>
+                </div>
+            </div>
+        </section> 
+         
+            
+    <!-- search-field end -->
+
+
+    <!-- about-section -->
+
+                 
+            <section class="about-section sec-pad">
+                <div class="pattern-layer"> </div>
+                  <div class="auto-container">
+                     <div class="row clearfix">
+
+                        <div class="col-lg-6 col-md-12 col-sm-12 image-column">
+                            <div class="image_block_one">
+                                <div data-animation-box class="image-box p_relative d_block pl_120 pb_100 mr_30">
+                                    <div class="shape-box">
+                                        <div class="shape-1 p_absolute l_70 t_40 w_130 h_130"></div>
+                                        <div class="shape-2 p_absolute b_45 r_40 w_130 h_130"></div>
+                                    </div>
+                                    <figure data-animation-text class="overlay-anim-black-bg image p_relative d_block" data-animation="overlay-animation">
+                                        <img width="470" height="520" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20470%20520'%3E%3C/svg%3E" data-lazy-src="https://vastvoltelectrical.com.au/wp-content/uploads/2023/04/About_electricalSafety_VVE.png"><noscript><img width="470" height="520" src="https://vastvoltelectrical.com.au/wp-content/uploads/2023/04/About_electricalSafety_VVE.png"></noscript>
+                                    </figure>
+
+                                    <div class="icon p_absolute l_25 float-bob-y">
+                                        <img width="71" height="121" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2071%20121'%3E%3C/svg%3E" alt="" style="filter: invert(44%) sepia(100%) saturate(7451%) hue-rotate(342deg) brightness(98%) contrast(123%);" data-lazy-src="https://vastvoltelectrical.com.au/wp-content/themes/vast-volt/images/electric_icon.png"><noscript><img width="71" height="121" src="https://vastvoltelectrical.com.au/wp-content/themes/vast-volt/images/electric_icon.png" alt="" style="filter: invert(44%) sepia(100%) saturate(7451%) hue-rotate(342deg) brightness(98%) contrast(123%);"></noscript>
+                                    </div>
+
+                                    <div class="text-box centred p_absolute l_0 b_0 z_2" style="background-color: #FFEE21;">
+                                        <div class="light-icon p_absolute">
+                                            <img width="139" height="197" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20139%20197'%3E%3C/svg%3E" alt="" data-lazy-src="https://vastvoltelectrical.com.au/wp-content/themes/vast-volt/images/about_us_icon-2.png"><noscript><img width="139" height="197" src="https://vastvoltelectrical.com.au/wp-content/themes/vast-volt/images/about_us_icon-2.png" alt=""></noscript>
+                                        </div>
+
+                                        <h2 class="d_block fs_40 lh_40 fw_bold mb_18">7+</h2>
+                                        <h3 class="d_block fw_medium">Years Experience</h3>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-6 col-md-12 col-sm-12 content-column">
+                            <div class="content_block_one">
+                                <div class="content-box p_relative d_block ml_30">
+                                    <div class="sec-title p_relative mb_25">
+                                        <h5 class="d_block fs_17 lh_25 fw_medium mb_9">About Electrical Safety Inspections</h5>
+                                        <h2 class="d_block fs_40 lh_50 fw_bold">Understand the importance of electrical safety in your home or business</h2>
+                                    </div>
+                                    <div class="text p_relative d_block mb_30">
+                                        <p>We thoroughly inspect your electrical system to identify any potential hazards, including faulty wiring, outdated electrical panels, and outdated electrical fixtures. <br><br>Our team will provide you with a detailed report of any issues found during the inspection and recommend the necessary repairs to ensure your safety.</p>
+                                    </div>
+                                    <div class="inner p_relative d_block mb_40">
+                                        <div class="row clearfix">
+                                                                                            <div class="col-lg-6 col-md-6 col-sm-12 single-column">
+                                                    <div class="single-item">
+                                                        <div class="icon-box"><img width="39" height="40" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2039%2040'%3E%3C/svg%3E" data-lazy-src="https://vastvoltelectrical.com.au/wp-content/uploads/2023/04/rewiring-and-check-icon.png"><noscript><img width="39" height="40" src="https://vastvoltelectrical.com.au/wp-content/uploads/2023/04/rewiring-and-check-icon.png"></noscript></div>
+                                                        <h4>Domestic Safety Checks</h4>
+                                                    </div>
+                                                </div> 
+                                                                                            <div class="col-lg-6 col-md-6 col-sm-12 single-column">
+                                                    <div class="single-item">
+                                                        <div class="icon-box"><img width="41" height="26" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2041%2026'%3E%3C/svg%3E" data-lazy-src="https://vastvoltelectrical.com.au/wp-content/uploads/2023/04/emergency-repairs-icon.png"><noscript><img width="41" height="26" src="https://vastvoltelectrical.com.au/wp-content/uploads/2023/04/emergency-repairs-icon.png"></noscript></div>
+                                                        <h4>Commercial Compliance</h4>
+                                                    </div>
+                                                </div> 
+                                                                                            
+                                        </div>
+                                    </div>
+                                    <ul class="list-style-one clearfix">
+                                                                                    <li>Electrical hazards can be fatal, making safety critical.</li>
+                                                                                    <li>Regular inspections prevent accidents and dangerous situations.</li>
+                                                                                    <li>Proper maintenance can prevent devastating electrical fires.</li>
+                                                                                    <li>Compliance with safety standards avoids legal and financial penalties.</li>
+                                                                                    <li>Safety is crucial for reliable operation and to avoid power outages and equipment damage.</li>
+                                            
+                                    </ul>
+                                    <figure class="signature"><img src=""></figure>
+                                </div>
+                            </div>
+                        </div>
+
+                </div>
+            </div>
+        </section>
+
+             
+
+
+<!-- about-section end -->
+        
+
+<!-- feature-section -->
+
+    
+        <section class="feature-section">
+            <div class="outer-container p_relative pl_30 pr_30">
+                <div class="row clearfix">
+                                            <div class="col-lg-4 col-md-6 col-sm-12 feature-block">
+                            <div class="feature-block-one wow fadeInLeft" data-wow-duration="1500ms">
+                                <div class="inner-box p_relative d_block clearfix">
+                                    <figure class="image-box p_relative d_block">
+                                        <img width="250" height="351" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20250%20351'%3E%3C/svg%3E" data-lazy-src="https://vastvoltelectrical.com.au/wp-content/uploads/2023/04/DomesticElectricalSafetyChecks.png"><noscript><img width="250" height="351" src="https://vastvoltelectrical.com.au/wp-content/uploads/2023/04/DomesticElectricalSafetyChecks.png"></noscript>
+                                    </figure>
+                       
+                                    <div class="content-box p_relative d_block">
+                                        <div class="icon-box p_relative d_block fs_50 lh_50"><img width="266" height="265" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20266%20265'%3E%3C/svg%3E" data-lazy-src="https://vastvoltelectrical.com.au/wp-content/uploads/2023/04/electrical-safety-checks.png"><noscript><img width="266" height="265" src="https://vastvoltelectrical.com.au/wp-content/uploads/2023/04/electrical-safety-checks.png"></noscript></div>
+                                        <h3><a href="#">Domestic Electrical Safety Checks</a></h3>
+
+                                        <p>Ensure the safety and reliability of your residential electrical systems with our licensed electricians.</p>
+
+                                        <div class="link"><a href="#">
+                                            <span>Protect Your Home and Family Today</span><i class="icon-7"></i></a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                                            <div class="col-lg-4 col-md-6 col-sm-12 feature-block">
+                            <div class="feature-block-one wow fadeInLeft" data-wow-duration="1500ms">
+                                <div class="inner-box p_relative d_block clearfix">
+                                    <figure class="image-box p_relative d_block">
+                                        <img width="250" height="351" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20250%20351'%3E%3C/svg%3E" data-lazy-src="https://vastvoltelectrical.com.au/wp-content/uploads/2023/04/SafetyReports.png"><noscript><img width="250" height="351" src="https://vastvoltelectrical.com.au/wp-content/uploads/2023/04/SafetyReports.png"></noscript>
+                                    </figure>
+                       
+                                    <div class="content-box p_relative d_block">
+                                        <div class="icon-box p_relative d_block fs_50 lh_50"><img width="272" height="276" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20272%20276'%3E%3C/svg%3E" data-lazy-src="https://vastvoltelectrical.com.au/wp-content/uploads/2023/04/comprehensive-safety-yellow.png"><noscript><img width="272" height="276" src="https://vastvoltelectrical.com.au/wp-content/uploads/2023/04/comprehensive-safety-yellow.png"></noscript></div>
+                                        <h3><a href="#">Comprehensive Safety Reports</a></h3>
+
+                                        <p>Our Comprehensive Safety Reports that provide detailed assessments of electrical systems & recommendations.</p>
+
+                                        <div class="link"><a href="#">
+                                            <span>Get Your Safety Report</span><i class="icon-7"></i></a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                                            <div class="col-lg-4 col-md-6 col-sm-12 feature-block">
+                            <div class="feature-block-one wow fadeInLeft" data-wow-duration="1500ms">
+                                <div class="inner-box p_relative d_block clearfix">
+                                    <figure class="image-box p_relative d_block">
+                                        <img width="250" height="351" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20250%20351'%3E%3C/svg%3E" data-lazy-src="https://vastvoltelectrical.com.au/wp-content/uploads/2023/04/Domestic_CommercialCompliance.png"><noscript><img width="250" height="351" src="https://vastvoltelectrical.com.au/wp-content/uploads/2023/04/Domestic_CommercialCompliance.png"></noscript>
+                                    </figure>
+                       
+                                    <div class="content-box p_relative d_block">
+                                        <div class="icon-box p_relative d_block fs_50 lh_50"><img width="253" height="260" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20253%20260'%3E%3C/svg%3E" data-lazy-src="https://vastvoltelectrical.com.au/wp-content/uploads/2023/04/domestic-commercial-compliance.png"><noscript><img width="253" height="260" src="https://vastvoltelectrical.com.au/wp-content/uploads/2023/04/domestic-commercial-compliance.png"></noscript></div>
+                                        <h3><a href="#">Domestic/Commercial Compliance</a></h3>
+
+                                        <p>Prevent accidents and avoid legal and financial penalties for both residential and commercial properties.</p>
+
+                                        <div class="link"><a href="#">
+                                            <span>Schedule Your Compliance Check</span><i class="icon-7"></i></a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        
+
+                </div>
+            </div>
+        </section>
+
+     
+
+<!-- feature-section end -->
+
+
+<!-- clients-section logo -->
+
+             <section class="clients-section p_relative">
+            <div class="auto-container">
+                <div class="five-item-carousel owl-carousel owl-theme owl-nav-none owl-dots-none">
+                                            <figure class="clients-logo p_relative d_block">
+                            <a href="https://vastvoltelectrical.com.au/"><img width="205" height="44" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20205%2044'%3E%3C/svg%3E" alt="icon" data-lazy-src="https://vastvoltelectrical.com.au/wp-content/uploads/2023/04/WorkSafe_vic.png"><noscript><img width="205" height="44" src="https://vastvoltelectrical.com.au/wp-content/uploads/2023/04/WorkSafe_vic.png" alt="icon"></noscript></a>
+                        </figure>
+                                             <figure class="clients-logo p_relative d_block">
+                            <a href="https://vastvoltelectrical.com.au/"><img width="205" height="44" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20205%2044'%3E%3C/svg%3E" alt="icon" data-lazy-src="https://vastvoltelectrical.com.au/wp-content/uploads/2023/04/clipsal_logo.png"><noscript><img width="205" height="44" src="https://vastvoltelectrical.com.au/wp-content/uploads/2023/04/clipsal_logo.png" alt="icon"></noscript></a>
+                        </figure>
+                                             <figure class="clients-logo p_relative d_block">
+                            <a href="https://vastvoltelectrical.com.au/"><img width="205" height="44" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20205%2044'%3E%3C/svg%3E" alt="icon" data-lazy-src="https://vastvoltelectrical.com.au/wp-content/uploads/2023/04/ocular_logo.png"><noscript><img width="205" height="44" src="https://vastvoltelectrical.com.au/wp-content/uploads/2023/04/ocular_logo.png" alt="icon"></noscript></a>
+                        </figure>
+                                             <figure class="clients-logo p_relative d_block">
+                            <a href="https://vastvoltelectrical.com.au/"><img width="205" height="44" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20205%2044'%3E%3C/svg%3E" alt="icon" data-lazy-src="https://vastvoltelectrical.com.au/wp-content/uploads/2023/04/AWM_Melbourne.png"><noscript><img width="205" height="44" src="https://vastvoltelectrical.com.au/wp-content/uploads/2023/04/AWM_Melbourne.png" alt="icon"></noscript></a>
+                        </figure>
+                                             <figure class="clients-logo p_relative d_block">
+                            <a href="https://vastvoltelectrical.com.au/"><img width="205" height="44" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20205%2044'%3E%3C/svg%3E" alt="icon" data-lazy-src="https://vastvoltelectrical.com.au/wp-content/uploads/2023/04/Hager-Blue-Logo.png"><noscript><img width="205" height="44" src="https://vastvoltelectrical.com.au/wp-content/uploads/2023/04/Hager-Blue-Logo.png" alt="icon"></noscript></a>
+                        </figure>
+                                             <figure class="clients-logo p_relative d_block">
+                            <a href="https://vastvoltelectrical.com.au/"><img width="205" height="44" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20205%2044'%3E%3C/svg%3E" alt="icon" data-lazy-src="https://vastvoltelectrical.com.au/wp-content/uploads/2023/04/neca-nat-logo-text.png"><noscript><img width="205" height="44" src="https://vastvoltelectrical.com.au/wp-content/uploads/2023/04/neca-nat-logo-text.png" alt="icon"></noscript></a>
+                        </figure>
+                                             <figure class="clients-logo p_relative d_block">
+                            <a href="https://vastvoltelectrical.com.au/"><img width="205" height="44" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20205%2044'%3E%3C/svg%3E" alt="icon" data-lazy-src="https://vastvoltelectrical.com.au/wp-content/uploads/2023/04/ESVLogo.png"><noscript><img width="205" height="44" src="https://vastvoltelectrical.com.au/wp-content/uploads/2023/04/ESVLogo.png" alt="icon"></noscript></a>
+                        </figure>
+                                     </div>
+            </div>
+        </section> 
+       
+
+<!-- clients-section end -->
+
+
+<!-- faq-section -->
+
+
+    <section class="faq-section p_relative">
+        <div class="auto-container">
+            <div class="row clearfix">
+                <div class="col-lg-6 col-md-12 col-sm-12 image-column">
+                    <div class="image_block_five">
+                        <div class="image-box">
+                            <div data-bg="http://../wp-content/uploads/2023/04/faq-service-shape-9.png" class="shape rocket-lazyload" style=""></div>
+                            <figure class="image image-1"><img width="450" height="550" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20450%20550'%3E%3C/svg%3E" data-lazy-src="https://vastvoltelectrical.com.au/wp-content/uploads/2023/04/FAQ-Lighting-bg.png"><noscript><img width="450" height="550" src="https://vastvoltelectrical.com.au/wp-content/uploads/2023/04/FAQ-Lighting-bg.png"></noscript></figure>
+                            <figure class="image image-2"><img width="300" height="220" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20300%20220'%3E%3C/svg%3E" data-lazy-src="https://vastvoltelectrical.com.au/wp-content/uploads/2023/04/questions-vastvotl-lighting.png"><noscript><img width="300" height="220" src="https://vastvoltelectrical.com.au/wp-content/uploads/2023/04/questions-vastvotl-lighting.png"></noscript></figure>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 col-md-12 col-sm-12 content-column">
+                    <div class="content_block_five">
+                        <div class="content-box p_relative d_block ml_30">
+                            <div class="sec-title p_relative mb_50">
+                                <h5 class="d_block fs_17 lh_25 fw_medium mb_9">FAQ’S</h5>
+                                <h2 class="d_block fs_40 lh_50 fw_bold mb_25">Frequently Asked Question</h2>
+                                <p class="fs_16">All of our services are backed by our 100% satisfaction guarantee Our electricians.</p>
+                            </div>
+                            <ul class="accordion-box">
+                                                                  
+                                    <li class="accordion block">
+                                        <div class="acc-btn">
+                                            <div class="icon-outer"><i class="fa fa-angle-down"></i></div>
+                                            <h5>What is an electrical safety inspection?  </h5>
+                                        </div>
+                                        <div class="acc-content">
+                                            <div class="text">
+                                                <p>An electrical safety inspection is a comprehensive assessment of an electrical system to ensure that it is safe, reliable, and compliant with relevant safety standards.</p>
+                                            </div>
+                                        </div>
+                                    </li>
+
+                                 
+                                    <li class="accordion block">
+                                        <div class="acc-btn">
+                                            <div class="icon-outer"><i class="fa fa-angle-down"></i></div>
+                                            <h5>Why is an electrical safety inspection necessary?  </h5>
+                                        </div>
+                                        <div class="acc-content">
+                                            <div class="text">
+                                                <p>An electrical safety inspection is necessary to identify potential safety hazards and recommend appropriate actions to improve the safety and reliability of the electrical system. It can also help ensure compliance with relevant safety standards.</p>
+                                            </div>
+                                        </div>
+                                    </li>
+
+                                 
+                                    <li class="accordion block">
+                                        <div class="acc-btn">
+                                            <div class="icon-outer"><i class="fa fa-angle-down"></i></div>
+                                            <h5>How often should an electrical safety inspection be conducted?  </h5>
+                                        </div>
+                                        <div class="acc-content">
+                                            <div class="text">
+                                                <p>The frequency of electrical safety inspections may vary depending on the type and age of the electrical system, the specific requirements of the property being inspected, and other factors. Generally, it is recommended to have an inspection done every 2 years in Australia.</p>
+                                            </div>
+                                        </div>
+                                    </li>
+
+                                 
+                                    <li class="accordion block">
+                                        <div class="acc-btn">
+                                            <div class="icon-outer"><i class="fa fa-angle-down"></i></div>
+                                            <h5>What is included in an electrical safety inspection?</h5>
+                                        </div>
+                                        <div class="acc-content">
+                                            <div class="text">
+                                                <p>An electrical safety inspection typically includes a visual inspection of the electrical system, testing of circuit breakers, Switchboard, electrical outlets, and other components, as well as a detailed analysis and report of any safety hazards, faults, or areas of concern.</p>
+                                            </div>
+                                        </div>
+                                    </li>
+
+                                 
+                                    <li class="accordion block">
+                                        <div class="acc-btn">
+                                            <div class="icon-outer"><i class="fa fa-angle-down"></i></div>
+                                            <h5>How long does an electrical safety inspection take? </h5>
+                                        </div>
+                                        <div class="acc-content">
+                                            <div class="text">
+                                                <p>The duration of an electrical safety inspection may vary depending on the size and complexity of the electrical system being inspected. Typically, it can take a few hours to a full day to complete an inspection.</p>
+                                            </div>
+                                        </div>
+                                    </li>
+
+                                 
+                                    <li class="accordion block">
+                                        <div class="acc-btn">
+                                            <div class="icon-outer"><i class="fa fa-angle-down"></i></div>
+                                            <h5>How much does an electrical safety inspection cost?  </h5>
+                                        </div>
+                                        <div class="acc-content">
+                                            <div class="text">
+                                                <p>The cost of an electrical safety inspection may vary depending on the size and complexity of the electrical system being inspected, as well as other factors. Generally, it can range from a few hundred to a few thousand dollars.</p>
+                                            </div>
+                                        </div>
+                                    </li>
+
+                                 
+                                    <li class="accordion block">
+                                        <div class="acc-btn">
+                                            <div class="icon-outer"><i class="fa fa-angle-down"></i></div>
+                                            <h5>What happens if safety hazards are identified during the inspection?  </h5>
+                                        </div>
+                                        <div class="acc-content">
+                                            <div class="text">
+                                                <p>If safety hazards are identified during the inspection, the electrician will provide recommendations for repairs and upgrades to improve safety and ensure compliance with relevant safety standards.</p>
+                                            </div>
+                                        </div>
+                                    </li>
+
+                                                                  
+
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+  
+
+<!-- faq-section end -->
+
+
+<!-- testimonial-section -->
+
+
+    <section class="testimonial-section p_relative">
+        <div data-bg="https://vastvoltelectrical.com.au/wp-content/uploads/2023/04/client-say-testimonial-bg.png" class="bg-layer parallax-bg rocket-lazyload" data-parallax='{"y": 100}' style=""></div>
+        <div data-bg="https://vastvoltelectrical.com.au/wp-content/uploads/2023/04/ReportExample_ByVASTVOLElectrical.png" class="bg-layer-2 rocket-lazyload" style=""></div>
+
+        <div class="auto-container">
+            <div class="row align-items-center clearfix">
+                <div class="col-lg-6 col-md-12 col-sm-12 title-column">
+                    <div class="sec-title light p_relative mb_50">
+                        <h5 class="d_block fs_17 lh_25 fw_medium mb_9">Testimonials</h5>
+                        <h2 class="d_block fs_40 lh_50 fw_bold">What Our Client Say <br>About Vast Volt Electrical</h2>
+                    </div>
+                </div>
+                <div class="col-lg-6 col-md-12 col-sm-12 testimonial-column">
+                    <div class="testimonial-inner p_relative d_block ml_30">
+                        <div class="single-item-carousel owl-carousel owl-dots-none nav-style-one">
+                                                          
+                                <div class="testimonial-block-one">
+                                    <div class="inner-box p_relative d_block">
+                                        <div class="light-icon"><img width="216" height="301" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20216%20301'%3E%3C/svg%3E" alt="" data-lazy-src="https://vastvoltelectrical.com.au/wp-content/themes/vast-volt/images/client-say-icon-3.png"><noscript><img width="216" height="301" src="https://vastvoltelectrical.com.au/wp-content/themes/vast-volt/images/client-say-icon-3.png" alt=""></noscript></div>
+                                        <div class="icon-box p_relative d_block fs_65">
+                                            <img width="66" height="45" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2066%2045'%3E%3C/svg%3E" alt="" data-lazy-src="https://vastvoltelectrical.com.au/wp-content/themes/vast-volt/images/client_quotie.png"><noscript><img width="66" height="45" src="https://vastvoltelectrical.com.au/wp-content/themes/vast-volt/images/client_quotie.png" alt=""></noscript>
+                                        </div>
+                                        <p> I contacted Vast Volt Electrical for a Comprehensive Safety Report before buying my new home, and I'm so glad I did. The electrician was very professional and conducted a detailed assessment of the electrical system, identifying several issues that needed to be addressed. The report he provided was very thorough and easy to understand, and I was able to negotiate repairs with the seller before closing.<br><br> Thanks to Vast Volt Electrical, I now feel much more confident in my new home's electrical system.</p>
+
+                                         <div class="author-box p_relative d_block" style="text-align: right;">
+                                            <h5 style="display: inline-block;">Domestic ~ Ringwood, Vic</h5>
+                                            <span class="designation p_relative d_block" style="display: inline-block;">
+                                                 Sarah ~ VVE Customer</span>
+                                        </div>
+                                    </div>
+                                </div>
+                              
+                                <div class="testimonial-block-one">
+                                    <div class="inner-box p_relative d_block">
+                                        <div class="light-icon"><img width="216" height="301" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20216%20301'%3E%3C/svg%3E" alt="" data-lazy-src="https://vastvoltelectrical.com.au/wp-content/themes/vast-volt/images/client-say-icon-3.png"><noscript><img width="216" height="301" src="https://vastvoltelectrical.com.au/wp-content/themes/vast-volt/images/client-say-icon-3.png" alt=""></noscript></div>
+                                        <div class="icon-box p_relative d_block fs_65">
+                                            <img width="66" height="45" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2066%2045'%3E%3C/svg%3E" alt="" data-lazy-src="https://vastvoltelectrical.com.au/wp-content/themes/vast-volt/images/client_quotie.png"><noscript><img width="66" height="45" src="https://vastvoltelectrical.com.au/wp-content/themes/vast-volt/images/client_quotie.png" alt=""></noscript>
+                                        </div>
+                                        <p>As a small business owner, I take compliance very seriously, and that's why I contacted Vast Volt Electrical for Domestic/Commercial Compliance services. The electricians were very professional and conducted a thorough assessment of our electrical systems and devices, identifying several areas that needed improvement. <br><br>They provided clear recommendations and worked with us to ensure we were fully compliant with safety standards. Thanks to their services, I feel much more secure knowing that my business is safe and in compliance.</p>
+
+                                         <div class="author-box p_relative d_block" style="text-align: right;">
+                                            <h5 style="display: inline-block;">Commercial ~ South Yarra, Vic</h5>
+                                            <span class="designation p_relative d_block" style="display: inline-block;">
+                                                 Mark ~ VVE Customer</span>
+                                        </div>
+                                    </div>
+                                </div>
+                              
+                                <div class="testimonial-block-one">
+                                    <div class="inner-box p_relative d_block">
+                                        <div class="light-icon"><img width="216" height="301" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20216%20301'%3E%3C/svg%3E" alt="" data-lazy-src="https://vastvoltelectrical.com.au/wp-content/themes/vast-volt/images/client-say-icon-3.png"><noscript><img width="216" height="301" src="https://vastvoltelectrical.com.au/wp-content/themes/vast-volt/images/client-say-icon-3.png" alt=""></noscript></div>
+                                        <div class="icon-box p_relative d_block fs_65">
+                                            <img width="66" height="45" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2066%2045'%3E%3C/svg%3E" alt="" data-lazy-src="https://vastvoltelectrical.com.au/wp-content/themes/vast-volt/images/client_quotie.png"><noscript><img width="66" height="45" src="https://vastvoltelectrical.com.au/wp-content/themes/vast-volt/images/client_quotie.png" alt=""></noscript>
+                                        </div>
+                                        <p>I recently had an Electrical Safety Check done by Vast Volt Electrical and I was really impressed with their service. The electrician was very knowledgeable and thorough, and identified a few potential hazards that I wasn't aware of. He provided clear recommendations on how to address them, and I felt much more secure in my home knowing that my electrical system was safe.<br><br> I highly recommend Vast Volt Electrical for anyone in need of electrical services.</p>
+
+                                         <div class="author-box p_relative d_block" style="text-align: right;">
+                                            <h5 style="display: inline-block;">Domestic ~ Epping, Vic</h5>
+                                            <span class="designation p_relative d_block" style="display: inline-block;">
+                                                 Brianna ~ VVE Customer</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                                                  
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section> 
+
+  
+
+<!-- testimonial-section end -->
+
+<!-- service-section -->
+
+ 
+        <section class="service-section">
+            <div class="pattern-layer">
+                <div data-bg="http://../wp-content/uploads/2023/04/electrical_serviceshape-3.png" class="pattern-1 rocket-lazyload" style=""></div> 
+                <div data-bg="http://../wp-content/uploads/2023/04/electric_service-shape-4.png" class="pattern-2 rocket-lazyload" style=""></div>
+            </div>
+            <div class="auto-container">
+                <div class="sec-title p_relative mb_50 centred">
+                    <h5 class="d_block fs_17 lh_25 fw_medium mb_9">Electrical Safety ~ Not Just a Buzz word</h5>
+                    <h2 class="d_block fs_40 lh_50 fw_bold">We are a Fully Licensed Electrical <br>Contractor</h2>
+                </div>
+                <div class="tabs-box">
+
+                    <div class="tab-btn-box p_relative d_block mb_60 centred">
+                        <ul class="tab-btns tab-buttons clearfix">
+                            <li class="tab-btn active-btn" data-tab="#tab-1">Improved Safety</li>
+                            <li class="tab-btn" data-tab="#tab-2">Electrical Safety + Certificates</li>
+                            <li class="tab-btn" data-tab="#tab-3">Electrical Safety Reports</li>
+                        </ul>
+                    </div>
+
+                    <div class="tabs-content">
+                        <div class="tab active-tab" id="tab-1">
+                            <div class="inner-box">
+                                
+                                <div class="row clearfix">
+                                    <div class="col-lg-8 col-md-12 col-sm-12 content-column">
+                                        <div class="content_block_two">
+                                            <div class="content-box p_relative d_block mr_70">
+                                                 
+                                                    <div class="text p_relative d_block">
+                                                        <h3>Electrical Safety Inspections</h3>
+                                                        <p>Our team of expert electricians is dedicated to ensuring your safety through electrical safety inspections and repairs. We understand the importance of electrical safety, which is why we offer comprehensive electrical safety inspections.</p>
+                                                        <p>We thoroughly inspect your electrical system to identify any potential hazards, including faulty wiring, outdated electrical panels, and outdated electrical fixtures. Our team will provide you with a detailed report of any issues found during the inspection and recommend the necessary repairs to ensure your safety.</p>
+                                                    </div>
+                                                 
+
+                                                <div class="row clearfix">
+                                                                                                            <div class="col-lg-6 col-md-6 col-sm-12 single-column">
+                                                            <div class="single-item p_relative d_block">
+                                                                <div class="icon-box"><img width="851" height="322" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20851%20322'%3E%3C/svg%3E" data-lazy-src="https://vastvoltelectrical.com.au/wp-content/uploads/2023/04/electrical-safety-inspections-dule-sec.png"><noscript><img width="851" height="322" src="https://vastvoltelectrical.com.au/wp-content/uploads/2023/04/electrical-safety-inspections-dule-sec.png"></noscript></div>
+                                                                <h4><a href="#">Electrical Safety Inspections</a></h4>
+                                                                <p>Identify any electrical hazards, including outdated electrical panels and wiring.</p>
+                                                            </div>
+                                                        </div>
+                                                                                                            <div class="col-lg-6 col-md-6 col-sm-12 single-column">
+                                                            <div class="single-item p_relative d_block">
+                                                                <div class="icon-box"><img width="370" height="117" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20370%20117'%3E%3C/svg%3E" data-lazy-src="https://vastvoltelectrical.com.au/wp-content/uploads/2023/04/icon4.png"><noscript><img width="370" height="117" src="https://vastvoltelectrical.com.au/wp-content/uploads/2023/04/icon4.png"></noscript></div>
+                                                                <h4><a href="#">Electrical Panel Upgrades</a></h4>
+                                                                <p>Outdated electrical panels can be a major safety hazard. Our team can upgrade your electrical panel to ensure it meets the latest safety standards.</p>
+                                                            </div>
+                                                        </div>
+                                                                                                            <div class="col-lg-6 col-md-6 col-sm-12 single-column">
+                                                            <div class="single-item p_relative d_block">
+                                                                <div class="icon-box"><img width="896" height="322" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20896%20322'%3E%3C/svg%3E" data-lazy-src="https://vastvoltelectrical.com.au/wp-content/uploads/2023/04/electric-wiring-dule.png"><noscript><img width="896" height="322" src="https://vastvoltelectrical.com.au/wp-content/uploads/2023/04/electric-wiring-dule.png"></noscript></div>
+                                                                <h4><a href="#">Electrical Wiring Upgrades</a></h4>
+                                                                <p>Faulty wiring can cause electrical fires and other hazards. Our team can upgrade your electrical wiring to ensure it meets the latest safety standards.</p>
+                                                            </div>
+                                                        </div>
+                                                                                                            <div class="col-lg-6 col-md-6 col-sm-12 single-column">
+                                                            <div class="single-item p_relative d_block">
+                                                                <div class="icon-box"><img width="370" height="117" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20370%20117'%3E%3C/svg%3E" data-lazy-src="https://vastvoltelectrical.com.au/wp-content/uploads/2023/04/bulb_icon-new.png"><noscript><img width="370" height="117" src="https://vastvoltelectrical.com.au/wp-content/uploads/2023/04/bulb_icon-new.png"></noscript></div>
+                                                                <h4><a href="#">Electrical Fixture Upgrades</a></h4>
+                                                                <p>Outdated electrical fixtures can be a major safety hazard. Our team can upgrade your electrical fixtures to ensure they meet the latest safety standards </p>
+                                                            </div>
+                                                        </div>
+                                                                                                            <div class="col-lg-6 col-md-6 col-sm-12 single-column">
+                                                            <div class="single-item p_relative d_block">
+                                                                <div class="icon-box"><img width="370" height="117" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20370%20117'%3E%3C/svg%3E" data-lazy-src="https://vastvoltelectrical.com.au/wp-content/uploads/2023/04/icon5.png"><noscript><img width="370" height="117" src="https://vastvoltelectrical.com.au/wp-content/uploads/2023/04/icon5.png"></noscript></div>
+                                                                <h4><a href="#">Electrical Maintenance</a></h4>
+                                                                <p>In-Home Electrical repairs and installations on demand</p>
+                                                            </div>
+                                                        </div>
+                                                      
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-lg-4 col-md-12 col-sm-12 image-column">
+                                        <div class="image_block_two">
+                                            <div class="image-box p_relative d_block mt_8">
+                                                <figure class="image p_relative d_block">
+                                                    <img width="370" height="500" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20370%20500'%3E%3C/svg%3E" data-lazy-src="https://vastvoltelectrical.com.au/wp-content/uploads/2023/04/ElectricalReportBy_VastVoltElectrical_VVE.png"><noscript><img width="370" height="500" src="https://vastvoltelectrical.com.au/wp-content/uploads/2023/04/ElectricalReportBy_VastVoltElectrical_VVE.png"></noscript>
+                                                </figure>
+                                                <div class="icon-box"><img width="191" height="297" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20191%20297'%3E%3C/svg%3E" data-lazy-src="https://vastvoltelectrical.com.au/wp-content/uploads/2023/04/domestic-service-icon.png"><noscript><img width="191" height="297" src="https://vastvoltelectrical.com.au/wp-content/uploads/2023/04/domestic-service-icon.png"></noscript></div>
+                                            </div>
+                                        </div>
+                                         <div class="image_block_two">
+                                            <div class="image-box p_relative d_block mt_8">
+                                                <figure class="image p_relative d_block">
+                                                    <img src="">
+                                                </figure>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>                      
+                         
+                            </div>
+                        </div>
+
+                        <div class="tab" id="tab-2">
+                            <div class="inner-box">
+                                <div class="content_block_two">
+                                    <div class="content-box p_relative d_block">
+                                        <div class="row clearfix">
+                                            <div class="col-lg-4 col-md-12 col-sm-12 text-column">
+                                                 
+                                                    <div class="text p_relative d_block">
+                                                        <h3>Electrical Safety + Certificates</h3>
+                                                        <p><strong>Electrical safety hazards</strong> can cause significant damage and even lead to serious injuries or fatalities. Many homes and businesses are at risk due to outdated electrical systems and faulty wiring</p>
+                                                        <p><strong>You may not be aware of the potential dangers that lurk within your electrical system</strong>. Faulty wiring, outdated electrical panels, and fixtures can all pose significant safety hazards. Without regular inspections and upgrades, your home or business could be at risk of electrical fires, electrocution, and other serious hazards.</p>
+                                                        <p><strong>Don't wait!</strong>We offer comprehensive electrical safety inspections and services to help you protect your home or business. Our team of expert electricians will thoroughly inspect your electrical system to identify any potential hazards and recommend the necessary repairs to ensure your safety.<br><br> We offer a range of services, including electrical panel and wiring upgrades, fixture upgrades, and more.</p>
+                                                    </div>
+                                                    
+                                            </div>
+                                            <div class="col-lg-8 col-md-12 col-sm-12 inner-column">
+                                                <div class="inner-content">
+                                                    <div class="row clearfix">
+                                                                                                                    <div class="col-lg-6 col-md-6 col-sm-12 single-column">
+                                                                <div class="single-item p_relative d_block">
+                                                                    <div class="icon-box"><img width="841" height="278" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20841%20278'%3E%3C/svg%3E" data-lazy-src="https://vastvoltelectrical.com.au/wp-content/uploads/2023/04/visual-inspection-dule.png"><noscript><img width="841" height="278" src="https://vastvoltelectrical.com.au/wp-content/uploads/2023/04/visual-inspection-dule.png"></noscript></div>
+                                                                    <h4><a href="#">Visual Inspection</a></h4>
+                                                                    <p>A visual inspection of the electrical system is performed to identify any signs of damage, corrosion, or wear and tear.</p>
+                                                                </div>
+                                                            </div>
+                                                                                                                    <div class="col-lg-6 col-md-6 col-sm-12 single-column">
+                                                                <div class="single-item p_relative d_block">
+                                                                    <div class="icon-box"><img width="841" height="278" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20841%20278'%3E%3C/svg%3E" data-lazy-src="https://vastvoltelectrical.com.au/wp-content/uploads/2023/04/visual-inspection-dule.png"><noscript><img width="841" height="278" src="https://vastvoltelectrical.com.au/wp-content/uploads/2023/04/visual-inspection-dule.png"></noscript></div>
+                                                                    <h4><a href="#">Electrical Panel & Load Inspection + Tests</a></h4>
+                                                                    <p>The electrical panel is inspected to ensure that it is functioning correctly and that there are no signs of damage, wear and tear, or overheating. The electrical load is tested to ensure that the electrical system is not overloaded and that there is no risk of overheating.</p>
+                                                                </div>
+                                                            </div>
+                                                                                                                    <div class="col-lg-6 col-md-6 col-sm-12 single-column">
+                                                                <div class="single-item p_relative d_block">
+                                                                    <div class="icon-box"><img width="841" height="278" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20841%20278'%3E%3C/svg%3E" data-lazy-src="https://vastvoltelectrical.com.au/wp-content/uploads/2023/04/visual-inspection-dule.png"><noscript><img width="841" height="278" src="https://vastvoltelectrical.com.au/wp-content/uploads/2023/04/visual-inspection-dule.png"></noscript></div>
+                                                                    <h4><a href="#">Circuit Breaker Tests</a></h4>
+                                                                    <p>Circuit breakers are tested to ensure that they are functioning correctly and that they trip when required.</p>
+                                                                </div>
+                                                            </div>
+                                                                                                                    <div class="col-lg-6 col-md-6 col-sm-12 single-column">
+                                                                <div class="single-item p_relative d_block">
+                                                                    <div class="icon-box"><img width="841" height="278" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20841%20278'%3E%3C/svg%3E" data-lazy-src="https://vastvoltelectrical.com.au/wp-content/uploads/2023/04/visual-inspection-dule.png"><noscript><img width="841" height="278" src="https://vastvoltelectrical.com.au/wp-content/uploads/2023/04/visual-inspection-dule.png"></noscript></div>
+                                                                    <h4><a href="#">Electrical Wiring + insulation Tests</a></h4>
+                                                                    <p>The electrical wiring is inspected to ensure that it is in good condition and that there are no signs of damage, corrosion, or wear and tear. <br> Insulation resistance testing is performed to ensure that the electrical insulation is in good condition and that there are no safety hazards.</p>
+                                                                </div>
+                                                            </div>
+                                                                                                                    <div class="col-lg-6 col-md-6 col-sm-12 single-column">
+                                                                <div class="single-item p_relative d_block">
+                                                                    <div class="icon-box"><img width="841" height="278" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20841%20278'%3E%3C/svg%3E" data-lazy-src="https://vastvoltelectrical.com.au/wp-content/uploads/2023/04/visual-inspection-dule.png"><noscript><img width="841" height="278" src="https://vastvoltelectrical.com.au/wp-content/uploads/2023/04/visual-inspection-dule.png"></noscript></div>
+                                                                    <h4><a href="#">Electrical Outlet Testing</a></h4>
+                                                                    <p>Electrical outlets are tested to ensure that they are correctly wired and that there are no loose connections or other safety hazards.</p>
+                                                                </div>
+                                                            </div>
+                                                                                                                    <div class="col-lg-6 col-md-6 col-sm-12 single-column">
+                                                                <div class="single-item p_relative d_block">
+                                                                    <div class="icon-box"><img width="841" height="278" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20841%20278'%3E%3C/svg%3E" data-lazy-src="https://vastvoltelectrical.com.au/wp-content/uploads/2023/04/visual-inspection-dule.png"><noscript><img width="841" height="278" src="https://vastvoltelectrical.com.au/wp-content/uploads/2023/04/visual-inspection-dule.png"></noscript></div>
+                                                                    <h4><a href="#">Earth Fault Loop Impedance Testing</a></h4>
+                                                                    <p>Earth fault loop impedance testing is performed to ensure that the electrical system has a safe and effective earth connection.</p>
+                                                                </div>
+                                                            </div>
+                                                                                                                     
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="tab" id="tab-3">
+                            <div class="inner-box">
+                                <div class="row clearfix">
+                                    <div class="col-lg-4 col-md-12 col-sm-12 image-column">
+                                        <div class="image_block_three">
+                                            <div class="image-box p_relative d_block">
+                                                <figure class="image p_relative d_block"><img width="370" height="500" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20370%20500'%3E%3C/svg%3E" data-lazy-src="https://vastvoltelectrical.com.au/wp-content/uploads/2023/04/ElectricalReportBy_VastVoltElectrical_VVE.png"><noscript><img width="370" height="500" src="https://vastvoltelectrical.com.au/wp-content/uploads/2023/04/ElectricalReportBy_VastVoltElectrical_VVE.png"></noscript></figure>
+                                                <div class="text">
+                                                    <h5><i class="icon-45"></i>Experts Keeping You Safe</h5>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-8 col-md-12 col-sm-12 content-column">
+                                        <div class="content_block_three">
+                                            <div class="content-box">
+                                                 
+                                                    <div class="text">
+                                                        <h3>Electrical Safety Reports</h3>
+                                                        <p><strong>The Electrical Safety Inspection Report</strong> is the most important document generated during an electrical safety inspection. It provides a detailed analysis of the electrical system, including any safety hazards, faults, or areas of concern. It also includes recommendations for repairs and upgrades to improve safety.</p>
+                                                        <p><strong>Electrical Testing Report</strong> This report provides information on the condition of electrical components, such as circuits, breakers, and fuses. It may include measurements of voltage, current, and resistance, and can help identify issues that may lead to safety hazards.</p>
+                                                        <p><strong>Don't wait until it's too late!</strong> Take action now to protect your property and ensure your safety. Contact us today to schedule an electrical safety inspection or to learn more about our services. With our help, you can have a safe and reliable electrical system that meets the latest safety standards.</p>
+                                                    </div>
+                                                   
+                                                <div class="list-box clearfix">
+                                                    <ul class="list-style-one clearfix">
+                                                                                                                    <li>Electrical wiring and connections checks</li>
+                                                                                                                    <li>Verification of grounding and bonding systems</li>
+                                                                                                                    <li>Functioning of electrical switches, outlets, and lighting fixtures</li>
+                                                                                                                    <li>Electrical hazards or risks Assessment</li>
+                                                                                                                    <li>Compliance Checks</li>
+                                                                                                                    <li>Upgrades, repairs & systems Recommendations</li>
+                                                             
+                                                    </ul>
+                                                    <ul class="list-style-one clearfix">
+                                                                                                                    <li>RCD Tests and Checks</li>
+                                                                                                                    <li>Load Analysis</li>
+                                                                                                                    <li>Appliance & Outlet Testings</li>
+                                                                                                                    <li>IR (Insulation Resistance) Testing</li>
+                                                                                                                    <li>Polarilty + Continuity Testing</li>
+                                                                                                                    <li>Switchboard checks + Testing</li>
+                                                             
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section> 
+
+   
+        
+<!-- service-section end -->
+
+
+<!-- chooseus-section -->
+
+ 
+        <section class="chooseus-section p_relative">
+            <div data-bg="http://../wp-content/uploads/2023/04/why-choose-us-shape-5.png" class="pattern-layer rocket-lazyload" style=""></div>
+            <div class="bg-layer"></div>
+            <div class="outer-container p_relative">
+                <div class="row clearfix">
+                    <div class="col-lg-6 col-md-12 col-sm-12 content-column">
+                        <div class="content_block_four">
+                            <div class="content-box">
+                                <div class="sec-title p_relative mb_30">
+                                    <h5 class="d_block fs_17 lh_25 fw_medium mb_9">Why Choose Us</h5>
+                                    <h2 class="d_block fs_40 lh_50 fw_bold mb_25">You'll be glad that you did!</h2>
+                                    <p>Fast, effecient and keeping your family safe. Our team of sparkies are dedicated to providing top-tier solutions that meet your needs and exceed your expectations. With years of experience and a commitment to safety, quality, and affordability, we are confident that we are the right fit for all your electrical needs.</p>
+                                </div>
+
+                                <div class="inner-box centred p_relative d_block chooseus_desktop">
+                                    <div class="row clearfix">
+                                                                                    <div class="col-xxl-4 col-xl-4 col-lg-6 col-md-6 col-sm-12 single-column">
+                                                <div class="single-item">
+                                                    <div class="icon-box p_relative d_iblock w_80 h_80 lh_80 fs_40 centred b_radius_50 tran_5">
+                                                        <img width="293" height="202" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20293%20202'%3E%3C/svg%3E" alt="icon" data-lazy-src="https://vastvoltelectrical.com.au/wp-content/uploads/2023/04/competitively-priced-year-round.png"><noscript><img width="293" height="202" src="https://vastvoltelectrical.com.au/wp-content/uploads/2023/04/competitively-priced-year-round.png" alt="icon"></noscript>
+                                                    </div>
+                                                    <h5 class="fs_18 fw_sbold">Competitively Priced Year Round</h5>
+                                                </div>
+                                            </div>
+                                                                                     <div class="col-xxl-4 col-xl-4 col-lg-6 col-md-6 col-sm-12 single-column">
+                                                <div class="single-item">
+                                                    <div class="icon-box p_relative d_iblock w_80 h_80 lh_80 fs_40 centred b_radius_50 tran_5">
+                                                        <img width="280" height="300" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20280%20300'%3E%3C/svg%3E" alt="icon" data-lazy-src="https://vastvoltelectrical.com.au/wp-content/uploads/2023/04/experienced-knowledgeable.png"><noscript><img width="280" height="300" src="https://vastvoltelectrical.com.au/wp-content/uploads/2023/04/experienced-knowledgeable.png" alt="icon"></noscript>
+                                                    </div>
+                                                    <h5 class="fs_18 fw_sbold">Experienced & Knowledgeable</h5>
+                                                </div>
+                                            </div>
+                                                                                     <div class="col-xxl-4 col-xl-4 col-lg-6 col-md-6 col-sm-12 single-column">
+                                                <div class="single-item">
+                                                    <div class="icon-box p_relative d_iblock w_80 h_80 lh_80 fs_40 centred b_radius_50 tran_5">
+                                                        <img width="185" height="296" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20185%20296'%3E%3C/svg%3E" alt="icon" data-lazy-src="https://vastvoltelectrical.com.au/wp-content/uploads/2023/04/committed-to-your-safety.png"><noscript><img width="185" height="296" src="https://vastvoltelectrical.com.au/wp-content/uploads/2023/04/committed-to-your-safety.png" alt="icon"></noscript>
+                                                    </div>
+                                                    <h5 class="fs_18 fw_sbold">Committed To Your Safety</h5>
+                                                </div>
+                                            </div>
+                                                                                     <div class="col-xxl-4 col-xl-4 col-lg-6 col-md-6 col-sm-12 single-column">
+                                                <div class="single-item">
+                                                    <div class="icon-box p_relative d_iblock w_80 h_80 lh_80 fs_40 centred b_radius_50 tran_5">
+                                                        <img width="297" height="296" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20297%20296'%3E%3C/svg%3E" alt="icon" data-lazy-src="https://vastvoltelectrical.com.au/wp-content/uploads/2023/04/supporting-your-home-buisness.png"><noscript><img width="297" height="296" src="https://vastvoltelectrical.com.au/wp-content/uploads/2023/04/supporting-your-home-buisness.png" alt="icon"></noscript>
+                                                    </div>
+                                                    <h5 class="fs_18 fw_sbold">Supporting Your Home & Buisness</h5>
+                                                </div>
+                                            </div>
+                                                                                     <div class="col-xxl-4 col-xl-4 col-lg-6 col-md-6 col-sm-12 single-column">
+                                                <div class="single-item">
+                                                    <div class="icon-box p_relative d_iblock w_80 h_80 lh_80 fs_40 centred b_radius_50 tran_5">
+                                                        <img width="298" height="298" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20298%20298'%3E%3C/svg%3E" alt="icon" data-lazy-src="https://vastvoltelectrical.com.au/wp-content/uploads/2023/04/focused-on-your-piece-of-mind-sec.png"><noscript><img width="298" height="298" src="https://vastvoltelectrical.com.au/wp-content/uploads/2023/04/focused-on-your-piece-of-mind-sec.png" alt="icon"></noscript>
+                                                    </div>
+                                                    <h5 class="fs_18 fw_sbold">Focused On Your Piece Of Mind</h5>
+                                                </div>
+                                            </div>
+                                                                                     <div class="col-xxl-4 col-xl-4 col-lg-6 col-md-6 col-sm-12 single-column">
+                                                <div class="single-item">
+                                                    <div class="icon-box p_relative d_iblock w_80 h_80 lh_80 fs_40 centred b_radius_50 tran_5">
+                                                        <img width="247" height="297" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20247%20297'%3E%3C/svg%3E" alt="icon" data-lazy-src="https://vastvoltelectrical.com.au/wp-content/uploads/2023/04/licensed-registered-electrical-contractors.png"><noscript><img width="247" height="297" src="https://vastvoltelectrical.com.au/wp-content/uploads/2023/04/licensed-registered-electrical-contractors.png" alt="icon"></noscript>
+                                                    </div>
+                                                    <h5 class="fs_18 fw_sbold">Licensed & Registered Electrical Contractors</h5>
+                                                </div>
+                                            </div>
+                                                                              </div>
+                                </div>
+
+                                <div class="inner-box centred p_relative d_none chooseus_mobile">
+                                    <div class="row clearfix">
+                                        <div class="five-item-carousels owl-carousel owl-theme owl-nav-none owl-dots-none">
+                                                                                            <div class="col-lg-12 col-md-12 col-sm-12 single-column">
+                                                    <div class="single-item">
+                                                        <div class="icon-box p_relative d_iblock w_80 h_80 lh_80 fs_40 centred b_radius_50 tran_5">
+                                                            <img width="293" height="202" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20293%20202'%3E%3C/svg%3E" alt="icon" data-lazy-src="https://vastvoltelectrical.com.au/wp-content/uploads/2023/04/competitively-priced-year-round.png"><noscript><img width="293" height="202" src="https://vastvoltelectrical.com.au/wp-content/uploads/2023/04/competitively-priced-year-round.png" alt="icon"></noscript>
+                                                        </div>
+                                                        <h5 class="fs_18 fw_sbold">Competitively Priced Year Round</h5>
+                                                    </div>
+                                                </div>
+                                                                                             <div class="col-lg-12 col-md-12 col-sm-12 single-column">
+                                                    <div class="single-item">
+                                                        <div class="icon-box p_relative d_iblock w_80 h_80 lh_80 fs_40 centred b_radius_50 tran_5">
+                                                            <img width="280" height="300" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20280%20300'%3E%3C/svg%3E" alt="icon" data-lazy-src="https://vastvoltelectrical.com.au/wp-content/uploads/2023/04/experienced-knowledgeable.png"><noscript><img width="280" height="300" src="https://vastvoltelectrical.com.au/wp-content/uploads/2023/04/experienced-knowledgeable.png" alt="icon"></noscript>
+                                                        </div>
+                                                        <h5 class="fs_18 fw_sbold">Experienced & Knowledgeable</h5>
+                                                    </div>
+                                                </div>
+                                                                                             <div class="col-lg-12 col-md-12 col-sm-12 single-column">
+                                                    <div class="single-item">
+                                                        <div class="icon-box p_relative d_iblock w_80 h_80 lh_80 fs_40 centred b_radius_50 tran_5">
+                                                            <img width="185" height="296" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20185%20296'%3E%3C/svg%3E" alt="icon" data-lazy-src="https://vastvoltelectrical.com.au/wp-content/uploads/2023/04/committed-to-your-safety.png"><noscript><img width="185" height="296" src="https://vastvoltelectrical.com.au/wp-content/uploads/2023/04/committed-to-your-safety.png" alt="icon"></noscript>
+                                                        </div>
+                                                        <h5 class="fs_18 fw_sbold">Committed To Your Safety</h5>
+                                                    </div>
+                                                </div>
+                                                                                             <div class="col-lg-12 col-md-12 col-sm-12 single-column">
+                                                    <div class="single-item">
+                                                        <div class="icon-box p_relative d_iblock w_80 h_80 lh_80 fs_40 centred b_radius_50 tran_5">
+                                                            <img width="297" height="296" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20297%20296'%3E%3C/svg%3E" alt="icon" data-lazy-src="https://vastvoltelectrical.com.au/wp-content/uploads/2023/04/supporting-your-home-buisness.png"><noscript><img width="297" height="296" src="https://vastvoltelectrical.com.au/wp-content/uploads/2023/04/supporting-your-home-buisness.png" alt="icon"></noscript>
+                                                        </div>
+                                                        <h5 class="fs_18 fw_sbold">Supporting Your Home & Buisness</h5>
+                                                    </div>
+                                                </div>
+                                                                                             <div class="col-lg-12 col-md-12 col-sm-12 single-column">
+                                                    <div class="single-item">
+                                                        <div class="icon-box p_relative d_iblock w_80 h_80 lh_80 fs_40 centred b_radius_50 tran_5">
+                                                            <img width="298" height="298" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20298%20298'%3E%3C/svg%3E" alt="icon" data-lazy-src="https://vastvoltelectrical.com.au/wp-content/uploads/2023/04/focused-on-your-piece-of-mind-sec.png"><noscript><img width="298" height="298" src="https://vastvoltelectrical.com.au/wp-content/uploads/2023/04/focused-on-your-piece-of-mind-sec.png" alt="icon"></noscript>
+                                                        </div>
+                                                        <h5 class="fs_18 fw_sbold">Focused On Your Piece Of Mind</h5>
+                                                    </div>
+                                                </div>
+                                                                                             <div class="col-lg-12 col-md-12 col-sm-12 single-column">
+                                                    <div class="single-item">
+                                                        <div class="icon-box p_relative d_iblock w_80 h_80 lh_80 fs_40 centred b_radius_50 tran_5">
+                                                            <img width="247" height="297" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20247%20297'%3E%3C/svg%3E" alt="icon" data-lazy-src="https://vastvoltelectrical.com.au/wp-content/uploads/2023/04/licensed-registered-electrical-contractors.png"><noscript><img width="247" height="297" src="https://vastvoltelectrical.com.au/wp-content/uploads/2023/04/licensed-registered-electrical-contractors.png" alt="icon"></noscript>
+                                                        </div>
+                                                        <h5 class="fs_18 fw_sbold">Licensed & Registered Electrical Contractors</h5>
+                                                    </div>
+                                                </div>
+                                                                                      </div>
+                                    </div>
+                                </div>
+
+
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-6 col-md-12 col-sm-12 image-column">
+                        <div class="image_block_four">
+                            <div class="image-box mt_8">
+                                <div class="image-shape">
+                                    <div data-bg="http://../wp-content/uploads/2023/04/glad-shape-6-icon.png" class="shape-1 rocket-lazyload" style=""></div>
+                                    <div data-bg="http://../wp-content/uploads/2023/04/glab-shape-7-icon.png" class="shape-2 rocket-lazyload" style=""></div>
+                                </div>
+                                <div class="row clearfix">
+                                    <div class="col-lg-6 col-md-6 col-sm-12 single-image">
+                                        <figure class="image-1 p_relative d_block">
+                                            <img width="370" height="610" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20370%20610'%3E%3C/svg%3E" alt="" data-lazy-src="https://vastvoltelectrical.com.au/wp-content/uploads/2023/04/why-chooseVVE-1.png"><noscript><img width="370" height="610" src="https://vastvoltelectrical.com.au/wp-content/uploads/2023/04/why-chooseVVE-1.png" alt=""></noscript>
+                                        </figure>
+                                    </div>
+                                    <div class="col-lg-6 col-md-6 col-sm-12 video-column">
+                                        <div class="video-inner p_relative d_block">
+                                            <figure class="image-2 p_relative d_block">
+                                                <img width="370" height="610" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20370%20610'%3E%3C/svg%3E" alt="" data-lazy-src="https://vastvoltelectrical.com.au/wp-content/uploads/2023/04/WhyChooseVVE-2-us.png"><noscript><img width="370" height="610" src="https://vastvoltelectrical.com.au/wp-content/uploads/2023/04/WhyChooseVVE-2-us.png" alt=""></noscript>
+                                            </figure>
+                                            <div class="video-btn">
+                                                <a href="" class="lightbox-image" data-caption="">
+                                                    <i class="fa-solid fa-play"></i>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section> 
+
+   
+
+<!-- chooseus-section end -->
+
+
+<!-- funfact-section -->
+        
+        
+        <section class="funfact-section p_relative centred bg-color-2 funfact_desktop">
+            <div class="auto-container">
+                <div class="inner-container p_relative">
+                    
+                        <div class="counter-block-one wow slideInUp animated" data-wow-delay="100ms" data-wow-duration="1500ms">
+                            <div class="inner-box">
+                                <div class="icon-box p_relative d_block fs_60">
+                                    <img width="60" height="59" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2060%2059'%3E%3C/svg%3E" data-lazy-src="https://vastvoltelectrical.com.au/wp-content/uploads/2023/04/Expertise-icon.png"><noscript><img width="60" height="59" src="https://vastvoltelectrical.com.au/wp-content/uploads/2023/04/Expertise-icon.png"></noscript></div>
+                                <div class="count-outer count-box">
+                                    <span class="count-text" data-speed="1500" data-stop="35">100ms</span>
+                                </div>
+                                <p>Areas of Expertise</p>
+                            </div>
+                        </div>
+                     
+                        <div class="counter-block-one wow slideInUp animated" data-wow-delay="200ms" data-wow-duration="1500ms">
+                            <div class="inner-box">
+                                <div class="icon-box p_relative d_block fs_60">
+                                    <img width="59" height="49" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2059%2049'%3E%3C/svg%3E" data-lazy-src="https://vastvoltelectrical.com.au/wp-content/uploads/2023/04/Suburbs-icon.png"><noscript><img width="59" height="49" src="https://vastvoltelectrical.com.au/wp-content/uploads/2023/04/Suburbs-icon.png"></noscript></div>
+                                <div class="count-outer count-box">
+                                    <span class="count-text" data-speed="1500" data-stop="36">200ms</span>
+                                </div>
+                                <p>Servicing Suburbs</p>
+                            </div>
+                        </div>
+                     
+                        <div class="counter-block-one wow slideInUp animated" data-wow-delay="300ms" data-wow-duration="1500ms">
+                            <div class="inner-box">
+                                <div class="icon-box p_relative d_block fs_60">
+                                    <img width="49" height="60" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2049%2060'%3E%3C/svg%3E" data-lazy-src="https://vastvoltelectrical.com.au/wp-content/uploads/2023/04/experienced-staff.png"><noscript><img width="49" height="60" src="https://vastvoltelectrical.com.au/wp-content/uploads/2023/04/experienced-staff.png"></noscript></div>
+                                <div class="count-outer count-box">
+                                    <span class="count-text" data-speed="1500" data-stop="6">300ms</span>
+                                </div>
+                                <p>Experienced Staff</p>
+                            </div>
+                        </div>
+                     
+                        <div class="counter-block-one wow slideInUp animated" data-wow-delay="400ms" data-wow-duration="1500ms">
+                            <div class="inner-box">
+                                <div class="icon-box p_relative d_block fs_60">
+                                    <img width="38" height="59" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2038%2059'%3E%3C/svg%3E" data-lazy-src="https://vastvoltelectrical.com.au/wp-content/uploads/2023/04/Certifications-icon.png"><noscript><img width="38" height="59" src="https://vastvoltelectrical.com.au/wp-content/uploads/2023/04/Certifications-icon.png"></noscript></div>
+                                <div class="count-outer count-box">
+                                    <span class="count-text" data-speed="1500" data-stop="17">400ms</span>
+                                </div>
+                                <p>Certifications</p>
+                            </div>
+                        </div>
+                                             
+                </div>
+            </div>
+        </section>
+      
+
+<!-- funfact-section -->
+
+<!-- funfact-section mobile -->
+
+        
+        <section class="funfact-section p_relative centred bg-color-2 d_none funfact_mobile">
+            <div class="auto-container">
+                <div class="inner-container p_relative">
+                    <div class="five-item-carousel owl-carousel owl-theme owl-nav-none owl-dots-none">
+                        
+                            <div class="counter-block-one wow slideInUp animated" data-wow-delay="100ms" data-wow-duration="1500ms">
+                                <div class="inner-box">
+                                    <div class="icon-box p_relative d_block fs_60">
+                                        <img width="60" height="59" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2060%2059'%3E%3C/svg%3E" data-lazy-src="https://vastvoltelectrical.com.au/wp-content/uploads/2023/04/Expertise-icon.png"><noscript><img width="60" height="59" src="https://vastvoltelectrical.com.au/wp-content/uploads/2023/04/Expertise-icon.png"></noscript></div>
+                                    <div class="count-outer count-box">
+                                        <span class="count-text" data-speed="1500" data-stop="35">100ms</span>
+                                    </div>
+                                    <p>Areas of Expertise</p>
+                                </div>
+                            </div>
+
+                         
+                            <div class="counter-block-one wow slideInUp animated" data-wow-delay="200ms" data-wow-duration="1500ms">
+                                <div class="inner-box">
+                                    <div class="icon-box p_relative d_block fs_60">
+                                        <img width="59" height="49" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2059%2049'%3E%3C/svg%3E" data-lazy-src="https://vastvoltelectrical.com.au/wp-content/uploads/2023/04/Suburbs-icon.png"><noscript><img width="59" height="49" src="https://vastvoltelectrical.com.au/wp-content/uploads/2023/04/Suburbs-icon.png"></noscript></div>
+                                    <div class="count-outer count-box">
+                                        <span class="count-text" data-speed="1500" data-stop="36">200ms</span>
+                                    </div>
+                                    <p>Servicing Suburbs</p>
+                                </div>
+                            </div>
+
+                         
+                            <div class="counter-block-one wow slideInUp animated" data-wow-delay="300ms" data-wow-duration="1500ms">
+                                <div class="inner-box">
+                                    <div class="icon-box p_relative d_block fs_60">
+                                        <img width="49" height="60" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2049%2060'%3E%3C/svg%3E" data-lazy-src="https://vastvoltelectrical.com.au/wp-content/uploads/2023/04/experienced-staff.png"><noscript><img width="49" height="60" src="https://vastvoltelectrical.com.au/wp-content/uploads/2023/04/experienced-staff.png"></noscript></div>
+                                    <div class="count-outer count-box">
+                                        <span class="count-text" data-speed="1500" data-stop="6">300ms</span>
+                                    </div>
+                                    <p>Experienced Staff</p>
+                                </div>
+                            </div>
+
+                         
+                            <div class="counter-block-one wow slideInUp animated" data-wow-delay="400ms" data-wow-duration="1500ms">
+                                <div class="inner-box">
+                                    <div class="icon-box p_relative d_block fs_60">
+                                        <img width="38" height="59" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2038%2059'%3E%3C/svg%3E" data-lazy-src="https://vastvoltelectrical.com.au/wp-content/uploads/2023/04/Certifications-icon.png"><noscript><img width="38" height="59" src="https://vastvoltelectrical.com.au/wp-content/uploads/2023/04/Certifications-icon.png"></noscript></div>
+                                    <div class="count-outer count-box">
+                                        <span class="count-text" data-speed="1500" data-stop="17">400ms</span>
+                                    </div>
+                                    <p>Certifications</p>
+                                </div>
+                            </div>
+
+                                                     
+                    </div>
+                </div>    
+            </div>
+        </section>
+      
+
+<!-- funfact-section -->
+
+
+<!-- cta-section -->
+
+    <section class="cta-section bg-color-1 p_relative pt_120 pb_120">
+        <div class="pattern-layer">
+            <div data-bg="http://../wp-content/uploads/2023/04/shape-12.png" class="pattern-1 rocket-lazyload" style=""></div>
+            <div data-bg="http://../wp-content/uploads/2023/04/shape-13.png" class="pattern-2 rocket-lazyload" style=""></div>
+           <!--  <div data-bg="http://assets/images/shape/shape-7.png" class="pattern-3 rocket-lazyload" style=""></div>
+            <div data-bg="http://assets/images/shape/shape-7.png" class="pattern-4 rocket-lazyload" style=""></div> -->
+        </div>
+        <figure class="image-layer"><br>
+        <img width="638" height="680" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20638%20680'%3E%3C/svg%3E" data-lazy-src="https://vastvoltelectrical.com.au/wp-content/uploads/2023/04/up-gradey-our-switch-board-VVE.png"><noscript><img width="638" height="680" src="https://vastvoltelectrical.com.au/wp-content/uploads/2023/04/up-gradey-our-switch-board-VVE.png"></noscript></figure><br><br>
+        <div class="auto-container">
+            <div class="row clearfix">
+                <div class="col-lg-6 col-md-12 col-sm-12 content-column">
+                    <div class="content_block_six">
+                        <div class="content-box p_relative d_block mr_20">
+                            <div class="sec-title p_relative mb_13">
+                                <h5 class="d_block fs_17 lh_25 fw_medium mb_13">Does your switchboard need an upgrade?</h5>
+                                <h2 class="d_block fs_40 lh_50 fw_bold">Test, Check and Upgrade!</h2>
+                            </div>
+                            <div class="text">
+                                <p>Is your electrical system outdated or in need of an upgrade? Let one of our licensed electricians help you upgrade your electrical system for improved safety, efficiency, and performance.</p>
+                            </div>
+                            <div class="support-box p_relative d_block">
+                                <div class="icon-box p_absolute l_0 t_0 w_70 h_70 lh_70 b_radius_50 fs_40"><img width="328" height="232" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20328%20232'%3E%3C/svg%3E" data-lazy-src="https://vastvoltelectrical.com.au/wp-content/uploads/2023/04/swichboard-icon.png"><noscript><img width="328" height="232" src="https://vastvoltelectrical.com.au/wp-content/uploads/2023/04/swichboard-icon.png"></noscript></div>
+                                <h5>Speak To Us Today</h5>
+                                <h3><a href="tel:1300 870 115">1300 870 115</a></h3>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+<!-- cta-section end -->
+
+
+<!-- news-section -->
+
+    <section class="news-section p_relative sec-pad">
+        <div class="auto-container">
+            <div class="sec-title p_relative mb_50 centred">
+               <h5 class="d_block fs_17 lh_25 fw_medium mb_9">LATEST NEWS</h5>
+                    <h2 class="d_block fs_40 lh_50 fw_bold">Stay Updated With <br />Industry News</h2>
+            </div>
+            <div class="row clearfix">
+
+                       
+
+                <div class="col-lg-4 col-md-6 col-sm-12 news-block">
+                    <div class="news-block-one wow fadeInUp animated" data-wow-delay="00ms" data-wow-duration="1500ms">
+                        <div class="inner-box p_relative d_block">
+                            <figure class="image-box"><a href="https://vastvoltelectrical.com.au/a-comprehensive-guide-to-electric-car-charging-station-installation/"><img width="770" height="400" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20770%20400'%3E%3C/svg%3E" class="attachment-full size-full wp-post-image" alt="EV Charger installer, how long does it take to charge an electric car" decoding="async" data-lazy-srcset="https://vastvoltelectrical.com.au/wp-content/uploads/2023/04/evblog_2-blog.png 770w, https://vastvoltelectrical.com.au/wp-content/uploads/2023/04/evblog_2-blog-300x156.png 300w, https://vastvoltelectrical.com.au/wp-content/uploads/2023/04/evblog_2-blog-768x399.png 768w" data-lazy-sizes="(max-width: 770px) 100vw, 770px" style="width:100%;height:51.95%;max-width:770px;" data-lazy-src="https://vastvoltelectrical.com.au/wp-content/uploads/2023/04/evblog_2-blog.png" /><noscript><img width="770" height="400" src="https://vastvoltelectrical.com.au/wp-content/uploads/2023/04/evblog_2-blog.png" class="attachment-full size-full wp-post-image" alt="EV Charger installer, how long does it take to charge an electric car" decoding="async" srcset="https://vastvoltelectrical.com.au/wp-content/uploads/2023/04/evblog_2-blog.png 770w, https://vastvoltelectrical.com.au/wp-content/uploads/2023/04/evblog_2-blog-300x156.png 300w, https://vastvoltelectrical.com.au/wp-content/uploads/2023/04/evblog_2-blog-768x399.png 768w" sizes="(max-width: 770px) 100vw, 770px" style="width:100%;height:51.95%;max-width:770px;" /></noscript></a></figure>
+                            <div class="lower-content p_relative d_block">
+                                <h3><a href="https://vastvoltelectrical.com.au/a-comprehensive-guide-to-electric-car-charging-station-installation/">A Comprehensive Guide to Electric Car Charging Station Installation</a></h3>
+                                <ul class="post-info clearfix">
+                                    <li><i class="icon-42"></i>April 27, 2023</li>
+                                    <li><i class="icon-43"></i><a href="javascript:void(0)">Host_vastvolt</a></li>
+                                </ul>
+                               <div class="lexpt"><p>By understanding the different types of charging stations and hiring a qualified professional, you can&#8230;..</p>
+</div>
+                                <div class="link"><a href="https://vastvoltelectrical.com.au/a-comprehensive-guide-to-electric-car-charging-station-installation/">Read more<i class="icon-7"></i></a></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                           
+
+                <div class="col-lg-4 col-md-6 col-sm-12 news-block">
+                    <div class="news-block-one wow fadeInUp animated" data-wow-delay="00ms" data-wow-duration="1500ms">
+                        <div class="inner-box p_relative d_block">
+                            <figure class="image-box"><a href="https://vastvoltelectrical.com.au/ensuring-safe-and-efficient-electrical-appliance-installations/"><img width="770" height="400" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20770%20400'%3E%3C/svg%3E" class="attachment-full size-full wp-post-image" alt="Electrical Appliance Installations" decoding="async" data-lazy-srcset="https://vastvoltelectrical.com.au/wp-content/uploads/2023/04/applice-install-main-blog.png 770w, https://vastvoltelectrical.com.au/wp-content/uploads/2023/04/applice-install-main-blog-300x156.png 300w, https://vastvoltelectrical.com.au/wp-content/uploads/2023/04/applice-install-main-blog-768x399.png 768w" data-lazy-sizes="(max-width: 770px) 100vw, 770px" style="width:100%;height:51.95%;max-width:770px;" data-lazy-src="https://vastvoltelectrical.com.au/wp-content/uploads/2023/04/applice-install-main-blog.png" /><noscript><img width="770" height="400" src="https://vastvoltelectrical.com.au/wp-content/uploads/2023/04/applice-install-main-blog.png" class="attachment-full size-full wp-post-image" alt="Electrical Appliance Installations" decoding="async" srcset="https://vastvoltelectrical.com.au/wp-content/uploads/2023/04/applice-install-main-blog.png 770w, https://vastvoltelectrical.com.au/wp-content/uploads/2023/04/applice-install-main-blog-300x156.png 300w, https://vastvoltelectrical.com.au/wp-content/uploads/2023/04/applice-install-main-blog-768x399.png 768w" sizes="(max-width: 770px) 100vw, 770px" style="width:100%;height:51.95%;max-width:770px;" /></noscript></a></figure>
+                            <div class="lower-content p_relative d_block">
+                                <h3><a href="https://vastvoltelectrical.com.au/ensuring-safe-and-efficient-electrical-appliance-installations/">Ensuring Safe and Efficient Electrical Appliance Installations</a></h3>
+                                <ul class="post-info clearfix">
+                                    <li><i class="icon-42"></i>April 27, 2023</li>
+                                    <li><i class="icon-43"></i><a href="javascript:void(0)">Host_vastvolt</a></li>
+                                </ul>
+                               <div class="lexpt"><p>Electrical appliance installations can save you time, ensure safety, and provide peace of mind. By taking&#8230;.</p>
+</div>
+                                <div class="link"><a href="https://vastvoltelectrical.com.au/ensuring-safe-and-efficient-electrical-appliance-installations/">Read more<i class="icon-7"></i></a></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                           
+
+                <div class="col-lg-4 col-md-6 col-sm-12 news-block">
+                    <div class="news-block-one wow fadeInUp animated" data-wow-delay="00ms" data-wow-duration="1500ms">
+                        <div class="inner-box p_relative d_block">
+                            <figure class="image-box"><a href="https://vastvoltelectrical.com.au/the-importance-of-recycling-electrical-appliances-and-where-to-do-it/"><img width="770" height="400" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20770%20400'%3E%3C/svg%3E" class="attachment-full size-full wp-post-image" alt="Recycling Electrical Appliances" decoding="async" data-lazy-srcset="https://vastvoltelectrical.com.au/wp-content/uploads/2023/04/AppliceRecycleMain.png 770w, https://vastvoltelectrical.com.au/wp-content/uploads/2023/04/AppliceRecycleMain-300x156.png 300w, https://vastvoltelectrical.com.au/wp-content/uploads/2023/04/AppliceRecycleMain-768x399.png 768w" data-lazy-sizes="(max-width: 770px) 100vw, 770px" style="width:100%;height:51.95%;max-width:770px;" data-lazy-src="https://vastvoltelectrical.com.au/wp-content/uploads/2023/04/AppliceRecycleMain.png" /><noscript><img width="770" height="400" src="https://vastvoltelectrical.com.au/wp-content/uploads/2023/04/AppliceRecycleMain.png" class="attachment-full size-full wp-post-image" alt="Recycling Electrical Appliances" decoding="async" srcset="https://vastvoltelectrical.com.au/wp-content/uploads/2023/04/AppliceRecycleMain.png 770w, https://vastvoltelectrical.com.au/wp-content/uploads/2023/04/AppliceRecycleMain-300x156.png 300w, https://vastvoltelectrical.com.au/wp-content/uploads/2023/04/AppliceRecycleMain-768x399.png 768w" sizes="(max-width: 770px) 100vw, 770px" style="width:100%;height:51.95%;max-width:770px;" /></noscript></a></figure>
+                            <div class="lower-content p_relative d_block">
+                                <h3><a href="https://vastvoltelectrical.com.au/the-importance-of-recycling-electrical-appliances-and-where-to-do-it/">The Importance of Recycling Electrical Appliances and Where to Do It</a></h3>
+                                <ul class="post-info clearfix">
+                                    <li><i class="icon-42"></i>April 27, 2023</li>
+                                    <li><i class="icon-43"></i><a href="javascript:void(0)">Host_vastvolt</a></li>
+                                </ul>
+                               <div class="lexpt"><p>In this article, we will explore the significance of recycling electrical appliances and provide some resources for finding recycling locations near you.</p>
+</div>
+                                <div class="link"><a href="https://vastvoltelectrical.com.au/the-importance-of-recycling-electrical-appliances-and-where-to-do-it/">Read more<i class="icon-7"></i></a></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                    
+            </div>
+        </div>
+    </section>  
+
+<!-- news-section end -->
+
+        <!-- subscribe-section -->
+
+        <section class="subscribe-section p_relative">
+            <div class="auto-container">
+                <div class="inner-container">
+                    <div class="row align-items-center clearfix">
+                        <div class="col-lg-6 col-md-12 col-sm-12 text-column">
+                            <div class="text p_relative d_block">
+                                <h2>12% off when you book direct.</h2>
+                            </div>
+                        </div>
+                        <div class="col-lg-6 col-md-12 col-sm-12 form-column">
+                            <div class="form-inner p_relative d_block">
+
+                                <?php//  echo do_shortcode(' [newsletter_form]'); ?>
+
+                                 <form  method="post">
+                                    <div class="form-group">
+                                        <input type="email" name="email" placeholder="enter your email to recieve 12% off" required="">
+                                        <button type="submit">Give me 12% OFF<i class="fa fa-angle-right"></i></button>
+                                    </div>
+                                </form> 
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    <!-- subscribe-section end -->
+
+    <!--  -->
+
+			</main><!-- #main -->
+		</div><!-- #primary -->
+	</div><!-- #content -->
+
+	   <footer id="site-footer" role="contentinfo" class="main-footer p_relative ">
+            <div class="footer-top">
+                <div class="auto-container">
+                    <div class="row clearfix">
+                        <div class="col-lg-4 col-md-6 col-sm-12 footer-column">
+                            <div class="footer-widget logo-widget">
+                                 <div class="widget widget_media_image"><div class="widget-content"><a href="https://vastvoltelectrical.com.au/"><img width="1024" height="293" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%201024%20293'%3E%3C/svg%3E" class="image wp-image-32  attachment-full size-full" alt="" decoding="async" style="width:100%;height:28.61%;max-width:1024px;max-width: 100%; height: auto;" data-lazy-srcset="https://vastvoltelectrical.com.au/wp-content/uploads/2023/04/logo_new.png 1024w, https://vastvoltelectrical.com.au/wp-content/uploads/2023/04/logo_new-300x86.png 300w, https://vastvoltelectrical.com.au/wp-content/uploads/2023/04/logo_new-768x220.png 768w" data-lazy-sizes="(max-width: 1024px) 100vw, 1024px" data-lazy-src="https://vastvoltelectrical.com.au/wp-content/uploads/2023/04/logo_new.png" /><noscript><img width="1024" height="293" src="https://vastvoltelectrical.com.au/wp-content/uploads/2023/04/logo_new.png" class="image wp-image-32  attachment-full size-full" alt="" decoding="async" style="width:100%;height:28.61%;max-width:1024px;max-width: 100%; height: auto;" srcset="https://vastvoltelectrical.com.au/wp-content/uploads/2023/04/logo_new.png 1024w, https://vastvoltelectrical.com.au/wp-content/uploads/2023/04/logo_new-300x86.png 300w, https://vastvoltelectrical.com.au/wp-content/uploads/2023/04/logo_new-768x220.png 768w" sizes="(max-width: 1024px) 100vw, 1024px" /></noscript></a></div></div><div class="widget widget_text"><div class="widget-content">			<div class="textwidget"><p><strong>Not sure what electrical services you need?</strong> Get expert advice from our licensed electricians and find the best solution for your electrical needs. Whether you have a question or need a second opinion, we&#8217;re here to help.</p>
+</div>
+		</div></div>                            </div>                                        
+                        </div>
+
+                        <div class="col-lg-3 col-md-6 col-sm-12 footer-column">
+                            <div class="footer-widget links-widget ml_100">
+                                <div class="widget widget_nav_menu"><div class="widget-content"><h3 class="widget-title subheading">Links</h3><nav class="menu-footer-links-container" aria-label="Links"><ul id="menu-footer-links" class="menu"><li id="menu-item-76" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-76"><a href="https://vastvoltelectrical.com.au/reliable-electricians-servicing-melbourne-and-country-victoria-safety-first/">About VVE</a></li>
+<li id="menu-item-77" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-77"><a href="https://vastvoltelectrical.com.au/never-be-let-down-by-your-sparky-again/contact-us/">Contact Local Electricians</a></li>
+<li id="menu-item-78" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-78"><a href="https://vastvoltelectrical.com.au/services/">ELectrical Services</a></li>
+<li id="menu-item-107" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-107"><a href="https://vastvoltelectrical.com.au/terms-of-service/">Terms Of Service</a></li>
+<li id="menu-item-106" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-privacy-policy menu-item-106"><a rel="privacy-policy" href="https://vastvoltelectrical.com.au/privacy-policy/">Privacy Policy</a></li>
+<li id="menu-item-105" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-105"><a href="https://vastvoltelectrical.com.au/terms-conditions/">Terms  &#038; Conditions</a></li>
+</ul></nav></div></div>  
+                            </div>                         
+                        </div>
+
+                        <div class="col-lg-2 col-md-6 col-sm-12 footer-column">
+                            <div class="widget widget_nav_menu"><div class="widget-content"><h3 class="widget-title subheading">service</h3><nav class="menu-service_menu-container" aria-label="service"><ul id="menu-service_menu" class="menu"><li id="menu-item-108" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-108"><a href="https://vastvoltelectrical.com.au/lighting/">Lighting Design Specialists</a></li>
+<li id="menu-item-110" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-110"><a href="https://vastvoltelectrical.com.au/security-cctv/">Reliable Security Camera Systems</a></li>
+<li id="menu-item-109" class="menu-item menu-item-type-post_type menu-item-object-page current-menu-item page_item page-item-46 current_page_item menu-item-109"><a href="https://vastvoltelectrical.com.au/safety-inspections/" aria-current="page">Electrical Safety Inspections</a></li>
+<li id="menu-item-111" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-111"><a href="https://vastvoltelectrical.com.au/switchboard-upgrades/">Switchboard Upgrades</a></li>
+<li id="menu-item-112" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-112"><a href="https://vastvoltelectrical.com.au/ev-charging-stations/">EV Charging Stations</a></li>
+<li id="menu-item-113" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-113"><a href="https://vastvoltelectrical.com.au/everything-solar/">Everything Solar</a></li>
+</ul></nav></div></div>                           
+                        </div>
+
+                        <div class="col-lg-3 col-md-6 col-sm-12 footer-column">
+                            <div class="widget_text widget widget_custom_html"><div class="widget_text widget-content"><h3 class="widget-title subheading">Contacts</h3><div class="textwidget custom-html-widget">                  <div class="widget-content">
+                                    <ul class="info-list clearfix">
+                                        <li><i class="fas fa-map-marker-alt"></i> Servicing Melbourne, Vic</li>
+                                        <li><i class="fas fa-phone"></i> <a href="tel:1300870115">1300 870 115</a></li>
+                                        <li><i class="fas fa-info-circle"></i> <a href="mailto:info@vastvoltelectrical.com.au">info@vastvoltelectrical.com.au</a></li>
+                                    </ul>
+
+                                </div></div></div></div>                           
+                        </div>
+                    </div>    
+                </div>
+                <!-- .footer-credits -->            
+            </div>
+            <div class="footer-bottom p_relative">
+                <div class="auto-container">
+                    <div class="bottom-inner p_relative">
+                        <div class="copyright">
+                              <div class="widget widget_text"><div class="widget-content">			<div class="textwidget"><p>Vast Volt Electrical  &copy; 2023 All Right Reserved</p>
+</div>
+		</div></div><div class="widget widget_nav_menu"><div class="widget-content"><nav class="menu-footer_bottom-container" aria-label="Menu"><ul id="menu-footer_bottom" class="menu"><li id="menu-item-136" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-136"><a href="https://vastvoltelectrical.com.au/terms-of-service/">Terms Of Service</a></li>
+<li id="menu-item-135" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-privacy-policy menu-item-135"><a rel="privacy-policy" href="https://vastvoltelectrical.com.au/privacy-policy/">Privacy Policy</a></li>
+<li id="menu-item-134" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-134"><a href="https://vastvoltelectrical.com.au/terms-conditions/">Terms  &#038; Conditions</a></li>
+</ul></nav></div></div> 
+                        </div>  
+                    </div>
+                </div>                
+            </div>                       
+
+        </footer>
+
+
+        
+           <!--Scroll to top-->
+    <div class="scroll-to-top">
+    <div>
+        <div class="scroll-top-inner">
+            <div class="scroll-bar">
+                <div class="bar-inner"></div>
+            </div>
+            <div class="scroll-bar-text" style="color: #E00000;">Go To Top</div>
+        </div>
+    </div>
+</div>
+        <!-- Scroll to top end -->
+
+
+        <!-- #site-footer -->
+
+</div><!-- #page -->
+
+<script>document.body.classList.remove("no-js");</script>	<script type="rocketlazyloadscript">
+	if ( -1 !== navigator.userAgent.indexOf( 'MSIE' ) || -1 !== navigator.appVersion.indexOf( 'Trident/' ) ) {
+		document.body.classList.add( 'is-IE' );
+	}
+	</script>
+	<noscript><img height="1" width="1" style="display: none;" src="https://www.facebook.com/tr?id=225537923418473&ev=PageView&noscript=1&cd%5Bpage_title%5D=Electrical+Safety+Inspections&cd%5Bpost_type%5D=page&cd%5Bpost_id%5D=46&cd%5Bplugin%5D=PixelYourSite&cd%5Buser_role%5D=guest&cd%5Bevent_url%5D=vastvoltelectrical.com.au%2Fsafety-inspections%2F" alt=""></noscript>
+<script type="rocketlazyloadscript" src='https://vastvoltelectrical.com.au/wp-content/plugins/getresponse/assets/pagecount.min.js?ver=2.5.4' id='fca_eoi_pagecount_js-js' defer></script>
+<script type="rocketlazyloadscript" data-minify="1" src='https://vastvoltelectrical.com.au/wp-content/cache/min/1/wp-content/plugins/contact-form-7/includes/swv/js/index.js?ver=1689338791' id='swv-js' defer></script>
+<script id='contact-form-7-js-extra'>
+var wpcf7 = {"api":{"root":"https:\/\/vastvoltelectrical.com.au\/wp-json\/","namespace":"contact-form-7\/v1"},"cached":"1"};
+</script>
+<script type="rocketlazyloadscript" data-minify="1" src='https://vastvoltelectrical.com.au/wp-content/cache/min/1/wp-content/plugins/contact-form-7/includes/js/index.js?ver=1689338791' id='contact-form-7-js' defer></script>
+<script type="rocketlazyloadscript" id='twenty-twenty-one-ie11-polyfills-js-after'>
+( Element.prototype.matches && Element.prototype.closest && window.NodeList && NodeList.prototype.forEach ) || document.write( '<script data-minify="1" src="https://vastvoltelectrical.com.au/wp-content/cache/min/1/wp-content/themes/vast-volt/assets/js/polyfills.js?ver=1689338791" defer></scr' + 'ipt>' );
+</script>
+<script type="rocketlazyloadscript" data-minify="1" src='https://vastvoltelectrical.com.au/wp-content/cache/min/1/wp-content/themes/vast-volt/assets/js/primary-navigation.js?ver=1689338791' id='twenty-twenty-one-primary-navigation-script-js' defer></script>
+<script type="rocketlazyloadscript" data-minify="1" src='https://vastvoltelectrical.com.au/wp-content/cache/min/1/wp-content/themes/vast-volt/assets/js/responsive-embeds.js?ver=1689338791' id='twenty-twenty-one-responsive-embeds-script-js' defer></script>
+<script type="rocketlazyloadscript" data-minify="1" defer src='https://vastvoltelectrical.com.au/wp-content/cache/min/1/wp-content/plugins/akismet/_inc/akismet-frontend.js?ver=1689338867' id='akismet-frontend-js'></script>
+		<script type="rocketlazyloadscript">
+		/(trident|msie)/i.test(navigator.userAgent)&&document.getElementById&&window.addEventListener&&window.addEventListener("hashchange",(function(){var t,e=location.hash.substring(1);/^[A-z0-9_-]+$/.test(e)&&(t=document.getElementById(e))&&(/^(?:a|select|input|button|textarea)$/i.test(t.tagName)||(t.tabIndex=-1),t.focus())}),!1);
+		</script>
+		<script>window.lazyLoadOptions={elements_selector:"img[data-lazy-src],.rocket-lazyload,iframe[data-lazy-src]",data_src:"lazy-src",data_srcset:"lazy-srcset",data_sizes:"lazy-sizes",class_loading:"lazyloading",class_loaded:"lazyloaded",threshold:300,callback_loaded:function(element){if(element.tagName==="IFRAME"&&element.dataset.rocketLazyload=="fitvidscompatible"){if(element.classList.contains("lazyloaded")){if(typeof window.jQuery!="undefined"){if(jQuery.fn.fitVids){jQuery(element).parent().fitVids()}}}}}};window.addEventListener('LazyLoad::Initialized',function(e){var lazyLoadInstance=e.detail.instance;if(window.MutationObserver){var observer=new MutationObserver(function(mutations){var image_count=0;var iframe_count=0;var rocketlazy_count=0;mutations.forEach(function(mutation){for(var i=0;i<mutation.addedNodes.length;i++){if(typeof mutation.addedNodes[i].getElementsByTagName!=='function'){continue}
+if(typeof mutation.addedNodes[i].getElementsByClassName!=='function'){continue}
+images=mutation.addedNodes[i].getElementsByTagName('img');is_image=mutation.addedNodes[i].tagName=="IMG";iframes=mutation.addedNodes[i].getElementsByTagName('iframe');is_iframe=mutation.addedNodes[i].tagName=="IFRAME";rocket_lazy=mutation.addedNodes[i].getElementsByClassName('rocket-lazyload');image_count+=images.length;iframe_count+=iframes.length;rocketlazy_count+=rocket_lazy.length;if(is_image){image_count+=1}
+if(is_iframe){iframe_count+=1}}});if(image_count>0||iframe_count>0||rocketlazy_count>0){lazyLoadInstance.update()}});var b=document.getElementsByTagName("body")[0];var config={childList:!0,subtree:!0};observer.observe(b,config)}},!1)</script><script data-no-minify="1" async src="https://vastvoltelectrical.com.au/wp-content/plugins/wp-rocket/assets/js/lazyload/17.5/lazyload.min.js"></script><script>function lazyLoadThumb(e){var t='<img data-lazy-src="https://i.ytimg.com/vi/ID/hqdefault.jpg" alt="" width="480" height="360"><noscript><img src="https://i.ytimg.com/vi/ID/hqdefault.jpg" alt="" width="480" height="360"></noscript>',a='<button class="play" aria-label="play Youtube video"></button>';return t.replace("ID",e)+a}function lazyLoadYoutubeIframe(){var e=document.createElement("iframe"),t="ID?autoplay=1";t+=0===this.parentNode.dataset.query.length?'':'&'+this.parentNode.dataset.query;e.setAttribute("src",t.replace("ID",this.parentNode.dataset.src)),e.setAttribute("frameborder","0"),e.setAttribute("allowfullscreen","1"),e.setAttribute("allow", "accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"),this.parentNode.parentNode.replaceChild(e,this.parentNode)}document.addEventListener("DOMContentLoaded",function(){var e,t,p,a=document.getElementsByClassName("rll-youtube-player");for(t=0;t<a.length;t++)e=document.createElement("div"),e.setAttribute("data-id",a[t].dataset.id),e.setAttribute("data-query", a[t].dataset.query),e.setAttribute("data-src", a[t].dataset.src),e.innerHTML=lazyLoadThumb(a[t].dataset.id),a[t].appendChild(e),p=e.querySelector('.play'),p.onclick=lazyLoadYoutubeIframe});</script>
+
+
+	<!-- script -->
+
+	<script type="rocketlazyloadscript" data-minify="1" src="https://vastvoltelectrical.com.au/wp-content/cache/min/1/wp-content/themes/vast-volt/new-js/jquery.js?ver=1689338791" defer></script>
+	<script type="rocketlazyloadscript" src="https://vastvoltelectrical.com.au/wp-content/themes/vast-volt/new-js/popper.min.js" defer></script>
+	<script type="rocketlazyloadscript" src="https://vastvoltelectrical.com.au/wp-content/themes/vast-volt/new-js/bootstrap.min.js" defer></script>
+	<script type="rocketlazyloadscript" data-minify="1" src="https://vastvoltelectrical.com.au/wp-content/cache/min/1/wp-content/themes/vast-volt/new-js/plugins.js?ver=1689338791" defer></script>
+	<script type="rocketlazyloadscript" data-minify="1" src="https://vastvoltelectrical.com.au/wp-content/cache/min/1/wp-content/themes/vast-volt/new-js/owl.js?ver=1689338791" defer></script>
+	<script type="rocketlazyloadscript" data-minify="1" src="https://vastvoltelectrical.com.au/wp-content/cache/min/1/wp-content/themes/vast-volt/new-js/wow.js?ver=1689338791" defer></script>
+	<script type="rocketlazyloadscript" data-minify="1" src="https://vastvoltelectrical.com.au/wp-content/cache/min/1/wp-content/themes/vast-volt/new-js/validation.js?ver=1689338791" defer></script>
+	<script type="rocketlazyloadscript" data-minify="1" src="https://vastvoltelectrical.com.au/wp-content/cache/min/1/wp-content/themes/vast-volt/new-js/jquery.fancybox.js?ver=1689338791" defer></script>
+	<script type="rocketlazyloadscript" data-minify="1" src="https://vastvoltelectrical.com.au/wp-content/cache/min/1/wp-content/themes/vast-volt/new-js/appear.js?ver=1689338791" defer></script>
+	<script type="rocketlazyloadscript" data-minify="1" src="https://vastvoltelectrical.com.au/wp-content/cache/min/1/wp-content/themes/vast-volt/new-js/scrollbar.js?ver=1689338791" defer></script>
+	<script type="rocketlazyloadscript" data-minify="1" src="https://vastvoltelectrical.com.au/wp-content/cache/min/1/wp-content/themes/vast-volt/new-js/isotope.js?ver=1689338791" defer></script>
+	<script type="rocketlazyloadscript" src="https://vastvoltelectrical.com.au/wp-content/themes/vast-volt/new-js/jquery.nice-select.min.js" defer></script>
+	<script type="rocketlazyloadscript" data-minify="1" src="https://vastvoltelectrical.com.au/wp-content/cache/min/1/wp-content/themes/vast-volt/new-js/jquery-ui.js?ver=1689338791" defer></script>
+	<script type="rocketlazyloadscript" data-minify="1" src="https://vastvoltelectrical.com.au/wp-content/cache/min/1/wp-content/themes/vast-volt/new-js/parallax-scroll.js?ver=1689338791" defer></script>
+	<script type="rocketlazyloadscript" data-minify="1" src="https://vastvoltelectrical.com.au/wp-content/cache/min/1/wp-content/themes/vast-volt/new-js/script.js?ver=1689338791" defer></script>
+
+	<!-- script -->
+
+
+</body>
+
+
+
+</html>
+
+
+
+
+<!-- This website is like a Rocket, isn't it? Performance optimized by WP Rocket. Learn more: https://wp-rocket.me - Debug: cached@1690339944 -->

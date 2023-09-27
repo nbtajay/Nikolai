@@ -1,0 +1,27 @@
+[28-May-2023 00:07:16 UTC] PHP Warning:  Undefined variable $item in /home/vastvolt/public_html/wp-content/plugins/advanced-custom-fields-pro/includes/ajax/class-acf-ajax-check-screen.php on line 60
+[28-May-2023 00:07:16 UTC] PHP Warning:  Trying to access array offset on value of type null in /home/vastvolt/public_html/wp-content/plugins/advanced-custom-fields-pro/includes/ajax/class-acf-ajax-check-screen.php on line 60
+[28-May-2023 00:17:03 UTC] PHP Warning:  Undefined variable $item in /home/vastvolt/public_html/wp-content/plugins/advanced-custom-fields-pro/includes/ajax/class-acf-ajax-check-screen.php on line 60
+[28-May-2023 00:17:03 UTC] PHP Warning:  Trying to access array offset on value of type null in /home/vastvolt/public_html/wp-content/plugins/advanced-custom-fields-pro/includes/ajax/class-acf-ajax-check-screen.php on line 60
+[28-May-2023 00:20:20 UTC] PHP Warning:  Undefined variable $item in /home/vastvolt/public_html/wp-content/plugins/advanced-custom-fields-pro/includes/ajax/class-acf-ajax-check-screen.php on line 60
+[28-May-2023 00:20:20 UTC] PHP Warning:  Trying to access array offset on value of type null in /home/vastvolt/public_html/wp-content/plugins/advanced-custom-fields-pro/includes/ajax/class-acf-ajax-check-screen.php on line 60
+[28-May-2023 00:20:21 UTC] PHP Warning:  Undefined variable $item in /home/vastvolt/public_html/wp-content/plugins/advanced-custom-fields-pro/includes/ajax/class-acf-ajax-check-screen.php on line 60
+[28-May-2023 00:20:21 UTC] PHP Warning:  Trying to access array offset on value of type null in /home/vastvolt/public_html/wp-content/plugins/advanced-custom-fields-pro/includes/ajax/class-acf-ajax-check-screen.php on line 60
+[28-May-2023 00:20:24 UTC] PHP Warning:  Undefined variable $item in /home/vastvolt/public_html/wp-content/plugins/advanced-custom-fields-pro/includes/ajax/class-acf-ajax-check-screen.php on line 60
+[28-May-2023 00:20:24 UTC] PHP Warning:  Trying to access array offset on value of type null in /home/vastvolt/public_html/wp-content/plugins/advanced-custom-fields-pro/includes/ajax/class-acf-ajax-check-screen.php on line 60
+[28-May-2023 05:22:07 UTC] PHP Warning:  Undefined array key "inner_alt_1" in /home/vastvolt/public_html/wp-content/plugins/header-footer/admin/controls.php on line 132
+[28-May-2023 05:22:07 UTC] PHP Warning:  Undefined array key "inner_alt_1" in /home/vastvolt/public_html/wp-content/plugins/header-footer/admin/controls.php on line 135
+[28-May-2023 05:22:07 UTC] PHP Warning:  Undefined array key "inner_alt_1" in /home/vastvolt/public_html/wp-content/plugins/header-footer/admin/controls.php on line 138
+[28-May-2023 05:22:07 UTC] PHP Warning:  Undefined array key "inner_alt_2" in /home/vastvolt/public_html/wp-content/plugins/header-footer/admin/controls.php on line 132
+[28-May-2023 05:22:07 UTC] PHP Warning:  Undefined array key "inner_alt_2" in /home/vastvolt/public_html/wp-content/plugins/header-footer/admin/controls.php on line 135
+[28-May-2023 05:22:07 UTC] PHP Warning:  Undefined array key "inner_alt_2" in /home/vastvolt/public_html/wp-content/plugins/header-footer/admin/controls.php on line 138
+[28-May-2023 05:22:07 UTC] PHP Warning:  Undefined array key "inner_alt_3" in /home/vastvolt/public_html/wp-content/plugins/header-footer/admin/controls.php on line 132
+[28-May-2023 05:22:07 UTC] PHP Warning:  Undefined array key "inner_alt_3" in /home/vastvolt/public_html/wp-content/plugins/header-footer/admin/controls.php on line 135
+[28-May-2023 05:22:07 UTC] PHP Warning:  Undefined array key "inner_alt_3" in /home/vastvolt/public_html/wp-content/plugins/header-footer/admin/controls.php on line 138
+[28-May-2023 05:22:07 UTC] PHP Warning:  Undefined array key "inner_alt_4" in /home/vastvolt/public_html/wp-content/plugins/header-footer/admin/controls.php on line 132
+[28-May-2023 05:22:07 UTC] PHP Warning:  Undefined array key "inner_alt_4" in /home/vastvolt/public_html/wp-content/plugins/header-footer/admin/controls.php on line 135
+[28-May-2023 05:22:07 UTC] PHP Warning:  Undefined array key "inner_alt_4" in /home/vastvolt/public_html/wp-content/plugins/header-footer/admin/controls.php on line 138
+[28-May-2023 05:22:07 UTC] PHP Warning:  Undefined array key "inner_alt_5" in /home/vastvolt/public_html/wp-content/plugins/header-footer/admin/controls.php on line 132
+[28-May-2023 05:22:07 UTC] PHP Warning:  Undefined array key "inner_alt_5" in /home/vastvolt/public_html/wp-content/plugins/header-footer/admin/controls.php on line 135
+[28-May-2023 05:22:07 UTC] PHP Warning:  Undefined array key "inner_alt_5" in /home/vastvolt/public_html/wp-content/plugins/header-footer/admin/controls.php on line 138
+[28-May-2023 05:22:07 UTC] PHP Warning:  Undefined array key "mobile_user_agents_parsed" in /home/vastvolt/public_html/wp-content/plugins/header-footer/admin/options.php on line 394
+[28-May-2023 05:36:08 UTC] PHP Warning:  Undefined array key "ua" in /home/vastvolt/public_html/wp-content/plugins/google-analytics-for-wordpress/includes/admin/api-auth.php on line 406
